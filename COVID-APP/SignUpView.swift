@@ -121,8 +121,11 @@ struct SignUpView: View {
         Auth.auth().createUser(withEmail: self.email, password: self.password){(res, err) in if err != nil{
             print("fail")
             return
+            
         } }
     }
     
 }
+
+
 

@@ -87,5 +87,47 @@ struct LoginView: View {
        
         }
     }
+    
+    func quickUserLogin(){
+        print("here")
+        Auth.auth().signIn(withEmail: self.email, password: self.password){(res, err) in if err != nil{
+            print("fail")
+            wrongLoginAlert = true
+            
+            return
+        }
+        print("great success!")
+        loginComplete = true
+       
+        }
+    }
+    
+    func quickBusinessLogin(){
+        print("here")
+        Auth.auth().signIn(withEmail: self.email, password: self.password){(res, err) in if err != nil{
+            print("fail")
+            wrongLoginAlert = true
+            
+            return
+        }
+        print("great success!")
+        loginComplete = true
+       
+        }
+    }
+    
+    func quickHealthlogin(){
+        print("here")
+        Auth.auth().signIn(withEmail: self.email, password: self.password){(res, err) in if err != nil{
+            print("fail")
+            wrongLoginAlert = true
+            
+            return
+        }
+        print("great success!")
+        loginComplete = true
+       
+        }
+    }
 }
 

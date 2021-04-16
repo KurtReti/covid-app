@@ -30,6 +30,7 @@ struct ContentView: View {
         
         
     }
+    
     //not using atm
     func swapButtonColors(swapNumber: Int){
         if swapNumber == 0{
