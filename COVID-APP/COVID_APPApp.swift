@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct COVID_APPApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+      }
+    
     var body: some Scene {
         WindowGroup {
+            
             ContentView()
+            
         }
     }
 }
