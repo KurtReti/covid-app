@@ -10,13 +10,7 @@ import Firebase
 
 struct SignUpView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var postcode: String = ""
-    @State var password: String = ""
-    @State var confirmPassword: String = ""
-    @State var email: String = ""
-    @State private var date = Date()
+    @State private var signupVM = SignupViewModel()
     //allows state index st be accesible inside this struct so you can toggle back to login
     @Binding var index: Int
     //allows us to change the toggle buttons color from inside the struct
@@ -24,6 +18,7 @@ struct SignUpView: View {
     // also means you have to pass the colors in the parameters in the if statement of contentview
     @Binding var buttonBackground1: Color
     @Binding var buttonBackground2: Color
+    @State private var showErrorMessage = false
     var accentColor: Color = Color.blue
     var grayBackground: Color = Color.gray.opacity(0.2)
     
@@ -37,7 +32,7 @@ struct SignUpView: View {
                 
                 DatePicker(
                     "Date of Birth",
-                    selection: $date,
+                    selection: $signupVM.date,
                     displayedComponents: .date
                     
                 ).datePickerStyle(CompactDatePickerStyle())
@@ -49,41 +44,43 @@ struct SignUpView: View {
                 .accentColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                 
                 
+                HStack {
+                TextField("First Name", text: $signupVM.firstName)
+                    .overlay(VStack{Divider().offset(x: 0, y: 15)})
+                    
+                }
+                    .padding()
+                    
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
+                TextField("Last Name", text: $signupVM.lastName)
+                    .overlay(VStack{Divider().offset(x: 0, y: 15)})
+                    .padding()
+                    
+                    .cornerRadius(5.0)
+                    .padding(.bottom, 20)
                 
-                TextField("First Name", text: $firstName)
-                    .overlay(VStack{Divider().offset(x: 0, y: 15)})
-                    .padding()
-                    
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
-                TextField("Last Name", text: $lastName)
-                    .overlay(VStack{Divider().offset(x: 0, y: 15)})
-                    .padding()
-                    
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
                 
                 
-                
-                TextField("Email", text: $email)
+                TextField("Email", text: $signupVM.email)
                     .overlay(VStack{Divider().offset(x: 0, y: 15)})
                     .padding()
                     
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
-                TextField("Home Postcode", text: $postcode)
+                TextField("Home Postcode", text: $signupVM.postcode)
                     .overlay(VStack{Divider().offset(x: 0, y: 15)})
                     .padding()
                     
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
-                SecureField("Password", text: $password)
+                SecureField("Password", text: $signupVM.password)
                     .overlay(VStack{Divider().offset(x: 0, y: 15)})
                     .padding()
                     
                     .cornerRadius(5.0)
                     .padding(.bottom, 20)
-                SecureField("Confirm Password", text: $confirmPassword)
+                SecureField("Confirm Password", text: $signupVM.confirmPassword)
                     .overlay(VStack{Divider().offset(x: 0, y: 15)})
                     .padding()
                     
@@ -91,10 +88,20 @@ struct SignUpView: View {
                     .padding(.bottom, 20)
                 
                 Button(action: {
-                    index = 0
-                    buttonBackground1 = Color.blue
-                    buttonBackground2 = Color.gray.opacity(0.2)
-                    self.register()
+                    
+                    if !signupVM.fieldEmpty(){
+                    
+                        signupVM.register()
+                        print(signupVM.showErrorMessage)
+                        index = 0
+                        buttonBackground1 = Color.blue
+                        buttonBackground2 = Color.gray.opacity(0.2)
+                    }else{
+                        self.showErrorMessage  = true
+                    }
+                
+                 
+                    
                     
                     presentationMode.wrappedValue.dismiss()
                     
@@ -106,6 +113,9 @@ struct SignUpView: View {
                         .frame(width: 320, height: 50)
                         .background(accentColor)
                         .cornerRadius(15.0).padding(.bottom, 20)
+                        .alert(isPresented: $showErrorMessage) {
+                            Alert(title: Text("Error"), message: Text("Please Enter all details correctly!"), dismissButton: .default(Text("OK")))
+                        }
                 }
                 
                 .padding()
@@ -113,17 +123,13 @@ struct SignUpView: View {
             } }
             .frame(height: 350)
             .padding(.top)
+       
         
     }
     
-    func register(){
-        print("here")
-        Auth.auth().createUser(withEmail: self.email, password: self.password){(res, err) in if err != nil{
-            print("fail")
-            return
-            
-        } }
-    }
+    
+    
+    
     
 }
 

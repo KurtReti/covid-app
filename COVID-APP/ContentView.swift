@@ -13,11 +13,6 @@ import Firebase
 
 
 struct ContentView: View {
-    @State var userAuth = false
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var email: String = ""
-    @State private var showingSheet = false
     @State var index = 0
     @State var loginComplete = false
     @State var showMenu = false
@@ -45,8 +40,6 @@ struct ContentView: View {
     
     var body: some View {
         
-        //only way i've been able to keep the heading and toggle buttons at the top
-        //not sure if best way
         
         if self.loginComplete == true {
           
@@ -74,6 +67,9 @@ struct ContentView: View {
             }
     
         }else{
+            //only way i've been able to keep the heading and toggle buttons at the top
+            //not sure if best way
+            //top half remains the same as if statements bellow control whether signup or login shows
         ZStack{
             ZStack(alignment: .top) {
                 
@@ -115,7 +111,7 @@ struct ContentView: View {
                             self.buttonBackground1 = Color.gray.opacity(0.2)
                             self.buttonBackground2 = Color.blue
                         }){
-                            Text("Login")
+                            Text("Sign Up")
                                 .font(.headline)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
@@ -139,20 +135,23 @@ struct ContentView: View {
             
             
             
-            //index is tied to state of what view is shown login or signup
+            //index is tied to state of what view is shown, login or signup
             if self.index == 0 {
-                
+                //index is needed to be past in as it is bound to index of contentview
+                //allowing for switch to signup on button press within LoginView
+                //the colours of the toggle buttons login/signup are tied to content view and need to be accessed within LoginView (might be a better way to do this)
+                //loginComplete will allow the HomeView to be accessed when set to true with user login
                 LoginView(index: $index, buttonBackground1: $buttonBackground1, buttonBackground2: $buttonBackground2, loginComplete: $loginComplete )
                 
                 
                 
             }else if self.index == 1{
+                //index is needed to be past as it is bound to index of contentview
+                //allowing for switch to LoginView on button press within SignUpView
+                // loginc
                 SignUpView(index: $index, buttonBackground1: $buttonBackground1, buttonBackground2: $buttonBackground2  )
                 
                 
-            }else{
-                
-               
             }
             
             
