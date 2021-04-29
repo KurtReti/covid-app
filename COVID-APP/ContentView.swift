@@ -7,69 +7,46 @@
 
 import SwiftUI
 import Firebase
-
+import Combine
 
 
 
 
 struct ContentView: View {
+    
+    
     @State var index = 0
     @State var loginComplete = false
     @State var showMenu = false
     
+    //@State var UID
     
     @State var buttonBackground1: Color = Color.blue
     @State var buttonBackground2: Color = Color.gray.opacity(0.2)
+
+    @AppStorage("log_Status") var status = false
+    @AppStorage("UID") var UID = ""
     
-    init(){
-        
-        
-    }
+    @EnvironmentObject var session: SessionStore
     
-    //not using atm
-    func swapButtonColors(swapNumber: Int){
-        if swapNumber == 0{
-            buttonBackground1 = Color.blue
-            buttonBackground2 = Color.gray.opacity(0.2)
-        }else{
-            buttonBackground2 = Color.blue
-            buttonBackground1 = Color.gray.opacity(0.2)
-        }
-        
+ 
+    func getUser () {
+        session.listen()
     }
     
     var body: some View {
         
+       
         
-        if self.loginComplete == true {
-          
+        
+        if loginComplete {
             
-            let drag = DragGesture()
-                .onEnded {
-                    if $0.translation.width > -100 {
-                        withAnimation {
-                            self.showMenu = false
-                        }
-                    }
-                }
-            
-            GeometryReader { geometry in
-                ZStack(alignment: .trailing) {
-                HomeView(showMenu: self.$showMenu)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                if self.showMenu {
-                                    MenuView()
-                                        .frame(width: geometry.size.width/2)
-                                        .transition(.move(edge: .trailing))
-                                }
-                    }
-            .gesture(drag)
-            }
+            HomeView()
     
         }else{
             //only way i've been able to keep the heading and toggle buttons at the top
             //not sure if best way
-            //top half remains the same as if statements bellow control whether signup or login shows
+            //top half remains the same as if statements below control whether signup or login shows
         ZStack{
             ZStack(alignment: .top) {
                 
@@ -86,6 +63,7 @@ struct ContentView: View {
                     HStack(alignment: .center) {
                         
                         Button(action: {
+                           
                             self.index = 0
                             self.buttonBackground1 = Color.blue
                             self.buttonBackground2 = Color.gray.opacity(0.2)
@@ -129,6 +107,7 @@ struct ContentView: View {
                 }
             }.padding(EdgeInsets.init(top: 100, leading: 0, bottom: 50, trailing: 0))
         }
+        //.onAppear(perform: getUser)
         
         
             
@@ -141,7 +120,8 @@ struct ContentView: View {
                 //allowing for switch to signup on button press within LoginView
                 //the colours of the toggle buttons login/signup are tied to content view and need to be accessed within LoginView (might be a better way to do this)
                 //loginComplete will allow the HomeView to be accessed when set to true with user login
-                LoginView(index: $index, buttonBackground1: $buttonBackground1, buttonBackground2: $buttonBackground2, loginComplete: $loginComplete )
+                LoginView(index: $index, buttonBackground1: $buttonBackground1, buttonBackground2: $buttonBackground2, loginComplete: $loginComplete).environmentObject(SessionStore())
+
                 
                 
                 
@@ -175,29 +155,90 @@ struct ContentView: View {
 
 struct HomeView: View {
    
-    
-    @Binding var showMenu: Bool
-    
+    @AppStorage("UID") var UID = ""
+    @State var user:User?
+    init() {
+        user = User(uid: UID, displayName: "hi")
+    }
     var body: some View {
         
+        NavigationView {
         VStack {
            
-        HStack {
-
-            Spacer()
-             
-            Button(action: {
-                self.showMenu = true
-                  }) {
-                Image(systemName: "gear")
-                     
-                  }
-                    .padding(.trailing, 10)
-                    .padding(.top, 10)
+            
+            VStack(alignment: .leading, spacing: 0.0) {
+                NavigationLink(destination: CheckinView()){
+                Text(UID)
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                    
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                NavigationLink(destination: VaccinesView()){
+                Text("Vaccines")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                    
+                    .frame(width: 160, height: 30)
           
-           
-        }
+                
+            }
+                
+                
+                
+                NavigationLink(destination: AlertsView()){
+                Text("Alerts")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                  
+                    .frame(width: 160, height: 30)
+                    
+                    
+                   
+                
+                
+            }
+                NavigationLink(destination: RestrictionsView()){
+                Text("Restrictions")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                   
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                
+                NavigationLink(destination: MenuView()){
+                Text("Settings")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                   
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                
+            }
             Spacer()
+           
+            .padding()
+            
         }
        /* NavigationView {
                    VStack {
@@ -211,15 +252,16 @@ struct HomeView: View {
                 Spacer()
 
             }
+    }
             
             
         }
         
         
 struct MenuView: View {
-   
     
     
+    @AppStorage("log_Status") var status = false
     
     var body: some View {
        
@@ -232,7 +274,7 @@ struct MenuView: View {
                                 .foregroundColor(.gray)
                                 .imageScale(.large)
                             Text("Profile")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.purple)
                                 .font(.headline)
                     }
                         
@@ -241,26 +283,28 @@ struct MenuView: View {
                     HStack {
                         
                         Button(action: {
+                           
                         print("Edit button was tapped")
                     }) {
                         Image(systemName: "envelope")
                             .foregroundColor(.gray)
                             .imageScale(.large)
-                        Text("Messages")
-                            .foregroundColor(.gray)
+                        Text("Settings")
+                            .foregroundColor(.purple)
                             .font(.headline)
                         }
                     }
                         .padding(.top, 30)
                     HStack {
                         Button(action: {
-                        print("Edit button was tapped")
+                           // self.showMenu = false
+                            self.status = false
                     }) {
                         Image(systemName: "gear")
                             .foregroundColor(.gray)
                             .imageScale(.large)
-                        Text("Settings")
-                            .foregroundColor(.gray)
+                        Text("Logout")
+                            .foregroundColor(.purple)
                             .font(.headline)
                         }
                     }
@@ -269,7 +313,7 @@ struct MenuView: View {
                 }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color(red: 32/255, green: 32/255, blue: 32/255))
+                    //.background(Color(red: 32/255, green: 32/255, blue: 32/255))
                     .edgesIgnoringSafeArea(.all)
             }
 
@@ -279,3 +323,40 @@ struct MenuView: View {
          
          
      }
+struct CheckinView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+
+struct VaccinesView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+struct AlertsView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+
+
+struct RestrictionsView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+//https://stackoverflow.com/questions/62083056/how-do-i-rerender-my-view-in-swiftui-after-a-user-logged-in-with-google-on-fireb
+

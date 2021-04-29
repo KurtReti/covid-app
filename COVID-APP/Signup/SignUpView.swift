@@ -63,6 +63,7 @@ struct SignUpView: View {
                 
                 
                 TextField("Email", text: $signupVM.email)
+                    .autocapitalization(.none)
                     .overlay(VStack{Divider().offset(x: 0, y: 15)})
                     .padding()
                     

@@ -35,7 +35,8 @@ class SignupViewModel: ObservableObject
     }
     
     
-    
+    // checks if any fields are empty
+    //needs to be cleaned up
     func fieldEmpty() -> Bool
     {
         var result = false
@@ -93,6 +94,7 @@ class SignupViewModel: ObservableObject
             
         }else{
             //after sucessfull user register, individual data is added and linked to email/password by UID
+            
             let db = Firestore.firestore()
             db.collection("individual").addDocument(data: ["firstname":self.firstName, "lastname": self.lastName,"DOB": dob, "postcode": self.postcode, "uid": res!.user.uid ]) { (error) in
                 

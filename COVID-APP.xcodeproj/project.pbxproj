@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		444AB5202632A18F00B09D4F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444AB51F2632A18F00B09D4F /* LoginViewModel.swift */; };
 		44FC6B8F261C4D2E0029ECC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FC6B8E261C4D2E0029ECC2 /* GoogleService-Info.plist */; };
 		44FC6B90261C4D2E0029ECC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FC6B8E261C4D2E0029ECC2 /* GoogleService-Info.plist */; };
 		44FC6B91261C4D2E0029ECC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 44FC6B8E261C4D2E0029ECC2 /* GoogleService-Info.plist */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		3F473BC1BDE09672AF5E0FA1 /* Pods-COVID-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COVID-APP.release.xcconfig"; path = "Target Support Files/Pods-COVID-APP/Pods-COVID-APP.release.xcconfig"; sourceTree = "<group>"; };
+		444AB51F2632A18F00B09D4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		44FC6B8E261C4D2E0029ECC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44FC6BA8261D7ED30029ECC2 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		44FC6BE026255B170029ECC2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		444AB5242637FB8500B09D4F /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				44FC6C72262AA1B60029ECC2 /* SignupViewModel.swift */,
+				44FC6BE026255B170029ECC2 /* SignUpView.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		444AB5252637FBAD00B09D4F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				444AB51F2632A18F00B09D4F /* LoginViewModel.swift */,
+				44FC6BEB26255BDE0029ECC2 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		44BA04B372F53676C332CCC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,9 +172,8 @@
 				44FC6B8E261C4D2E0029ECC2 /* GoogleService-Info.plist */,
 				F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */,
 				F2E02C87260B75FE00B115DF /* ContentView.swift */,
-				44FC6BE026255B170029ECC2 /* SignUpView.swift */,
-				44FC6C72262AA1B60029ECC2 /* SignupViewModel.swift */,
-				44FC6BEB26255BDE0029ECC2 /* LoginView.swift */,
+				444AB5242637FB8500B09D4F /* Signup */,
+				444AB5252637FBAD00B09D4F /* Login */,
 				F2E02C89260B760100B115DF /* Assets.xcassets */,
 				F2E02C8E260B760100B115DF /* Info.plist */,
 				F2E02C8B260B760100B115DF /* Preview Content */,
@@ -435,6 +454,7 @@
 				44FC6BE126255B180029ECC2 /* SignUpView.swift in Sources */,
 				44FC6BEC26255BDE0029ECC2 /* LoginView.swift in Sources */,
 				44FC6BA9261D7ED30029ECC2 /* SessionStore.swift in Sources */,
+				444AB5202632A18F00B09D4F /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
