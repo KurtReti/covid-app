@@ -11,17 +11,20 @@ import Firebase
 struct LoginView: View {
     
     @State var loginVM = LoginViewModel()
-    @State var UID = ""
     @State var username: String = ""
     @State var password: String = ""
     @State var email: String = ""
-    @State var CurrentUser: User 
     @State var wrongLoginAlert = false
+    
+    @AppStorage("UID") var UID: String = ""
+    @EnvironmentObject var CurrentUser: User
+    
+    
     @Binding var index: Int
     @Binding var buttonBackground1: Color
     @Binding var buttonBackground2: Color
     @Binding var loginComplete: Bool
-
+    
     
     var accentColor: Color = Color.blue
     var grayBackground: Color = Color.gray.opacity(0.2)
@@ -58,20 +61,26 @@ struct LoginView: View {
             
             
             Button(action: {
-              
-            // problem with this. it finishes function before firebase login is done.
+                
+                // problem with this. it finishes function before firebase login is done.
+                //the dispatchqueue is a quickfix
                 loginVM.login()
                 
-           // really need to figure out async firebase request. this adds a 2 second wait so the function above has recieved to firebase call (very hacky)
+                // really need to figure out async firebase request. this adds a 2 second wait so the function above has recieved the firebase call (very hacky)
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    
                     if loginVM.loginComplete {
-                    self.loginComplete = true
+ 
+                        CurrentUser.uid = UID
+                        
+                        self.loginComplete = true
+ 
+                    }else{ wrongLoginAlert = true}
                 }
-            }
                 
                 //login()
-              
-            
+                
+                
             }){
                 Text("Login")
                     .font(.headline)
@@ -83,51 +92,22 @@ struct LoginView: View {
             }.padding(.bottom, 20)
             .padding()
             
-    
-            if loginVM.isLoading == true{
-                LoadView()
-            }
             
         }.alert(isPresented: $wrongLoginAlert) {
             Alert(title: Text("Please try again"), message: Text("Username and password do not match our records"), dismissButton: .default(Text("OK")))
         }
         
-      
+        
         
         
         
     }
-
     
-
     
-
+    
+    
+    
 }
 
-struct LoadView : View {
-    @State var isLoading = true
-    var body: some View {
-        
-        ZStack {
-         
-                    Text("Loading")
-                        .font(.system(.body, design: .rounded))
-                        .bold()
-                        .offset(x: 0, y: -25)
-         
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(Color(.systemGray5), lineWidth: 3)
-                        .frame(width: 250, height: 3)
-         
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(Color.green, lineWidth: 3)
-                        .frame(width: 30, height: 3)
-                        .offset(x: isLoading ? 110 : -110, y: 0)
-                        .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                }
-                .onAppear() {
-                    self.isLoading = true
-                }
-    }
-}
+
 
