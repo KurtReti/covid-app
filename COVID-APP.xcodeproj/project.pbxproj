@@ -25,6 +25,9 @@
 		F2868BE7263BB24400F1C5CA /* DependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */; };
 		F2868BEF263BB2FF00F1C5CA /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
 		F2868BF0263BB2FF00F1C5CA /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
+		F2868C04263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
+		F2868C05263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
+		F2868C06263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
 		F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */; };
 		F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762B263AFEBF0077AA90 /* FirebaseStorage */; };
 		F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762D263AFEBF0077AA90 /* FirebaseAuth */; };
@@ -61,6 +64,7 @@
 		F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentListModelView.swift; sourceTree = "<group>"; };
 		F2868BDD263BB1F100F1C5CA /* DependentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentModel.swift; sourceTree = "<group>"; };
 		F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentViewModel.swift; sourceTree = "<group>"; };
+		F2868C03263BB6DC00F1C5CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2E02C82260B75FD00B115DF /* COVID-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_APPApp.swift; sourceTree = "<group>"; };
 		F2E02C89260B760100B115DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				F2868BEB263BB25100F1C5CA /* Views */,
 				F2868BF7263BB31800F1C5CA /* ViewModel */,
 				F2868BFB263BB3EC00F1C5CA /* Model */,
+				F2868C03263BB6DC00F1C5CA /* ContentView.swift */,
 			);
 			path = Dependents;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 			files = (
 				F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */,
 				F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F2868C04263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F2868BDE263BB1F100F1C5CA /* DependentModel.swift in Sources */,
 				F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
 				F2E02C86260B75FE00B115DF /* COVID_APPApp.swift in Sources */,
@@ -356,6 +362,7 @@
 			files = (
 				F2868BEF263BB2FF00F1C5CA /* DependentView.swift in Sources */,
 				F2868BD8263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F2868C05263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F24735B32637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
 				F2E02C98260B760100B115DF /* COVID_APPTests.swift in Sources */,
 				F2868BDF263BB1F100F1C5CA /* DependentModel.swift in Sources */,
@@ -369,6 +376,7 @@
 			files = (
 				F2868BF0263BB2FF00F1C5CA /* DependentView.swift in Sources */,
 				F2868BD9263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F2868C06263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F24735B42637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
 				F2E02CA3260B760100B115DF /* COVID_APPUITests.swift in Sources */,
 				F2868BE0263BB1F100F1C5CA /* DependentModel.swift in Sources */,
