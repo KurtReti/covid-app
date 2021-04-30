@@ -140,7 +140,6 @@
 				F2868BEB263BB25100F1C5CA /* Views */,
 				F2868BF7263BB31800F1C5CA /* ViewModel */,
 				F2868BFB263BB3EC00F1C5CA /* Model */,
-				F2868C03263BB6DC00F1C5CA /* ContentView.swift */,
 			);
 			path = Dependents;
 			sourceTree = "<group>";
@@ -168,6 +167,7 @@
 		F2E02C84260B75FD00B115DF /* COVID-APP */ = {
 			isa = PBXGroup;
 			children = (
+				F2868C03263BB6DC00F1C5CA /* ContentView.swift */,
 				F2868BFC263BB40600F1C5CA /* Dependents */,
 				F261B9192630597D00537BA6 /* GoogleService-Info.plist */,
 				F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */,
