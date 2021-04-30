@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import SwiftUI
+import FirebaseAuth
 class LoginViewModel: ObservableObject
 {
     // info published on @Published

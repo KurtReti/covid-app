@@ -9,9 +9,6 @@ import SwiftUI
 import Firebase
 import Combine
 
-
-
-
 struct ContentView: View {
     
     

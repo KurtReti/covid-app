@@ -8,6 +8,8 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
+
 //signupview will contain an object SignupViewModel
 // where data and functions related to the view will be conatined
 class SignupViewModel: ObservableObject

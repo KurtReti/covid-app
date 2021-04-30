@@ -92,6 +92,19 @@ struct HomeView: View {
                 
                 
             }
+                NavigationLink(destination: DependentView()){
+                Text("Dependents")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                   
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
                 
             }
             Spacer()
