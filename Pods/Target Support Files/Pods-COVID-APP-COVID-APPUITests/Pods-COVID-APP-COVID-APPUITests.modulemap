@@ -1,0 +1,6 @@
+framework module Pods_COVID_APP_COVID_APPUITests {
+  umbrella header "Pods-COVID-APP-COVID-APPUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
