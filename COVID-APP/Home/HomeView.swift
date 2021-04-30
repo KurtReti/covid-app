@@ -1,0 +1,173 @@
+//
+//  HomeView.swift
+//  COVID-APP
+//
+//  Created by user188450 on 4/29/21.
+//
+
+
+//Contains home view and other views accessed from homeview
+// feel free to move other view into seperate files
+
+import SwiftUI
+
+struct HomeView: View {
+    
+    @EnvironmentObject var CurrentUser: User
+
+    var body: some View {
+        
+        NavigationView {
+        VStack {
+           
+            
+            VStack(alignment: .leading, spacing: 0.0) {
+                
+                Text(CurrentUser.uid)
+                
+                
+                NavigationLink(destination: CheckinView()){
+                Text("Check-In")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                    
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                NavigationLink(destination: VaccinesView()){
+                Text("Vaccines")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                    
+                    .frame(width: 160, height: 30)
+          
+                
+            }
+                
+                
+                
+                NavigationLink(destination: AlertsView()){
+                Text("Alerts")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                  
+                    .frame(width: 160, height: 30)
+                    
+                    
+                   
+                
+                
+            }
+                NavigationLink(destination: RestrictionsView()){
+                Text("Restrictions")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                   
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                
+                NavigationLink(destination: SettingsView()){
+                Text("Settings")
+                    .font(.headline)
+                    .foregroundColor(.purple)
+                    .multilineTextAlignment(.center)
+                   
+                    .frame(width: 160, height: 30)
+                    
+                    
+                    
+                
+                
+            }
+                
+            }
+            Spacer()
+           
+            .padding()
+            
+        }
+       /* NavigationView {
+                   VStack {
+                       NavigationLink(destination: SecondView()) {
+                           Text("Show Detail View")
+                       }
+                       
+                   }
+               } */
+            .padding()
+                Spacer()
+
+            }.environmentObject(CurrentUser)
+    }
+            
+            
+        }
+
+struct CheckinView: View {
+    @EnvironmentObject var CurrentUser: User
+    var body: some View {
+        VStack{
+            Text(CurrentUser.uid)
+            
+        }
+    }
+    
+}
+
+
+struct VaccinesView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+struct AlertsView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+
+
+struct RestrictionsView: View {
+    
+    var body: some View {
+        VStack{}
+    }
+    
+}
+
+struct SettingsView: View {
+    
+    
+    @AppStorage("log_Status") var status = false
+    
+    var body: some View {
+       
+        VStack(alignment: .trailing) { }
+    
+            }
+
+           
+
+    
+         
+         
+     }

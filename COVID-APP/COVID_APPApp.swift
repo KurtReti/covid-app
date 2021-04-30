@@ -14,7 +14,9 @@ struct COVID_APPApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DependentView()
+            
+            ContentView()
+            
         }
     }
     
