@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
-import Firestore
+import Firebase
+import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class DependentViewModel: ObservableObject {
     var dependent: Dependent
