@@ -6,9 +6,13 @@
 //
 
 
+
 import SwiftUI
 import Firebase
-import Combine
+import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
 
 //all fields needed for a session need to be added
 class User : ObservableObject  {
@@ -35,3 +39,8 @@ class User : ObservableObject  {
     }
 
 }
+
+
+
+
+

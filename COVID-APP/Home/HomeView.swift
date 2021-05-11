@@ -26,6 +26,8 @@ struct HomeView: View {
                 Text(CurrentUser.uid)
                 
                 
+
+                
                 NavigationLink(destination: CheckinView()){
                 Text("Check-In")
                     .font(.headline)
@@ -79,19 +81,7 @@ struct HomeView: View {
                 
             }
                 
-                NavigationLink(destination: SettingsView()){
-                Text("Settings")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
-                   
-                    .frame(width: 160, height: 30)
-                    
-                    
-                    
-                
-                
-            }
+              
                 NavigationLink(destination: DependentView()){
                 Text("Dependents")
                     .font(.headline)
@@ -167,20 +157,3 @@ struct RestrictionsView: View {
     
 }
 
-struct SettingsView: View {
-    
-    
-    @AppStorage("log_Status") var status = false
-    
-    var body: some View {
-       
-        VStack(alignment: .trailing) { }
-    
-            }
-
-           
-
-    
-         
-         
-     }
