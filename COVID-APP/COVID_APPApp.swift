@@ -14,7 +14,11 @@ struct COVID_APPApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //this runs from login
+            //ContentView()
+            
+            //this is for checkin testing
+            FakeHomeForCheckInTest()
         }
     }
     

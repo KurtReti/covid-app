@@ -19,6 +19,9 @@ class User : ObservableObject  {
     var uid: String
     var email: String?
     var displayName: String?
+    var individualID: String?
+    var businessID: String?
+    var healthID: String?
 
     init() {
         self.uid = ""
@@ -39,6 +42,7 @@ class User : ObservableObject  {
     }
 
 }
+
 
 
 

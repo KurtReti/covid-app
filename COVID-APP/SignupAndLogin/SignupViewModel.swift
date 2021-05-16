@@ -20,7 +20,7 @@ class IndividualSignupViewModel: ObservableObject
     
     @Published var firstName: String = ""
     @Published var lastName: String = ""
-    @Published var postcode: String = ""
+    @Published var address: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
     @Published var email: String = ""
@@ -55,7 +55,7 @@ class IndividualSignupViewModel: ObservableObject
         }else if lastName.isEmpty {
             showErrorMessage.toggle()
             result = true
-        }else if postcode.isEmpty {
+        }else if address.isEmpty {
             showErrorMessage.toggle()
             result = true
        // }else if confirmPassword.isEmpty {
@@ -97,7 +97,7 @@ class IndividualSignupViewModel: ObservableObject
         print(self.lastName)
         print(self.lastName)
         print(self.date)
-        print(self.postcode)
+        print(self.address)
         Auth.auth().createUser(withEmail: self.email, password: self.password){(res, err) in if err != nil{
             print("fail")
            
@@ -106,7 +106,10 @@ class IndividualSignupViewModel: ObservableObject
             //after sucessfull user register, individual data is added and linked to email/password by UID
             print("fail")
             let db = Firestore.firestore()
-            db.collection("individual").addDocument(data: ["firstname":self.firstName, "lastname": self.lastName,"DOB": dob, "postcode": self.postcode, "uid": res!.user.uid ]) { (error) in
+            let ref = db.collection("individuals").document()
+            let idref = ref.documentID
+            
+            ref.setData(["accountID": idref, "first_name":self.firstName, "last_name": self.lastName,"dob": dob, "address": self.address, "uid": res!.user.uid ]) { (error) in
                 
                 if error != nil {
                     //show error
@@ -215,15 +218,22 @@ class busSignupViewModel: ObservableObject
         }else{
             //after sucessfull user register, individual data is added and linked to email/password by UID
             
+            print("in else")
             let db = Firestore.firestore()
-            db.collection("business").addDocument(data: ["ABN":self.ABN, "name": self.name,"type": self.bType, "address": self.address, "uid": res!.user.uid ]) { (error) in
+            
+           
+            let ref = db.collection("business").document()
+            let idref = ref.documentID
+            ref.setData(["accountID": idref, "abn":Int(self.ABN)!, "address": self.address,"email": self.email, "name": self.name, "phoneNum": self.phoneNum, "type": self.bType,"uid": res!.user.uid ]) { (error) in
                 
                 if error != nil {
                     //show error
-                    print("error in bus")
+                    print("error in ind")
                 
                 }
             }
+            
+      
         } }
     }
     

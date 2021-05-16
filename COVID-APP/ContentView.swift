@@ -39,7 +39,11 @@ struct ContentView: View {
         if loginComplete {
             
             if userTypeLogin == 0  {
+                LoadingView(isShowing: $loading) {
+                
                 HomeView().environmentObject(CurrentUser)
+                    
+                }
             }else if userTypeLogin == 1 {
                 BusinessHomeView().environmentObject(CurrentUser)
                 

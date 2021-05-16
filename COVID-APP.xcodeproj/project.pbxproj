@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445D90A9265136B200220E19 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 445D90A8265136B200220E19 /* CodeScanner */; };
+		445D90C72651372E00220E19 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D90C62651372E00220E19 /* Visit.swift */; };
+		445D90CC2651376200220E19 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D90CB2651376200220E19 /* CheckInViewModel.swift */; };
+		445D90D12651378C00220E19 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D90D02651378C00220E19 /* CheckInView.swift */; };
+		445D90D7265138E600220E19 /* BusinessSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D90D6265138E600220E19 /* BusinessSign.swift */; };
+		445D90DF265138FB00220E19 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445D90DE265138FB00220E19 /* Business.swift */; };
 		AB2620E72649137700C8831B /* BusinessHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2620E62649137700C8831B /* BusinessHomeView.swift */; };
 		AB2AAA32264A6EF5009E462E /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2AAA31264A6EF5009E462E /* LoginOptionsView.swift */; };
 		AB2AAA3A264A6FEA009E462E /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2AAA39264A6FEA009E462E /* LoginSignupView.swift */; };
@@ -73,6 +79,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445D90C62651372E00220E19 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		445D90CB2651376200220E19 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		445D90D02651378C00220E19 /* CheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		445D90D6265138E600220E19 /* BusinessSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSign.swift; sourceTree = "<group>"; };
+		445D90DE265138FB00220E19 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		AB2620E62649137700C8831B /* BusinessHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHomeView.swift; sourceTree = "<group>"; };
 		AB2AAA31264A6EF5009E462E /* LoginOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
 		AB2AAA39264A6FEA009E462E /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
@@ -109,6 +120,7 @@
 			files = (
 				F2A57632263AFEBF0077AA90 /* FirebaseStorageSwift-Beta in Frameworks */,
 				F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				445D90A9265136B200220E19 /* CodeScanner in Frameworks */,
 				F2A57630263AFEBF0077AA90 /* FirebaseFirestore in Frameworks */,
 				F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */,
 				F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */,
@@ -132,6 +144,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		445D90AD265136DA00220E19 /* Check-in */ = {
+			isa = PBXGroup;
+			children = (
+				445D90BF2651370500220E19 /* Model */,
+				445D90B8265136F800220E19 /* ViewModel */,
+				445D90B4265136E900220E19 /* View */,
+			);
+			path = "Check-in";
+			sourceTree = "<group>";
+		};
+		445D90B4265136E900220E19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				445D90D02651378C00220E19 /* CheckInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		445D90B8265136F800220E19 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				445D90CB2651376200220E19 /* CheckInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		445D90BF2651370500220E19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				445D90C62651372E00220E19 /* Visit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		445D90D5265138C000220E19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				445D90D6265138E600220E19 /* BusinessSign.swift */,
+				445D90DE265138FB00220E19 /* Business.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AB2AAA30264A6E44009E462E /* SignupAndLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +267,8 @@
 		F2E02C84260B75FD00B115DF /* COVID-APP */ = {
 			isa = PBXGroup;
 			children = (
+				445D90D5265138C000220E19 /* Model */,
+				445D90AD265136DA00220E19 /* Check-in */,
 				F2CAE1B0263BCD0E0010D29C /* GoogleService-Info.plist */,
 				AB2AAA41264A71FA009E462E /* LoadingView.swift */,
 				AB2AAA30264A6E44009E462E /* SignupAndLogin */,
@@ -275,6 +332,7 @@
 				F2A5762D263AFEBF0077AA90 /* FirebaseAuth */,
 				F2A5762F263AFEBF0077AA90 /* FirebaseFirestore */,
 				F2A57631263AFEBF0077AA90 /* FirebaseStorageSwift-Beta */,
+				445D90A8265136B200220E19 /* CodeScanner */,
 			);
 			productName = "COVID-APP";
 			productReference = F2E02C82260B75FD00B115DF /* COVID-APP.app */;
@@ -349,6 +407,7 @@
 			mainGroup = F2E02C79260B75FD00B115DF;
 			packageReferences = (
 				F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				445D90A7265136B200220E19 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = F2E02C83260B75FD00B115DF /* Products */;
 			projectDirPath = "";
@@ -398,14 +457,19 @@
 				AB2AAA3A264A6FEA009E462E /* LoginSignupView.swift in Sources */,
 				F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */,
 				AB2620E72649137700C8831B /* BusinessHomeView.swift in Sources */,
+				445D90C72651372E00220E19 /* Visit.swift in Sources */,
 				F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
 				F2CAE182263BBE9A0010D29C /* SwiftUIView.swift in Sources */,
 				F2868C04263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F2868BDE263BB1F100F1C5CA /* DependentModel.swift in Sources */,
+				445D90D12651378C00220E19 /* CheckInView.swift in Sources */,
+				445D90CC2651376200220E19 /* CheckInViewModel.swift in Sources */,
+				445D90D7265138E600220E19 /* BusinessSign.swift in Sources */,
 				F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
 				F2CAE1AA263BBF130010D29C /* User.swift in Sources */,
 				AB2AAA32264A6EF5009E462E /* LoginOptionsView.swift in Sources */,
 				F2CAE1A0263BBEED0010D29C /* SignupViewModel.swift in Sources */,
+				445D90DF265138FB00220E19 /* Business.swift in Sources */,
 				F2CAE17F263BBE9A0010D29C /* HomeView.swift in Sources */,
 				F2E02C86260B75FE00B115DF /* COVID_APPApp.swift in Sources */,
 				F2CAE191263BBEDA0010D29C /* LoginViewModel.swift in Sources */,
@@ -748,6 +812,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		445D90A7265136B200220E19 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
 		F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -759,6 +831,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		445D90A8265136B200220E19 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 445D90A7265136B200220E19 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

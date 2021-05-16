@@ -126,7 +126,7 @@ struct LoginSignupView: View {
                             DatePicker(selection: $indSignupVM.date, displayedComponents: .date, label: { Text("Date of Birth") } )
                                 .datePickerStyle(WheelDatePickerStyle())
                                 .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            TextField("Home Postcode", text: $indSignupVM.postcode)
+                            TextField("Home Address", text: $indSignupVM.address)
                                 .frame(width:350, height:50)
                             Divider()
                                 .frame(width:370)
@@ -171,7 +171,7 @@ struct LoginSignupView: View {
                                 Divider()
                                     .frame(width:370)
                             }
-                            TextField("Email", text: $busSignupVM.address)
+                            TextField("Address", text: $busSignupVM.address)
                                 .frame(width:350, height:50)
                             Divider()
                                 .frame(width:370)
@@ -222,6 +222,20 @@ struct LoginSignupView: View {
         
         func login() {
             
+            let formatter = DateFormatter()
+            // initially set the format based on your datepicker date / server String
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+            let myString = formatter.string(from: Date()) // string purpose I add here
+            // convert your string to date
+            let yourDate = formatter.date(from: myString)
+            //then again set the date format whhich type of output you need
+            formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
+            // again convert your date to string
+            let myStringafd = formatter.string(from: yourDate!)
+
+            print(myStringafd)
+            
             
             if !LoginVM.fieldEmpty(){
                LoginVM.login2()
@@ -230,12 +244,14 @@ struct LoginSignupView: View {
                 // really need to figure out async firebase request. this adds a 2 second wait so the function above has recieved the firebase call (very hacky)
                 
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6) {
                     
                     
                     
                     if LoginVM.loginComplete {
                       if LoginVM.userTypeLogin == 0 {
+                        CurrentUser.uid = UID
+                        CurrentUser.individualID = LoginVM.CurrentUser.individualID
                             userTypeLogin = 0
                       }else if LoginVM.userTypeLogin == 1{
                         

@@ -10,125 +10,124 @@
 // feel free to move other view into seperate files
 
 import SwiftUI
+import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct HomeView: View {
     
-    @EnvironmentObject var CurrentUser: User
-
+    //@EnvironmentObject var CurrentUser: User
+    
     var body: some View {
         
         NavigationView {
-        VStack {
-           
-            
-            VStack(alignment: .leading, spacing: 0.0) {
-                
-                Text(CurrentUser.uid)
+            VStack {
                 
                 
-
-                
-                NavigationLink(destination: CheckinView()){
-                Text("Check-In")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
+                VStack(alignment: .leading, spacing: 0.0) {
                     
-                    .frame(width: 160, height: 30)
+                   // Text(CurrentUser.uid)
+                    Text("hi")
+                   // Text(CurrentUser.individualID ?? "")
                     
                     
                     
-                
-                
-            }
-                NavigationLink(destination: VaccinesView()){
-                Text("Vaccines")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
                     
-                    .frame(width: 160, height: 30)
-          
-                
-            }
-                
-                
-                
-                NavigationLink(destination: AlertsView()){
-                Text("Alerts")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
-                  
-                    .frame(width: 160, height: 30)
+                 /*   NavigationLink(destination: CheckInView()){
+                        Text("Check-In")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .multilineTextAlignment(.center)
+                            
+                            .frame(width: 160, height: 30)
                     
-                    
-                   
-                
-                
-            }
-                NavigationLink(destination: RestrictionsView()){
-                Text("Restrictions")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
-                   
-                    .frame(width: 160, height: 30)
+                        
+                    } */
                     
                     
                     
-                
-                
-            }
-                
-              
-                NavigationLink(destination: DependentView()){
-                Text("Dependents")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
-                   
-                    .frame(width: 160, height: 30)
+                    NavigationLink(destination: VaccinesView()){
+                        Text("Vaccines")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .multilineTextAlignment(.center)
+                            
+                            .frame(width: 160, height: 30)
+                        
+                        
+                    }
                     
                     
                     
-                
-                
-            }
-                
-            }
-            Spacer()
-           
-            .padding()
-            
-        }
-       /* NavigationView {
-                   VStack {
-                       NavigationLink(destination: SecondView()) {
-                           Text("Show Detail View")
-                       }
-                       
-                   }
-               } */
-            .padding()
+                    NavigationLink(destination: AlertsView()){
+                        Text("Alerts")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .multilineTextAlignment(.center)
+                            
+                            .frame(width: 160, height: 30)
+                        
+                        
+                        
+                        
+                        
+                    }
+                    NavigationLink(destination: RestrictionsView()){
+                        Text("Restrictions")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .multilineTextAlignment(.center)
+                            
+                            .frame(width: 160, height: 30)
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                    
+                    NavigationLink(destination: DependentView()){
+                        Text("Dependents")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                            .multilineTextAlignment(.center)
+                            
+                            .frame(width: 160, height: 30)
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                }
                 Spacer()
-
-            }.environmentObject(CurrentUser)
-    }
+                    
+                    .padding()
+                
+            }
+            /* NavigationView {
+             VStack {
+             NavigationLink(destination: SecondView()) {
+             Text("Show Detail View")
+             }
+             
+             }
+             } */
+            .padding()
+            Spacer()
             
-            
-        }
-
-struct CheckinView: View {
-    @EnvironmentObject var CurrentUser: User
-    var body: some View {
-        VStack{
-            Text(CurrentUser.uid)
-            
-        }
+        }//.environmentObject(CurrentUser)
     }
     
+    
 }
+
+
+
 
 
 struct VaccinesView: View {
@@ -156,4 +155,6 @@ struct RestrictionsView: View {
     }
     
 }
+
+
 

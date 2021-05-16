@@ -98,9 +98,9 @@ class LoginViewModel: ObservableObject
         let db = Firestore.firestore()
        
         
-        let citiesRef = db.collection("individual")
+        let indRef = db.collection("individuals")
         
-        db.collection("individual").whereField("uid", isEqualTo: res).getDocuments() { (querySnapshot, err) in
+        db.collection("individuals").whereField("uid", isEqualTo: res).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -109,13 +109,18 @@ class LoginViewModel: ObservableObject
                 for document in querySnapshot!.documents {
                     print("118i")
                     print("\(document.documentID) => \(document.data())")
+                    let indID = document.documentID
+                    let data = document.data()
+                    let accountID = data["accountID"] as? String ?? ""
+                    print(accountID)
+                    self.CurrentUser.individualID = accountID
                     self.userTypeLogin = 0
                     self.loginComplete = true
-                   
+
                     
                 }
                 print("123i")
-                print(citiesRef.whereField("uid", isEqualTo: res))
+                print(indRef.whereField("uid", isEqualTo: res))
                 
                 
             
