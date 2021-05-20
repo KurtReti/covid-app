@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleMaps
 
 @main
 struct COVID_APPApp: App {
@@ -14,12 +15,15 @@ struct COVID_APPApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CovidSignListView()
+            //DependentView()
+            //ContentView()
         }
     }
     
     class AppDelegate: NSObject, UIApplicationDelegate {
       func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        GMSServices.provideAPIKey("")
         FirebaseApp.configure()
         return true
       }

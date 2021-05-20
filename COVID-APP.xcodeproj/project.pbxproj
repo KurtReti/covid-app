@@ -10,7 +10,19 @@
 		F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
 		F24735B32637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
 		F24735B42637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
+		F25E59D32644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
+		F25E59D42644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
+		F25E59D52644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
 		F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
+		F26551A926446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F26551AA26446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F26551AB26446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F2695A4626560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A4726560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A4826560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A502656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
+		F2695A512656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
+		F2695A522656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
 		F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
 		F2868BD8263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
 		F2868BD9263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
@@ -25,6 +37,21 @@
 		F2868C04263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
 		F2868C05263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
 		F2868C06263BB6DC00F1C5CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868C03263BB6DC00F1C5CA /* ContentView.swift */; };
+		F28EFBDE264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBDF264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBE0264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBE8264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBE9264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBEA264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBEF264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF0264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF1264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF6264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F28EFBF7264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F28EFBF8264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F294DB97264E1F1800DF39E0 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB96264E1F1800DF39E0 /* GoogleMaps */; };
+		F294DB99264E1F1800DF39E0 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB98264E1F1800DF39E0 /* GoogleMapsCore */; };
+		F294DB9B264E1F1800DF39E0 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */; };
 		F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */; };
 		F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762B263AFEBF0077AA90 /* FirebaseStorage */; };
 		F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762D263AFEBF0077AA90 /* FirebaseAuth */; };
@@ -80,11 +107,19 @@
 
 /* Begin PBXFileReference section */
 		F24735B12637EC1D00C30BC8 /* AddDependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDependentView.swift; sourceTree = "<group>"; };
+		F25E59D22644F5600075493E /* EditDependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDependentView.swift; sourceTree = "<group>"; };
 		F261B90C26302BDA00537BA6 /* DependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentView.swift; sourceTree = "<group>"; };
+		F26551A826446813004D9ADD /* DependentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentDetailsView.swift; sourceTree = "<group>"; };
+		F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignViewModel.swift; sourceTree = "<group>"; };
+		F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignDetailsView.swift; sourceTree = "<group>"; };
 		F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentListModelView.swift; sourceTree = "<group>"; };
 		F2868BDD263BB1F100F1C5CA /* DependentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentModel.swift; sourceTree = "<group>"; };
 		F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentViewModel.swift; sourceTree = "<group>"; };
 		F2868C03263BB6DC00F1C5CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSignView.swift; sourceTree = "<group>"; };
+		F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignListView.swift; sourceTree = "<group>"; };
+		F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignListViewModel.swift; sourceTree = "<group>"; };
+		F28EFBF5264D384400F8D6D5 /* CovidSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSign.swift; sourceTree = "<group>"; };
 		F2CAE17D263BBE9A0010D29C /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F2CAE17E263BBE9A0010D29C /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		F2CAE18F263BBEDA0010D29C /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -113,9 +148,12 @@
 			files = (
 				F2A57632263AFEBF0077AA90 /* FirebaseStorageSwift-Beta in Frameworks */,
 				F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				F294DB97264E1F1800DF39E0 /* GoogleMaps in Frameworks */,
 				F2A57630263AFEBF0077AA90 /* FirebaseFirestore in Frameworks */,
 				F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */,
 				F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */,
+				F294DB99264E1F1800DF39E0 /* GoogleMapsCore in Frameworks */,
+				F294DB9B264E1F1800DF39E0 /* GoogleMapsBase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +179,8 @@
 			children = (
 				F261B90C26302BDA00537BA6 /* DependentView.swift */,
 				F24735B12637EC1D00C30BC8 /* AddDependentView.swift */,
+				F26551A826446813004D9ADD /* DependentDetailsView.swift */,
+				F25E59D22644F5600075493E /* EditDependentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +210,43 @@
 				F2868BFB263BB3EC00F1C5CA /* Model */,
 			);
 			path = Dependents;
+			sourceTree = "<group>";
+		};
+		F28EFBD9264D310400F8D6D5 /* Covidsign */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBDC264D31AE00F8D6D5 /* Model */,
+				F28EFBDB264D319F00F8D6D5 /* ViewModel */,
+				F28EFBDA264D319300F8D6D5 /* Views */,
+			);
+			path = Covidsign;
+			sourceTree = "<group>";
+		};
+		F28EFBDA264D319300F8D6D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */,
+				F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */,
+				F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F28EFBDB264D319F00F8D6D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */,
+				F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F28EFBDC264D31AE00F8D6D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBF5264D384400F8D6D5 /* CovidSign.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F2CAE17C263BBE9A0010D29C /* Home */ = {
@@ -228,6 +305,7 @@
 				F2CAE18E263BBEDA0010D29C /* Login */,
 				F2CAE17C263BBE9A0010D29C /* Home */,
 				F2868C03263BB6DC00F1C5CA /* ContentView.swift */,
+				F28EFBD9264D310400F8D6D5 /* Covidsign */,
 				F2868BFC263BB40600F1C5CA /* Dependents */,
 				F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */,
 				F2E02C89260B760100B115DF /* Assets.xcassets */,
@@ -285,6 +363,9 @@
 				F2A5762D263AFEBF0077AA90 /* FirebaseAuth */,
 				F2A5762F263AFEBF0077AA90 /* FirebaseFirestore */,
 				F2A57631263AFEBF0077AA90 /* FirebaseStorageSwift-Beta */,
+				F294DB96264E1F1800DF39E0 /* GoogleMaps */,
+				F294DB98264E1F1800DF39E0 /* GoogleMapsCore */,
+				F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */,
 			);
 			productName = "COVID-APP";
 			productReference = F2E02C82260B75FD00B115DF /* COVID-APP.app */;
@@ -359,6 +440,7 @@
 			mainGroup = F2E02C79260B75FD00B115DF;
 			packageReferences = (
 				F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
 			);
 			productRefGroup = F2E02C83260B75FD00B115DF /* Products */;
 			projectDirPath = "";
@@ -407,18 +489,26 @@
 			files = (
 				F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */,
 				F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F28EFBEF264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
 				F2CAE182263BBE9A0010D29C /* SwiftUIView.swift in Sources */,
+				F28EFBF6264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2695A4626560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
 				F2868C04263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F2868BDE263BB1F100F1C5CA /* DependentModel.swift in Sources */,
+				F26551A926446813004D9ADD /* DependentDetailsView.swift in Sources */,
 				F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
 				F2CAE1AA263BBF130010D29C /* User.swift in Sources */,
 				F2CAE1A0263BBEED0010D29C /* SignupViewModel.swift in Sources */,
 				F2CAE17F263BBE9A0010D29C /* HomeView.swift in Sources */,
+				F25E59D32644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A502656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
 				F2CAE1A3263BBEED0010D29C /* SignUpView.swift in Sources */,
+				F28EFBDE264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
 				F2E02C86260B75FE00B115DF /* COVID_APPApp.swift in Sources */,
 				F2CAE194263BBEDA0010D29C /* LoginView.swift in Sources */,
 				F2CAE191263BBEDA0010D29C /* LoginViewModel.swift in Sources */,
 				F2868BE5263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBE8264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,18 +518,26 @@
 			files = (
 				F2868BEF263BB2FF00F1C5CA /* DependentView.swift in Sources */,
 				F2868BD8263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F28EFBF0264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
 				F2CAE183263BBE9A0010D29C /* SwiftUIView.swift in Sources */,
+				F28EFBF7264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2695A4726560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
 				F2868C05263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F24735B32637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
+				F26551AA26446813004D9ADD /* DependentDetailsView.swift in Sources */,
 				F2E02C98260B760100B115DF /* COVID_APPTests.swift in Sources */,
 				F2CAE1AB263BBF130010D29C /* User.swift in Sources */,
 				F2CAE1A1263BBEED0010D29C /* SignupViewModel.swift in Sources */,
 				F2CAE180263BBE9A0010D29C /* HomeView.swift in Sources */,
+				F25E59D42644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A512656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
 				F2CAE1A4263BBEED0010D29C /* SignUpView.swift in Sources */,
+				F28EFBDF264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
 				F2868BDF263BB1F100F1C5CA /* DependentModel.swift in Sources */,
 				F2CAE195263BBEDA0010D29C /* LoginView.swift in Sources */,
 				F2CAE192263BBEDA0010D29C /* LoginViewModel.swift in Sources */,
 				F2868BE6263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBE9264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,18 +547,26 @@
 			files = (
 				F2868BF0263BB2FF00F1C5CA /* DependentView.swift in Sources */,
 				F2868BD9263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F28EFBF1264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
 				F2CAE184263BBE9A0010D29C /* SwiftUIView.swift in Sources */,
+				F28EFBF8264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2695A4826560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
 				F2868C06263BB6DC00F1C5CA /* ContentView.swift in Sources */,
 				F24735B42637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
+				F26551AB26446813004D9ADD /* DependentDetailsView.swift in Sources */,
 				F2E02CA3260B760100B115DF /* COVID_APPUITests.swift in Sources */,
 				F2CAE1AC263BBF130010D29C /* User.swift in Sources */,
 				F2CAE1A2263BBEED0010D29C /* SignupViewModel.swift in Sources */,
 				F2CAE181263BBE9A0010D29C /* HomeView.swift in Sources */,
+				F25E59D52644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A522656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
 				F2CAE1A5263BBEED0010D29C /* SignUpView.swift in Sources */,
+				F28EFBE0264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
 				F2868BE0263BB1F100F1C5CA /* DependentModel.swift in Sources */,
 				F2CAE196263BBEDA0010D29C /* LoginView.swift in Sources */,
 				F2CAE193263BBEDA0010D29C /* LoginViewModel.swift in Sources */,
 				F2868BE7263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBEA264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -775,6 +889,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F294DB96264E1F1800DF39E0 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		F294DB98264E1F1800DF39E0 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsCore;
+		};
+		F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsBase;
+		};
 		F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

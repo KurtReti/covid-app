@@ -26,7 +26,9 @@ struct DependentView: View {
         VStack {
             NavigationView{
                 List(viewModel.dependentsList) { dependent in
-                        Text(dependent.firstname + " " + dependent.surname)
+                    NavigationLink (destination: DependentDetailsView(dependent: dependent)) {
+                            Text(dependent.firstname + " " + dependent.surname)
+                        }
                     }
                 .navigationBarTitle("My Dependents")
                 .navigationBarItems(trailing: addButton)
@@ -44,7 +46,6 @@ struct DependentView: View {
 struct DependentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DependentView()
             DependentView()
         }
     }

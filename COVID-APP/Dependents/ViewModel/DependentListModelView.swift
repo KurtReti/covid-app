@@ -42,8 +42,8 @@ class DependentListViewModel: ObservableObject {
                     let individualID = data["individualID"] as? DocumentReference ?? nil
                     let firstname = data["firstname"] as? String ?? ""
                     let surname = data["surname"] as? String ?? ""
-                    let address = data["address"] as? [String] ?? [""]
-                    let phoneNo = data["phoneNo"] as? Int ?? 0
+                    let address = data["address"] as? String ?? ""
+                    let phoneNo = data["phoneNo"] as? String ?? ""
                     let email = data["email"] as? String ?? ""
                     let dob = data["dob"] as? Timestamp ?? Timestamp()
                     return Dependent(id: dependentID, individualID: individualID!, firstname: firstname, surname: surname, address: address, phoneNo: phoneNo, email: email, dob: dob)

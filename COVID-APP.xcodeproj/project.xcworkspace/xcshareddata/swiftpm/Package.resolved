@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "GoogleMaps",
+        "repositoryURL": "https://github.com/YAtechnologies/GoogleMaps-SP.git",
+        "state": {
+          "branch": null,
+          "revision": "68d9f01a1ffede0bdd58834923852fbedf013ab2",
+          "version": "4.2.0"
+        }
+      },
+      {
         "package": "GoogleUtilities",
         "repositoryURL": "https://github.com/google/GoogleUtilities.git",
         "state": {

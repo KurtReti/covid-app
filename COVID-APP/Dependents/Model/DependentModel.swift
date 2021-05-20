@@ -16,8 +16,8 @@ struct Dependent: Identifiable, Codable {
     var individualID: DocumentReference
     var firstname: String
     var surname: String
-    var address: [String]
-    var phoneNo: Int
+    var address: String
+    var phoneNo: String
     var email: String
     @ServerTimestamp var dob: Timestamp?
 }

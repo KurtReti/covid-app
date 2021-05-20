@@ -1,18 +1,25 @@
 //
-//  addDependentPopUp.swift
+//  EditDependentView.swift
 //  COVID-APP
 //
-//  Created by Taylah Galea on 27/4/21.
+//  Created by Taylah Galea on 7/5/21.
 //
 
 import SwiftUI
-import FirebaseFirestore
 
-struct AddDependentView: View {
+enum Action {
+    case delete
+    case done
+    case cancel
+}
+
+struct EditDependentView: View {
     @Environment(\.presentationMode) private var presentationMode
-    
+    @State var presentActionSheet = false
+
     @ObservedObject var viewModel = DependentViewModel()
     
+    var completionHandler: ((Result<Action, Error>) -> Void)?
     
     var cancelButton: some View {
 
@@ -25,7 +32,7 @@ struct AddDependentView: View {
     var saveButton: some View {
         Button(action: self.handleDoneTapped) {
             Text("Save")
-        }
+        }.disabled(!viewModel.modified)
     }
     
     
@@ -42,10 +49,21 @@ struct AddDependentView: View {
                     TextField("Phone Number", text: $viewModel.dependent.phoneNo)
                     TextField("Email Address", text: $viewModel.dependent.email)
                 }
+                Section {
+                    Button("Delete Dependent") { self.presentActionSheet.toggle() }
+                        .foregroundColor(.red)
+                }
             }
-            .navigationTitle("New Dependent")
+            .navigationBarTitle("Edit Dependent")
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
+            .actionSheet(isPresented: $presentActionSheet) {
+                ActionSheet(title: Text("Are you sure?"),
+                        buttons: [
+                            .destructive(Text("Delete Dependent"), action: {self.handleDeleteTapped()}),
+                            .cancel()
+                        ])
+            }
         }
     }
     
@@ -54,8 +72,14 @@ struct AddDependentView: View {
     }
     
     func handleDoneTapped() {
-        self.viewModel.addDependent()
+        self.viewModel.updateDependent()
         self.dismiss()
+    }
+    
+    func handleDeleteTapped() {
+        viewModel.deleteDependent()
+        self.dismiss()
+        self.completionHandler?(.success(.delete))
     }
     
     func dismiss() {
@@ -63,9 +87,8 @@ struct AddDependentView: View {
     }
 }
 
-
-struct AddDependentView_Previews: PreviewProvider {
+struct EditDependentView_Previews: PreviewProvider {
     static var previews: some View {
-        AddDependentView()
+        EditDependentView()
     }
 }
