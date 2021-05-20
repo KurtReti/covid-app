@@ -6,12 +6,30 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct COVID_APPApp: App {
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //this runs from login
+            //ContentView()
+            
+            //this is for checkin testing
+            //FakeHomeForCheckInTest()
+            //HealthOfficialView()
+           //HomeTestView()
+            CovidSignListView()
         }
     }
+    
+    class AppDelegate: NSObject, UIApplicationDelegate {
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        return true
+      }
+    }
 }
+
