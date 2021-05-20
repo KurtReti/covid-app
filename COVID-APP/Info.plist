@@ -29,12 +29,12 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict>
+		<key>UIColorName</key>
+		<string>bg</string>
 		<key>UIImageName</key>
 		<string>logosmall</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
 		<true/>
-		<key>UIColorName</key>
-		<string>bg</string>
 	</dict>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

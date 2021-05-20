@@ -77,7 +77,20 @@ struct CheckInView: View {
         
         if(index==0){
             Spacer()
-            VStack{}
+            NavigationView {
+                return List(CheckInVM.locations) { location in
+                    VStack {
+                        Text(location.businessSignID)
+                        Text(location.checkIn)
+                        Text(location.checkOut!)
+                        Text("Hello")
+                    }
+                }
+                .navigationBarTitle("Previous Check Ins")
+                .onAppear() {
+                    CheckInVM.fetchData()
+                }
+            }
             Spacer()
             
         }else if(index==1){
@@ -292,4 +305,85 @@ struct SwiftUIView_Previews: PreviewProvider
     }
 }
 
+
+//
+//  LocationView.swift
+//  COVID-APP
+//
+//  Created by Megan Moss on 19/5/21.
+//
+
+import SwiftUI
+import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
+struct LocationsListView: View {
+    @ObservedObject private var viewModel = LocationsViewModel()
+    
+    var body: some View {
+        NavigationView {
+            return List(viewModel.locations) { location in
+                VStack {
+                    Text(location.businessSignID)
+                    Text(location.checkIn)
+                    Text(location.checkOut!)
+                    Text("Hello")
+                }
+            }
+            .navigationBarTitle("Previous Check Ins")
+            .onAppear() {
+                self.viewModel.fetchData()
+            }
+        }
+    }
+}
+
+
+
+
+//
+//  LocationViewModel.swift
+//  COVID-APP
+//
+//  Created by Megan Moss on 19/5/21.
+//
+
+import SwiftUI
+import Foundation
+import Firebase
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
+class LocationsViewModel: ObservableObject {
+    @Published var locations = [Visit]()
+    private var db = Firestore.firestore()
+    func fetchData() {
+        db.collection("visit").whereField("individualID", isEqualTo: "571abab7-1de4-4b1b-a35a-8b5405c12445").addSnapshotListener{(QuerySnapshot, error) in
+            guard let documents = QuerySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.locations = documents.map{ (QueryDocumentSnapshot) -> Visit in
+                let data = QueryDocumentSnapshot.data()
+                
+                let id = data["contactID"] as? String ?? ""
+                let businessSignID = data["businessSignID"] as? String ?? ""
+                let individualID = data["individualID"] as? String ?? ""
+                let checkIn = data["signInDate"] as? String ?? ""
+                let checkOut = data["signOutDate"] as? String ?? ""
+                let active = true // Temporary
+                return Visit(id: id, businessSignID: businessSignID, individualID: individualID, checkIn: checkIn, checkOut: checkOut, active: active)
+            }
+        }
+    }
+    
+    
+    
+    
+}
 

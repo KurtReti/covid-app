@@ -26,6 +26,8 @@ class CheckInVeiwModel: ObservableObject
     @Published var isLoading = false
     @Published var initialLoadComplete = false
     
+    @Published var locations = [Visit]()
+    
     init() {
         // initialise objects to store relevent check in info
         
@@ -34,6 +36,28 @@ class CheckInVeiwModel: ObservableObject
         currentVisit = Visit(id: "", businessSignID: "", individualID: "", checkIn: "", active: false)
         currentBusiness = Business(id: "", abn: 0, name: "", address: "", email: "", phoneNum: "", type: "")
     }
+    
+    func fetchData() {
+        db.collection("visit").whereField("individualID", isEqualTo: indID).addSnapshotListener{(QuerySnapshot, error) in
+            guard let documents = QuerySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.locations = documents.map{ (QueryDocumentSnapshot) -> Visit in
+                let data = QueryDocumentSnapshot.data()
+                
+                let id = data["visitID"] as? String ?? ""
+                let businessSignID = data["businessSignID"] as? String ?? ""
+                let individualID = data["individualID"] as? String ?? ""
+                let checkIn = data["checkedIn"] as? String ?? ""
+                let checkOut = data["checkout"] as? String ?? ""
+                let active = true // Temporary
+                return Visit(id: id, businessSignID: businessSignID, individualID: individualID, checkIn: checkIn, checkOut: checkOut, active: active)
+            }
+        }
+    }
+
     
     // this one will load all the data using the url entered instead of scan
     func urlBusinessSign(){

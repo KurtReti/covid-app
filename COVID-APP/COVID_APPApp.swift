@@ -18,7 +18,9 @@ struct COVID_APPApp: App {
             //ContentView()
             
             //this is for checkin testing
-            FakeHomeForCheckInTest()
+            //FakeHomeForCheckInTest()
+            //HealthOfficialView()
+           HomeTestView()
         }
     }
     
