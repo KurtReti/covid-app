@@ -3,14 +3,96 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2E02C86260B75FE00B115DF /* COVID_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */; };
-		F2E02C88260B75FE00B115DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E02C87260B75FE00B115DF /* ContentView.swift */; };
-		F2E02C8A260B760100B115DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E02C89260B760100B115DF /* Assets.xcassets */; };
-		F2E02C8D260B760100B115DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2E02C8C260B760100B115DF /* Preview Assets.xcassets */; };
+		F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
+		F24735B32637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
+		F24735B42637EC1D00C30BC8 /* AddDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24735B12637EC1D00C30BC8 /* AddDependentView.swift */; };
+		F2596D3D26567B8B000C5770 /* ReportTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0426567B81000C5770 /* ReportTestView.swift */; };
+		F2596D3E26567B8B000C5770 /* ConductTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0526567B81000C5770 /* ConductTestView.swift */; };
+		F2596D3F26567B8B000C5770 /* CovidTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0726567B81000C5770 /* CovidTest.swift */; };
+		F2596D4026567B8B000C5770 /* placeholderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2596D0826567B81000C5770 /* placeholderLogo.png */; };
+		F2596D4126567B8B000C5770 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0926567B82000C5770 /* ContentView.swift */; };
+		F2596D4226567B8B000C5770 /* AlertProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0A26567B83000C5770 /* AlertProvider.swift */; };
+		F2596D4326567B8B000C5770 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2596D0C26567B83000C5770 /* Preview Assets.xcassets */; };
+		F2596D4426567B8B000C5770 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D0F26567B84000C5770 /* CheckInViewModel.swift */; };
+		F2596D4526567B8B000C5770 /* VisitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1126567B84000C5770 /* VisitDescription.swift */; };
+		F2596D4626567B8B000C5770 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1226567B84000C5770 /* Visit.swift */; };
+		F2596D4726567B8B000C5770 /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1426567B84000C5770 /* CheckInView.swift */; };
+		F2596D4826567B8B000C5770 /* HealthOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1626567B84000C5770 /* HealthOfficial.swift */; };
+		F2596D4A26567B8B000C5770 /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1826567B84000C5770 /* Individual.swift */; };
+		F2596D4B26567B8B000C5770 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1926567B84000C5770 /* Business.swift */; };
+		F2596D4C26567B8B000C5770 /* VaccineAdministrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1C26567B85000C5770 /* VaccineAdministrationViewModel.swift */; };
+		F2596D4D26567B8B000C5770 /* VaccineIndividualSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1D26567B85000C5770 /* VaccineIndividualSearchViewModel.swift */; };
+		F2596D4E26567B8B000C5770 /* HealthCentre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D1F26567B85000C5770 /* HealthCentre.swift */; };
+		F2596D4F26567B8B000C5770 /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2026567B85000C5770 /* Vaccine.swift */; };
+		F2596D5026567B8B000C5770 /* VaccineBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2126567B85000C5770 /* VaccineBatch.swift */; };
+		F2596D5126567B8B000C5770 /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2226567B85000C5770 /* Vaccination.swift */; };
+		F2596D5226567B8B000C5770 /* PreviousVaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2426567B85000C5770 /* PreviousVaccineView.swift */; };
+		F2596D5326567B8B000C5770 /* VaccineIndividualSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2526567B85000C5770 /* VaccineIndividualSearchView.swift */; };
+		F2596D5426567B8B000C5770 /* VaccineAdministrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2626567B85000C5770 /* VaccineAdministrationView.swift */; };
+		F2596D5526567B8B000C5770 /* VaccineAdmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2726567B85000C5770 /* VaccineAdmissionView.swift */; };
+		F2596D5626567B8B000C5770 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2596D2826567B86000C5770 /* Assets.xcassets */; };
+		F2596D5726567B8B000C5770 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2596D2926567B86000C5770 /* GoogleService-Info.plist */; };
+		F2596D5926567B8B000C5770 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2B26567B87000C5770 /* LoadingView.swift */; };
+		F2596D5B26567B8B000C5770 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D2F26567B89000C5770 /* HomeView.swift */; };
+		F2596D5C26567B8B000C5770 /* HealthOfficialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3026567B89000C5770 /* HealthOfficialView.swift */; };
+		F2596D5D26567B8B000C5770 /* BusinessHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3126567B89000C5770 /* BusinessHomeView.swift */; };
+		F2596D5E26567B8B000C5770 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3226567B89000C5770 /* SwiftUIView.swift */; };
+		F2596D6026567B8B000C5770 /* COVID_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3426567B8A000C5770 /* COVID_APPApp.swift */; };
+		F2596D6126567B8B000C5770 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3726567B8B000C5770 /* LoginViewModel.swift */; };
+		F2596D6226567B8B000C5770 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3826567B8B000C5770 /* SignupViewModel.swift */; };
+		F2596D6326567B8B000C5770 /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3926567B8B000C5770 /* LoginOptionsView.swift */; };
+		F2596D6426567B8B000C5770 /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D3A26567B8B000C5770 /* LoginSignupView.swift */; };
+		F2596D6926567CEF000C5770 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2596D6826567CEF000C5770 /* User.swift */; };
+		F2596D8126568710000C5770 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = F2596D8026568710000C5770 /* CodeScanner */; };
+		F2596D9B26568B90000C5770 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2596D9A26568B90000C5770 /* info.plist */; };
+		F25E59D32644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
+		F25E59D42644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
+		F25E59D52644F5600075493E /* EditDependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E59D22644F5600075493E /* EditDependentView.swift */; };
+		F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
+		F26551A926446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F26551AA26446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F26551AB26446813004D9ADD /* DependentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26551A826446813004D9ADD /* DependentDetailsView.swift */; };
+		F2695A4626560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A4726560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A4826560C4300EC51B2 /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */; };
+		F2695A502656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
+		F2695A512656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
+		F2695A522656207200EC51B2 /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */; };
+		F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
+		F2868BD8263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
+		F2868BD9263BB03600F1C5CA /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */; };
+		F2868BDE263BB1F100F1C5CA /* DependentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BDD263BB1F100F1C5CA /* DependentModel.swift */; };
+		F2868BDF263BB1F100F1C5CA /* DependentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BDD263BB1F100F1C5CA /* DependentModel.swift */; };
+		F2868BE0263BB1F100F1C5CA /* DependentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BDD263BB1F100F1C5CA /* DependentModel.swift */; };
+		F2868BE5263BB24400F1C5CA /* DependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */; };
+		F2868BE6263BB24400F1C5CA /* DependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */; };
+		F2868BE7263BB24400F1C5CA /* DependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */; };
+		F2868BEF263BB2FF00F1C5CA /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
+		F2868BF0263BB2FF00F1C5CA /* DependentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F261B90C26302BDA00537BA6 /* DependentView.swift */; };
+		F28EFBDE264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBDF264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBE0264D32CD00F8D6D5 /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */; };
+		F28EFBE8264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBE9264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBEA264D344500F8D6D5 /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */; };
+		F28EFBEF264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF0264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF1264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */; };
+		F28EFBF6264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F28EFBF7264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F28EFBF8264D384500F8D6D5 /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EFBF5264D384400F8D6D5 /* CovidSign.swift */; };
+		F294DB97264E1F1800DF39E0 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB96264E1F1800DF39E0 /* GoogleMaps */; };
+		F294DB99264E1F1800DF39E0 /* GoogleMapsCore in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB98264E1F1800DF39E0 /* GoogleMapsCore */; };
+		F294DB9B264E1F1800DF39E0 /* GoogleMapsBase in Frameworks */ = {isa = PBXBuildFile; productRef = F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */; };
+		F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */; };
+		F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762B263AFEBF0077AA90 /* FirebaseStorage */; };
+		F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762D263AFEBF0077AA90 /* FirebaseAuth */; };
+		F2A57630263AFEBF0077AA90 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F2A5762F263AFEBF0077AA90 /* FirebaseFirestore */; };
+		F2A57632263AFEBF0077AA90 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F2A57631263AFEBF0077AA90 /* FirebaseStorageSwift-Beta */; };
 		F2E02C98260B760100B115DF /* COVID_APPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E02C97260B760100B115DF /* COVID_APPTests.swift */; };
 		F2E02CA3260B760100B115DF /* COVID_APPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E02CA2260B760100B115DF /* COVID_APPUITests.swift */; };
 /* End PBXBuildFile section */
@@ -33,12 +115,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F24735B12637EC1D00C30BC8 /* AddDependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDependentView.swift; sourceTree = "<group>"; };
+		F2596D0426567B81000C5770 /* ReportTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTestView.swift; sourceTree = "<group>"; };
+		F2596D0526567B81000C5770 /* ConductTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductTestView.swift; sourceTree = "<group>"; };
+		F2596D0726567B81000C5770 /* CovidTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidTest.swift; sourceTree = "<group>"; };
+		F2596D0826567B81000C5770 /* placeholderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholderLogo.png; path = "../../../Downloads/covid-app-SignUpAndLogin/COVID-APP/placeholderLogo.png"; sourceTree = "<group>"; };
+		F2596D0926567B82000C5770 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F2596D0A26567B83000C5770 /* AlertProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertProvider.swift; path = "../../../Downloads/covid-app-SignUpAndLogin/COVID-APP/AlertProvider.swift"; sourceTree = "<group>"; };
+		F2596D0C26567B83000C5770 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F2596D0F26567B84000C5770 /* CheckInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		F2596D1126567B84000C5770 /* VisitDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitDescription.swift; sourceTree = "<group>"; };
+		F2596D1226567B84000C5770 /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		F2596D1426567B84000C5770 /* CheckInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		F2596D1626567B84000C5770 /* HealthOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficial.swift; sourceTree = "<group>"; };
+		F2596D1826567B84000C5770 /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
+		F2596D1926567B84000C5770 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		F2596D1C26567B85000C5770 /* VaccineAdministrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationViewModel.swift; sourceTree = "<group>"; };
+		F2596D1D26567B85000C5770 /* VaccineIndividualSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchViewModel.swift; sourceTree = "<group>"; };
+		F2596D1F26567B85000C5770 /* HealthCentre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCentre.swift; sourceTree = "<group>"; };
+		F2596D2026567B85000C5770 /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		F2596D2126567B85000C5770 /* VaccineBatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineBatch.swift; sourceTree = "<group>"; };
+		F2596D2226567B85000C5770 /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccination.swift; sourceTree = "<group>"; };
+		F2596D2426567B85000C5770 /* PreviousVaccineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousVaccineView.swift; sourceTree = "<group>"; };
+		F2596D2526567B85000C5770 /* VaccineIndividualSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchView.swift; sourceTree = "<group>"; };
+		F2596D2626567B85000C5770 /* VaccineAdministrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationView.swift; sourceTree = "<group>"; };
+		F2596D2726567B85000C5770 /* VaccineAdmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdmissionView.swift; sourceTree = "<group>"; };
+		F2596D2826567B86000C5770 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2596D2926567B86000C5770 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2596D2B26567B87000C5770 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F2596D2F26567B89000C5770 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F2596D3026567B89000C5770 /* HealthOfficialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficialView.swift; sourceTree = "<group>"; };
+		F2596D3126567B89000C5770 /* BusinessHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHomeView.swift; sourceTree = "<group>"; };
+		F2596D3226567B89000C5770 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		F2596D3426567B8A000C5770 /* COVID_APPApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COVID_APPApp.swift; sourceTree = "<group>"; };
+		F2596D3526567B8A000C5770 /* COVID-APP.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "COVID-APP.entitlements"; path = "../../../Downloads/covid-app-SignUpAndLogin/COVID-APP/COVID-APP.entitlements"; sourceTree = "<group>"; };
+		F2596D3726567B8B000C5770 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F2596D3826567B8B000C5770 /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		F2596D3926567B8B000C5770 /* LoginOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
+		F2596D3A26567B8B000C5770 /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
+		F2596D6826567CEF000C5770 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F2596D9A26568B90000C5770 /* info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		F25E59D22644F5600075493E /* EditDependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDependentView.swift; sourceTree = "<group>"; };
+		F261B90C26302BDA00537BA6 /* DependentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentView.swift; sourceTree = "<group>"; };
+		F26551A826446813004D9ADD /* DependentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentDetailsView.swift; sourceTree = "<group>"; };
+		F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignViewModel.swift; sourceTree = "<group>"; };
+		F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignDetailsView.swift; sourceTree = "<group>"; };
+		F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentListModelView.swift; sourceTree = "<group>"; };
+		F2868BDD263BB1F100F1C5CA /* DependentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentModel.swift; sourceTree = "<group>"; };
+		F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependentViewModel.swift; sourceTree = "<group>"; };
+		F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSignView.swift; sourceTree = "<group>"; };
+		F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignListView.swift; sourceTree = "<group>"; };
+		F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSignListViewModel.swift; sourceTree = "<group>"; };
+		F28EFBF5264D384400F8D6D5 /* CovidSign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSign.swift; sourceTree = "<group>"; };
 		F2E02C82260B75FD00B115DF /* COVID-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_APPApp.swift; sourceTree = "<group>"; };
-		F2E02C87260B75FE00B115DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F2E02C89260B760100B115DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F2E02C8C260B760100B115DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F2E02C8E260B760100B115DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2E02C93260B760100B115DF /* COVID-APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "COVID-APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2E02C97260B760100B115DF /* COVID_APPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_APPTests.swift; sourceTree = "<group>"; };
 		F2E02C99260B760100B115DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +181,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A57632263AFEBF0077AA90 /* FirebaseStorageSwift-Beta in Frameworks */,
+				F2A5762A263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				F294DB97264E1F1800DF39E0 /* GoogleMaps in Frameworks */,
+				F2A57630263AFEBF0077AA90 /* FirebaseFirestore in Frameworks */,
+				F2A5762E263AFEBF0077AA90 /* FirebaseAuth in Frameworks */,
+				F2A5762C263AFEBF0077AA90 /* FirebaseStorage in Frameworks */,
+				F294DB99264E1F1800DF39E0 /* GoogleMapsCore in Frameworks */,
+				F294DB9B264E1F1800DF39E0 /* GoogleMapsBase in Frameworks */,
+				F2596D8126568710000C5770 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +210,215 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2596D0326567B81000C5770 /* TestingHealthOfficial */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D0426567B81000C5770 /* ReportTestView.swift */,
+				F2596D0526567B81000C5770 /* ConductTestView.swift */,
+				F2596D0626567B81000C5770 /* Model */,
+			);
+			path = TestingHealthOfficial;
+			sourceTree = "<group>";
+		};
+		F2596D0626567B81000C5770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D0726567B81000C5770 /* CovidTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2596D0B26567B83000C5770 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D0C26567B83000C5770 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F2596D0D26567B84000C5770 /* Check-in */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D0E26567B84000C5770 /* ViewModel */,
+				F2596D1026567B84000C5770 /* Model */,
+				F2596D1326567B84000C5770 /* View */,
+			);
+			path = "Check-in";
+			sourceTree = "<group>";
+		};
+		F2596D0E26567B84000C5770 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D0F26567B84000C5770 /* CheckInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2596D1026567B84000C5770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1126567B84000C5770 /* VisitDescription.swift */,
+				F2596D1226567B84000C5770 /* Visit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2596D1326567B84000C5770 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1426567B84000C5770 /* CheckInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2596D1526567B84000C5770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1626567B84000C5770 /* HealthOfficial.swift */,
+				F2596D1826567B84000C5770 /* Individual.swift */,
+				F2596D1926567B84000C5770 /* Business.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2596D1A26567B85000C5770 /* VaccineAdmission */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1B26567B85000C5770 /* ViewModel */,
+				F2596D1E26567B85000C5770 /* Model */,
+				F2596D2326567B85000C5770 /* View */,
+				F2596D2726567B85000C5770 /* VaccineAdmissionView.swift */,
+			);
+			path = VaccineAdmission;
+			sourceTree = "<group>";
+		};
+		F2596D1B26567B85000C5770 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1C26567B85000C5770 /* VaccineAdministrationViewModel.swift */,
+				F2596D1D26567B85000C5770 /* VaccineIndividualSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2596D1E26567B85000C5770 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D1F26567B85000C5770 /* HealthCentre.swift */,
+				F2596D2026567B85000C5770 /* Vaccine.swift */,
+				F2596D2126567B85000C5770 /* VaccineBatch.swift */,
+				F2596D2226567B85000C5770 /* Vaccination.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2596D2326567B85000C5770 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D2426567B85000C5770 /* PreviousVaccineView.swift */,
+				F2596D2526567B85000C5770 /* VaccineIndividualSearchView.swift */,
+				F2596D2626567B85000C5770 /* VaccineAdministrationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2596D2E26567B89000C5770 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D2F26567B89000C5770 /* HomeView.swift */,
+				F2596D3026567B89000C5770 /* HealthOfficialView.swift */,
+				F2596D3126567B89000C5770 /* BusinessHomeView.swift */,
+				F2596D3226567B89000C5770 /* SwiftUIView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F2596D3626567B8B000C5770 /* SignupAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+				F2596D3726567B8B000C5770 /* LoginViewModel.swift */,
+				F2596D3826567B8B000C5770 /* SignupViewModel.swift */,
+				F2596D3926567B8B000C5770 /* LoginOptionsView.swift */,
+				F2596D3A26567B8B000C5770 /* LoginSignupView.swift */,
+			);
+			path = SignupAndLogin;
+			sourceTree = "<group>";
+		};
+		F2868BEB263BB25100F1C5CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F261B90C26302BDA00537BA6 /* DependentView.swift */,
+				F24735B12637EC1D00C30BC8 /* AddDependentView.swift */,
+				F26551A826446813004D9ADD /* DependentDetailsView.swift */,
+				F25E59D22644F5600075493E /* EditDependentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2868BF7263BB31800F1C5CA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2868BE4263BB24400F1C5CA /* DependentViewModel.swift */,
+				F2868BD6263BB03600F1C5CA /* DependentListModelView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2868BFB263BB3EC00F1C5CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2868BDD263BB1F100F1C5CA /* DependentModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2868BFC263BB40600F1C5CA /* Dependents */ = {
+			isa = PBXGroup;
+			children = (
+				F2868BEB263BB25100F1C5CA /* Views */,
+				F2868BF7263BB31800F1C5CA /* ViewModel */,
+				F2868BFB263BB3EC00F1C5CA /* Model */,
+			);
+			path = Dependents;
+			sourceTree = "<group>";
+		};
+		F28EFBD9264D310400F8D6D5 /* Covidsign */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBDC264D31AE00F8D6D5 /* Model */,
+				F28EFBDB264D319F00F8D6D5 /* ViewModel */,
+				F28EFBDA264D319300F8D6D5 /* Views */,
+			);
+			path = Covidsign;
+			sourceTree = "<group>";
+		};
+		F28EFBDA264D319300F8D6D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBDD264D32CD00F8D6D5 /* AddSignView.swift */,
+				F28EFBE7264D344500F8D6D5 /* CovidSignListView.swift */,
+				F2695A4F2656207200EC51B2 /* CovidSignDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F28EFBDB264D319F00F8D6D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBEE264D34BA00F8D6D5 /* CovidSignListViewModel.swift */,
+				F2695A4526560C4300EC51B2 /* CovidSignViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F28EFBDC264D31AE00F8D6D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F28EFBF5264D384400F8D6D5 /* CovidSign.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F2E02C79260B75FD00B115DF = {
 			isa = PBXGroup;
 			children = (
@@ -95,21 +442,27 @@
 		F2E02C84260B75FD00B115DF /* COVID-APP */ = {
 			isa = PBXGroup;
 			children = (
-				F2E02C85260B75FD00B115DF /* COVID_APPApp.swift */,
-				F2E02C87260B75FE00B115DF /* ContentView.swift */,
-				F2E02C89260B760100B115DF /* Assets.xcassets */,
-				F2E02C8E260B760100B115DF /* Info.plist */,
-				F2E02C8B260B760100B115DF /* Preview Content */,
+				F2596D9A26568B90000C5770 /* info.plist */,
+				F2596D0A26567B83000C5770 /* AlertProvider.swift */,
+				F2596D6826567CEF000C5770 /* User.swift */,
+				F2596D2826567B86000C5770 /* Assets.xcassets */,
+				F2596D0D26567B84000C5770 /* Check-in */,
+				F2596D0926567B82000C5770 /* ContentView.swift */,
+				F2596D3426567B8A000C5770 /* COVID_APPApp.swift */,
+				F2596D3526567B8A000C5770 /* COVID-APP.entitlements */,
+				F2596D2926567B86000C5770 /* GoogleService-Info.plist */,
+				F2596D2E26567B89000C5770 /* Home */,
+				F2596D2B26567B87000C5770 /* LoadingView.swift */,
+				F2596D1526567B84000C5770 /* Model */,
+				F2596D0826567B81000C5770 /* placeholderLogo.png */,
+				F2596D0B26567B83000C5770 /* Preview Content */,
+				F2596D3626567B8B000C5770 /* SignupAndLogin */,
+				F2596D0326567B81000C5770 /* TestingHealthOfficial */,
+				F2596D1A26567B85000C5770 /* VaccineAdmission */,
+				F28EFBD9264D310400F8D6D5 /* Covidsign */,
+				F2868BFC263BB40600F1C5CA /* Dependents */,
 			);
 			path = "COVID-APP";
-			sourceTree = "<group>";
-		};
-		F2E02C8B260B760100B115DF /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F2E02C8C260B760100B115DF /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F2E02C96260B760100B115DF /* COVID-APPTests */ = {
@@ -146,6 +499,17 @@
 			dependencies = (
 			);
 			name = "COVID-APP";
+			packageProductDependencies = (
+				F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */,
+				F2A5762B263AFEBF0077AA90 /* FirebaseStorage */,
+				F2A5762D263AFEBF0077AA90 /* FirebaseAuth */,
+				F2A5762F263AFEBF0077AA90 /* FirebaseFirestore */,
+				F2A57631263AFEBF0077AA90 /* FirebaseStorageSwift-Beta */,
+				F294DB96264E1F1800DF39E0 /* GoogleMaps */,
+				F294DB98264E1F1800DF39E0 /* GoogleMapsCore */,
+				F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */,
+				F2596D8026568710000C5770 /* CodeScanner */,
+			);
 			productName = "COVID-APP";
 			productReference = F2E02C82260B75FD00B115DF /* COVID-APP.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +581,11 @@
 				Base,
 			);
 			mainGroup = F2E02C79260B75FD00B115DF;
+			packageReferences = (
+				F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */,
+				F2596D7F2656870F000C5770 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = F2E02C83260B75FD00B115DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,8 +602,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E02C8D260B760100B115DF /* Preview Assets.xcassets in Resources */,
-				F2E02C8A260B760100B115DF /* Assets.xcassets in Resources */,
+				F2596D9B26568B90000C5770 /* info.plist in Resources */,
+				F2596D4326567B8B000C5770 /* Preview Assets.xcassets in Resources */,
+				F2596D5726567B8B000C5770 /* GoogleService-Info.plist in Resources */,
+				F2596D5626567B8B000C5770 /* Assets.xcassets in Resources */,
+				F2596D4026567B8B000C5770 /* placeholderLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +631,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2E02C88260B75FE00B115DF /* ContentView.swift in Sources */,
-				F2E02C86260B75FE00B115DF /* COVID_APPApp.swift in Sources */,
+				F2596D6126567B8B000C5770 /* LoginViewModel.swift in Sources */,
+				F2596D6326567B8B000C5770 /* LoginOptionsView.swift in Sources */,
+				F2596D3E26567B8B000C5770 /* ConductTestView.swift in Sources */,
+				F2596D4F26567B8B000C5770 /* Vaccine.swift in Sources */,
+				F2596D5E26567B8B000C5770 /* SwiftUIView.swift in Sources */,
+				F2596D4B26567B8B000C5770 /* Business.swift in Sources */,
+				F2596D4C26567B8B000C5770 /* VaccineAdministrationViewModel.swift in Sources */,
+				F261B90D26302BDA00537BA6 /* DependentView.swift in Sources */,
+				F2596D4826567B8B000C5770 /* HealthOfficial.swift in Sources */,
+				F2596D4D26567B8B000C5770 /* VaccineIndividualSearchViewModel.swift in Sources */,
+				F2596D5126567B8B000C5770 /* Vaccination.swift in Sources */,
+				F2596D5226567B8B000C5770 /* PreviousVaccineView.swift in Sources */,
+				F2596D4E26567B8B000C5770 /* HealthCentre.swift in Sources */,
+				F2596D5926567B8B000C5770 /* LoadingView.swift in Sources */,
+				F2596D5B26567B8B000C5770 /* HomeView.swift in Sources */,
+				F2868BD7263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F2596D5526567B8B000C5770 /* VaccineAdmissionView.swift in Sources */,
+				F2596D4426567B8B000C5770 /* CheckInViewModel.swift in Sources */,
+				F28EFBEF264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
+				F2596D5D26567B8B000C5770 /* BusinessHomeView.swift in Sources */,
+				F28EFBF6264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2596D3F26567B8B000C5770 /* CovidTest.swift in Sources */,
+				F2596D4126567B8B000C5770 /* ContentView.swift in Sources */,
+				F2596D5026567B8B000C5770 /* VaccineBatch.swift in Sources */,
+				F2596D6226567B8B000C5770 /* SignupViewModel.swift in Sources */,
+				F2596D6926567CEF000C5770 /* User.swift in Sources */,
+				F2596D4A26567B8B000C5770 /* Individual.swift in Sources */,
+				F2596D4226567B8B000C5770 /* AlertProvider.swift in Sources */,
+				F2596D5C26567B8B000C5770 /* HealthOfficialView.swift in Sources */,
+				F2596D3D26567B8B000C5770 /* ReportTestView.swift in Sources */,
+				F2695A4626560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
+				F2596D6426567B8B000C5770 /* LoginSignupView.swift in Sources */,
+				F2596D6026567B8B000C5770 /* COVID_APPApp.swift in Sources */,
+				F2868BDE263BB1F100F1C5CA /* DependentModel.swift in Sources */,
+				F26551A926446813004D9ADD /* DependentDetailsView.swift in Sources */,
+				F24735B22637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
+				F2596D4526567B8B000C5770 /* VisitDescription.swift in Sources */,
+				F2596D4626567B8B000C5770 /* Visit.swift in Sources */,
+				F2596D5326567B8B000C5770 /* VaccineIndividualSearchView.swift in Sources */,
+				F25E59D32644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A502656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
+				F2596D4726567B8B000C5770 /* CheckInView.swift in Sources */,
+				F28EFBDE264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
+				F2596D5426567B8B000C5770 /* VaccineAdministrationView.swift in Sources */,
+				F2868BE5263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBE8264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +684,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2868BEF263BB2FF00F1C5CA /* DependentView.swift in Sources */,
+				F2868BD8263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F28EFBF0264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
+				F28EFBF7264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2695A4726560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
+				F24735B32637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
+				F26551AA26446813004D9ADD /* DependentDetailsView.swift in Sources */,
 				F2E02C98260B760100B115DF /* COVID_APPTests.swift in Sources */,
+				F25E59D42644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A512656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
+				F28EFBDF264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
+				F2868BDF263BB1F100F1C5CA /* DependentModel.swift in Sources */,
+				F2868BE6263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBE9264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +705,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2868BF0263BB2FF00F1C5CA /* DependentView.swift in Sources */,
+				F2868BD9263BB03600F1C5CA /* DependentListModelView.swift in Sources */,
+				F28EFBF1264D34BA00F8D6D5 /* CovidSignListViewModel.swift in Sources */,
+				F28EFBF8264D384500F8D6D5 /* CovidSign.swift in Sources */,
+				F2695A4826560C4300EC51B2 /* CovidSignViewModel.swift in Sources */,
+				F24735B42637EC1D00C30BC8 /* AddDependentView.swift in Sources */,
+				F26551AB26446813004D9ADD /* DependentDetailsView.swift in Sources */,
 				F2E02CA3260B760100B115DF /* COVID_APPUITests.swift in Sources */,
+				F25E59D52644F5600075493E /* EditDependentView.swift in Sources */,
+				F2695A522656207200EC51B2 /* CovidSignDetailsView.swift in Sources */,
+				F28EFBE0264D32CD00F8D6D5 /* AddSignView.swift in Sources */,
+				F2868BE0263BB1F100F1C5CA /* DependentModel.swift in Sources */,
+				F2868BE7263BB24400F1C5CA /* DependentViewModel.swift in Sources */,
+				F28EFBEA264D344500F8D6D5 /* CovidSignListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,8 +859,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "COVID-APP/COVID-APP.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"COVID-APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 237N382NC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "COVID-APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -438,8 +882,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "COVID-APP/COVID-APP.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"COVID-APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 237N382NC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "COVID-APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -574,6 +1020,81 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2596D7F2656870F000C5770 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.7;
+			};
+		};
+		F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YAtechnologies/GoogleMaps-SP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+		F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2596D8026568710000C5770 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2596D7F2656870F000C5770 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		F294DB96264E1F1800DF39E0 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMaps;
+		};
+		F294DB98264E1F1800DF39E0 /* GoogleMapsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsCore;
+		};
+		F294DB9A264E1F1800DF39E0 /* GoogleMapsBase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F294DB95264E1F1800DF39E0 /* XCRemoteSwiftPackageReference "GoogleMaps-SP" */;
+			productName = GoogleMapsBase;
+		};
+		F2A57629263AFEBF0077AA90 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		F2A5762B263AFEBF0077AA90 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		F2A5762D263AFEBF0077AA90 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F2A5762F263AFEBF0077AA90 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F2A57631263AFEBF0077AA90 /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2A57628263AFEBF0077AA90 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F2E02C7A260B75FD00B115DF /* Project object */;
 }
