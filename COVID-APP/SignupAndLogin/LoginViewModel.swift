@@ -11,25 +11,20 @@ import SwiftUI
 import FirebaseAuth
 class LoginViewModel: ObservableObject
 {
-    // info published on @Published
-    /* https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper */
-    
-    @Published var userAuth = false
-    @Published var username: String = ""
+ 
     @Published var password: String = ""
     @Published var email: String = ""
     
-    @Published var wrongLoginAlert = false
     @Published var loginComplete = false
-    @Published var isLoading = false
-    @Published var CurrentUser = User()
+
     @Published var showErrorMessage = false
     
     @Published var loading = false
-    @State var error = false
-    @AppStorage("UID") var UID: String = ""
+    
     @Published var userTypeLogin = -1
     
+    //allows navigation to continue contentView where login is complete
+    @Published var isActive = false
     
     
     
@@ -41,12 +36,12 @@ class LoginViewModel: ObservableObject
     {
         var result = false
         if email.isEmpty {
-            print("hi1")
+        
             showErrorMessage.toggle()
             print(showErrorMessage)
             result = true
         }else if password.isEmpty {
-            print("hi2")
+          
             showErrorMessage.toggle()
             result = true
         }
@@ -54,53 +49,108 @@ class LoginViewModel: ObservableObject
         return result
     }
     
-    
+    //checks if account is of type business
+    //if so login is completed and singleton is given it uid amd accountID and UserType
+    //IsActive set to true an login is complete
+    // if not move onto healtCentreCheck()
     func businessCheck(res: String) {
         let db = Firestore.firestore()
        
         
-        let citiesRef = db.collection("business")
         
-        db.collection("business").whereField("uid", isEqualTo: res).getDocuments() { (querySnapshot, err) in
+        
+        db.collection("business").whereField("uid", isEqualTo: res).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
                 
             } else {
                 for document in querySnapshot!.documents {
-                    print("118b")
+                    let data = document.data()
+                    let accountID = data["accountID"] as? String ?? ""
                     print("\(document.documentID) => \(document.data())")
-                    self.userTypeLogin = 1
+                  
                     self.loginComplete = true
                     
+                    Singleton.shared.UID = res
+                    Singleton.shared.accountID = accountID
+                    Singleton.shared.userType = "business"
+                    self.loading = false
+                    //takes to next view login complete
+                    self.isActive = true
+                    
                 }
-                print("123b")
-                print(citiesRef.whereField("uid", isEqualTo: res))
+                
+                self.healthCentreCheck(res: res)
+    
+ 
+                
+            }
+    }
+ 
+    }
+    
+    //checks if account is of type health centre
+    //if so login is completed and singleton is given it uid amd accountID and UserType
+    //IsActive set to true an login is complete
+    // if not move onto healtCentreCheck()
+    func healthCentreCheck(res: String) {
+        let db = Firestore.firestore()
+       
+        
+        
+        
+        db.collection("healthCentre").whereField("uid", isEqualTo: res).limit(to: 1).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
                 
                 
-            
-                
-                //self.loginComplete = true
-                
-                //var value = docRef.getString("username");
-                print("132b")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let accountID = data["healthCentreID"] as? String ?? ""
+                    print("\(document.documentID) => \(document.data())")
+                   
+                    self.loginComplete = true
+                    print(res)
+                   
+                    Singleton.shared.UID = res
+                    Singleton.shared.accountID = accountID
+                    Singleton.shared.userType = "HealthCentre"
+                    self.loading = false
+                    
+                    self.isActive = true
+                    
+                }
+              
+               
                 print(res)
-                self.CurrentUser.uid = res
-                self.UID = res
-                //self.loading = false
+                
+                if(!self.loginComplete){
+                self.loading = false
+                self.showErrorMessage = true
+                //self.loginComplete = true
+                }
+
+                
                 
             }
     }
       //  return  false
     }
     
+    
+    //checks if account is of type Individual
+    //if so login is completed and singleton is given it uid amd accountID and UserType
+    //IsActive set to true an login is complete
+    // if not move onto healtCentreCheck()
     func indCheck(res: String){
         let db = Firestore.firestore()
+        print(getFormattedDateAndTime())
        
+       // let indRef = db.collection("individuals")
         
-        let indRef = db.collection("individuals")
-        
-        db.collection("individuals").whereField("uid", isEqualTo: res).getDocuments() { (querySnapshot, err) in
+        db.collection("individual").whereField("uid", isEqualTo: res).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -108,59 +158,50 @@ class LoginViewModel: ObservableObject
             } else {
                 for document in querySnapshot!.documents {
                     print("118i")
-                    print("\(document.documentID) => \(document.data())")
-                    let indID = document.documentID
+                    //print("\(document.documentID) => \(document.data())")
+                   // let indID = document.documentID
                     let data = document.data()
                     let accountID = data["accountID"] as? String ?? ""
                     print(accountID)
-                    self.CurrentUser.individualID = accountID
-                    self.userTypeLogin = 0
+                   
+                
                     self.loginComplete = true
-
+                    Singleton.shared.accountID = accountID
+                    Singleton.shared.userType = "Individual"
+                    self.loading = false
+                    self.isActive = true
                     
                 }
-                print("123i")
-                print(indRef.whereField("uid", isEqualTo: res))
                 
+                self.businessCheck(res: res)
                 
-            
-                
-                //self.loginComplete = true
-                
-                //var value = docRef.getString("username");
-                print("132i")
-                print(res)
-                self.CurrentUser.uid = res
-                self.UID = res
-                //self.loading = false
                 
             }
     }
-       // return  false
+  
     }
-    func login2(){
+    func login(){
+        self.loading = true
+        
         Auth.auth().signIn(withEmail: self.email, password: self.password){(res, err) in
             
             if err != nil{
                
                     
-                    print("fail")
+                    print("failss")
+                self.loading = false
                    self.showErrorMessage = true
                 
                 
             }else{
-                self.businessCheck(res: res!.user.uid)
-                
                 self.indCheck(res: res!.user.uid)
                 
                 
+                                
+                
                 
             }
-            print("great success!")
-            
-            
-            
-            print(self.loginComplete)
+
             
             
         }
@@ -184,6 +225,26 @@ class LoginViewModel: ObservableObject
     }
     
     
-    
+    func getFormattedDateAndTime()->String{
+        
+        
+        let inputFormatter = DateFormatter()
+   
+        inputFormatter.dateFormat = "dd/MM/yyyy"
+        
+        let myString = inputFormatter.string(from: Date())
+        
+        let yourDate = inputFormatter.date(from: myString)
+
+        let myStringafd = inputFormatter.string(from: yourDate!)
+        
+      
+        
+        print(myStringafd)
+        
+        return myStringafd
+    }
     
 }
+
+

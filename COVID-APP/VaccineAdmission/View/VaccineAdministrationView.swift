@@ -14,33 +14,34 @@ import FirebaseFirestoreSwift
 struct VaccineAdministrationView: View {
     
     @Binding var medicare: String
+    @Binding var isActive: Bool
     @StateObject var VaccineAdminVM = VaccineAdministrationViewModel()
-    @State var isActive = false
-    //@State var intitialLoad = true
+    
     @State var index = 1
-    //@State var selectedDate = Date()
-    @State private var selectedDatacenter = "test"
-    //@State var showProfile = false
+
     var body: some View {
         
         
         
-        
+        //initila load is ongoing
         if VaccineAdminVM.intitialLoad == true{
             
             ProgressView().onAppear(){
-                VaccineAdminVM.vaccineHistorySearch(medicare: medicare)
+                //goes through process of readying user data and vaccine info
+                VaccineAdminVM.startProcess(medicare: medicare)
             }
-            
+            //initial load complete
         }else{
-            Picker(selection: $index, label: Text("What is your favorite color?")) {
+            Picker(selection: $index, label: Text("")) {
                 Text("Vaccine Admin").tag(1)
                 Text("Vaccine History").tag(0)
                 
             }.pickerStyle(SegmentedPickerStyle())
             Spacer()
             if(index==1){
+                
                 AdmissionFormScreen
+                Spacer()
             }else{
                 VaccineHistoryScreen
                 Spacer()
@@ -48,68 +49,20 @@ struct VaccineAdministrationView: View {
             
             
         }
-        //IndividualMedRecordScreen
+    
         
         
     }
     
-    
-    var IndividualMedRecordScreen: some View {
-        VStack{
-            VStack(alignment: .leading){
-                
-                Text("Cerificate of Vaccinataion")
-                    .font(.title)
-                HStack{
-                    Text("Medicare Number: ")
-                    Text(VaccineAdminVM.medicareNum)
-                    
-                }
-                
-                HStack{
-                    Text("Name:")
-                    Text(VaccineAdminVM.currentIndividual.firstName)
-                    
-                    Text(VaccineAdminVM.currentIndividual.lastName)
-                    
-                    
-                }
-                
-                HStack{
-                    Text("Vaccine:")
-                    Text(VaccineAdminVM.currentVaccine.name)
-                        .multilineTextAlignment(.leading)
-                    
-                    
-                    
-                }
-                
-                HStack{
-                    Text("Dose:")
-                    Text("1 /")
-                    Text("2")
-                    
-                    
-                    
-                    
-                }
-                
-            }
-            .padding(.leading)
-            Spacer()
-        }
-        
-    }
     
     //Ui for confirming vaccine
     var AdmissionFormScreen: some View {
         VStack{
             
             
-            ScrollView{
                 
-                
-                
+                Text("Vaccine Administration")
+                    .font(.title)
                 VStack(alignment: .leading){
                     Text("Indiviul Details")
                         .font(.headline)
@@ -143,28 +96,33 @@ struct VaccineAdministrationView: View {
                 }.font(.system(size: 14))
                 .background(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                 VStack{
-                    Text("Vaccine Administered")
-                        .font(.title)
-                    
+   
                     HStack{
                         Text("Vaccine")
-                        Picker(selection: $VaccineAdminVM.selectedVaccineType, label: Text("Datacenter")) {
-                            ForEach(VaccineAdminVM.vaccineList) { vaccine in
-                                Text(vaccine.name).tag(vaccine.id)
+                        Picker(selection: $VaccineAdminVM.currentVaccine, label: Text("Vaccine")) {
+                            
+                            ForEach(VaccineAdminVM.vaccineList) { vaccine1 in
+                                
+                                Text(vaccine1.name).tag(vaccine1)
                             }
-                        }
                     }
+                }
+                   
+                   
                     
                     
-                    Text(VaccineAdminVM.selectedVaccineType)
                     
                     
                     
                     
                     
                     Button(action: {
-                        
+                        //vaccination record created and vaccineBatch count subracted
                         VaccineAdminVM.generateVaccineAdmission()
+                        medicare = ""
+                        //will throw back to previous view Individual search
+                        isActive = false
+                        
                         
                         
                     }){
@@ -176,7 +134,7 @@ struct VaccineAdministrationView: View {
                                             .frame(width: 300.0, height: 40.0))
                     }.padding(.bottom, 15)
                 }
-            }
+            
             
             
             

@@ -12,7 +12,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Business: Identifiable, Codable {
-    @DocumentID var id: String?
+    var id: String?
     let abn: Int
     let name: String
     let address: String

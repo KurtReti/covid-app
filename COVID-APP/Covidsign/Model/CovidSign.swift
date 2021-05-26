@@ -12,9 +12,10 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct CovidSign: Identifiable, Codable {
-    @DocumentID var id: String?
-    var businessID: DocumentReference
+    var id: String?
+    var businessID: String
     var name: String
-    var location: GeoPoint
+    var longitude: String
+    var latitude: String
     var qrCode: String
 }

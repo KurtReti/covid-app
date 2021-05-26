@@ -42,42 +42,24 @@ class VaccineIndividualSearchViewModel: ObservableObject{
     }
     
     
-    func vaccineHistorySearch(medicare: String){
+    func IndividualSearch(medicare: String){
         
-        
-        db.collection("individuals").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        var check = false
+        db.collection("individual").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
                 
             } else {
                 for document in querySnapshot!.documents {
-                    
-                    let data = document.data()
-                    //  let id = document.documentID
-                    let fsAccountID = data["accountID"] as? String ?? ""
-                    let fsAddress = data["address"] as? String ?? ""
-                    let fsDOB = data["dob"] as? String ?? ""
-                    let fsEmail = data["email"] as? String ?? ""
-                    let fsFirstName = data["first_name"] as? String ?? ""
-                    let fsLastName = data["last_name"] as? String ?? ""
-                    let fsPhoneNum = data["phoneNum"] as? String ?? ""
-                    
-                    
-                    self.currentIndividual = Individual(id: fsAccountID, firstName: fsFirstName, lastName: fsLastName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, dob: fsDOB)
-                    
-                    print("bid")
-                    print(fsFirstName)
-                    //self.getVaccinationHistory()
-                    
-                    // self.getBusiness()
-                    self.isActive = true
-                    //do some error stuff
+
+                    check = true
+  
                 }
-                
-                //
-                
-                
+                //will transfer current view to VaccineAdministrationView
+                if(check){
+                self.isActive = true
+                }
                 
             }
             

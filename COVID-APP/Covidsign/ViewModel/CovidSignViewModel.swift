@@ -4,7 +4,7 @@
 //
 //  Created by Taylah Galea on 20/5/21.
 //
-
+/*
 import SwiftUI
 import Firebase
 import Foundation
@@ -82,3 +82,5 @@ class CovidSignViewModel: ObservableObject {
         }
     }
 }
+
+ */

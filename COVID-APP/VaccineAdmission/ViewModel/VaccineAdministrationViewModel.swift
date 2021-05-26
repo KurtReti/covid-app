@@ -5,7 +5,6 @@
 //  Created by Connor Jones on 20/5/21.
 //
 
-
 import SwiftUI
 import Foundation
 import Firebase
@@ -13,23 +12,10 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
-
-
-/*
- struct SwiftUIView_Previews1: PreviewProvider
- {
- @State var index = ""
- static var previews: some View {
- VaccineAdmissionView()
- }
- }
- */
-
 class VaccineAdministrationViewModel: ObservableObject{
     
     private let db = Firestore.firestore()
-    var healthCentreID = "2de45fd4-6c05-4756-ace7-33f0f1bdd9f3"
+    var healthCentreID = Singleton.shared.accountID
     
     //tied to picker selection for vaccine
     @Published var selectedVaccineType = ""
@@ -49,6 +35,7 @@ class VaccineAdministrationViewModel: ObservableObject{
     
     @Published var vaccineList = [Vaccine]()
     
+    
     @Published var intitialLoad = true
     @Published var showProfile = false
     @Published var medicareNum = ""
@@ -63,15 +50,20 @@ class VaccineAdministrationViewModel: ObservableObject{
         
         currentHealthCentre = HealthCentre(id: "", accessLevel: "", address: "", email: "", phoneNum: "", uid: "")
         
-        populateVaccineList()
+        //getVaccineSupply()
+       
         
         
     }
-    
+    func startProcess(medicare:String){
+        medicareNum = medicare
+        getVaccineSupply()
+        
+    }
     
     func populateVaccineList(){
         
-        let query = db.collection("vaccine")
+        let query = db.collection("vaccine").whereField("active", isEqualTo: true).limit(to: 8)
         query
             .addSnapshotListener { (querySnapshot, error) in
                 guard let documents1 = querySnapshot?.documents else {
@@ -88,9 +80,31 @@ class VaccineAdministrationViewModel: ObservableObject{
                     let fsDosageAmount = data["dosageAmount"] as? Int ?? 0
                     let fsName = data["name"] as? String ?? ""
                     let fsManufcature = data["manufacture"] as? String ?? ""
-                    
+                    print("in Supply")
                     return Vaccine(id: fsVaccineID, name: fsName, dosageAmount: fsDosageAmount, manufacture: fsManufcature)
                 }
+                
+                var tempVaccineList = [Vaccine]()
+                for vaccine in self.vaccineList{
+                    print("in Supply1")
+                    var vaccineInSupply = false
+                    for vaccineBatch in self.vaccineBatchList{
+                        
+                        if(vaccine.id == vaccineBatch.vaccineID){
+                            vaccineInSupply = true
+                        }
+                        
+                    }
+                    if(vaccineInSupply){
+                        print(vaccine.name)
+                        print("in Supply2")
+                        tempVaccineList.append(vaccine)
+                    }
+                }
+                self.vaccineList = tempVaccineList
+                
+               //self.intitialLoad = false
+                self.vaccineHistorySearch(medicare: self.medicareNum)
                 
             }
         
@@ -99,11 +113,11 @@ class VaccineAdministrationViewModel: ObservableObject{
     
     func getVaccineSupply(){
         
-        print("here")
+        print("here11")
         var anyVaccinationHistory = false
         
         
-        let query = db.collection("vaccineBatch").whereField("healthCentreID", isEqualTo: healthCentreID)
+        let query = db.collection("vaccineBatch").whereField("healthCentreID", isEqualTo: Singleton.shared.accountID!)
         query
             .addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
@@ -122,17 +136,18 @@ class VaccineAdministrationViewModel: ObservableObject{
                     
                     return VaccineBatch(id: fsVaccineBatchID, totalVaccines: fsTotalVaccines, vaccineID: fsVaccineID, healthCentreID: fsHealthCentreID)
                 }
+                self.populateVaccineList()
                 
-                self.intitialLoad = false
+                
             }
         
         
         if (anyVaccinationHistory == true){
-            print("vaccine history present2")
+            print("vaccine history present21")
             
             
         }else{
-            print("no vaccine history2")
+            print("no vaccine history23")
         }
         
         
@@ -150,7 +165,7 @@ class VaccineAdministrationViewModel: ObservableObject{
         var vaccineAvailable = false
         
         for vaccineBatch in vaccineBatchList {
-            if vaccineBatch.totalVaccines > 0 && vaccineBatch.vaccineID == selectedVaccineType{
+            if vaccineBatch.totalVaccines > 0 && vaccineBatch.vaccineID == currentVaccine.id{
                 vaccineAvailable = true
                 print("vaccine available")
                 batchID = vaccineBatch.id
@@ -175,7 +190,7 @@ class VaccineAdministrationViewModel: ObservableObject{
         
         let idref = ref.documentID
         
-        ref.setData(["vaccinationID": idref, "bookingID": "placeholder", "healthCentreID": healthCentreID,"individualID": self.currentIndividual.id as Any, "vaccineID": selectedVaccineType as Any, "doseDate": currentTimeDate]) { err in
+        ref.setData(["vaccinationID": idref, "bookingID": "placeholder", "healthCentreID": healthCentreID,"individualID": self.currentIndividual.id as Any, "vaccineID": currentVaccine.id, "doseDate": currentTimeDate]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
@@ -223,7 +238,7 @@ class VaccineAdministrationViewModel: ObservableObject{
         
         medicareNum = medicare
         
-        db.collection("individuals").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("individual").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -244,7 +259,7 @@ class VaccineAdministrationViewModel: ObservableObject{
                     
                     self.currentIndividual = Individual(id: fsAccountID, firstName: fsFirstName, lastName: fsLastName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, dob: fsDOB)
                     
-                    print("bid")
+                    
                     print(fsFirstName)
                     self.getVaccinationHistory()
                     
@@ -270,12 +285,14 @@ class VaccineAdministrationViewModel: ObservableObject{
     
     func getVaccinationHistory(){
         
-        print("here")
+       
+        print(medicareNum)
+        
         var anyVaccinationHistory = false
-        var vaccineID = ""
+      
         
         
-        var query = db.collection("vaccination").whereField("individualID", isEqualTo: medicareNum)
+        let query = db.collection("vaccination").whereField("individualID", isEqualTo: medicareNum)
         query
             .addSnapshotListener { (querySnapshot, error) in
                 guard let documents = querySnapshot?.documents else {
@@ -295,30 +312,33 @@ class VaccineAdministrationViewModel: ObservableObject{
                     let fsDoseDate = data["doseDate"] as? String ?? ""
                     
                     
-                    vaccineID = fsVaccineID
+                  
                     return Vaccination(id: fsVaccinationID, bookingID: fsBookingID, individualID: fsIndividualID, healthCentreID: fsHealthOfficialID, vaccineID: fsVaccineID, doseDate: fsDoseDate)
                 }
                 
                 
                 if (anyVaccinationHistory == true){
                     print("vaccine history present1")
+                    self.intitialLoad = false
                     //self.getVaccine()
-                    self.getVaccineSupply()
+                   // self.getVaccineSupply()
                     
                 }else{
                     print("no vaccine history")
+                    self.intitialLoad = false
                     //self.getVaccine()
-                    self.getVaccineSupply()
+                   // self.getVaccineSupply()
                 }
                 
             }
         
         if (anyVaccinationHistory == true){
             print("vaccine history present2")
-            
+            self.intitialLoad = false
             
         }else{
             print("no vaccine history2")
+            self.intitialLoad = false
         }
         
         
@@ -326,17 +346,17 @@ class VaccineAdministrationViewModel: ObservableObject{
     func getFormattedDateAndTime()->String{
         
         
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let inputFormatter = DateFormatter()
+   
+        inputFormatter.dateFormat = "dd/MM/yyyy"
         
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
-        // again convert your date to string
-        let myStringafd = formatter.string(from: yourDate!)
+        let myString = inputFormatter.string(from: Date())
+        
+        let yourDate = inputFormatter.date(from: myString)
+
+        let myStringafd = inputFormatter.string(from: yourDate!)
+        
+      
         
         print(myStringafd)
         
@@ -368,20 +388,10 @@ class VaccineAdministrationViewModel: ObservableObject{
                     
                     
                     self.currentVaccine = Vaccine(id: fsVaccineID, name: fsName, dosageAmount: fsDosageAmount, manufacture: fsManufacture)
-                    
-                    print("bid1")
-                    // print(fsFirstName)
-                    // self.getVaccinationHistory()
-                    
-                    // self.getBusiness()
-                    
-                    //do some error stuff
+                
                 }
                 self.getVaccineSupply()
-                //
-                print("bid2")
-                //self.intitialLoad = false
-                // self.showProfile = true
+   
                 
             }
             

@@ -11,82 +11,30 @@ import Combine
 
 struct ContentView: View {
     
-    
-    @State var index = -1
-    @State var loginComplete = false
-    @State var showMenu = false
-    @State var loading = false
-    @State var userTypeLogin = -1
-    
-  
-    
-    @AppStorage("log_Status") var status = false
-    @AppStorage("UID") var UID = ""
-    @StateObject var CurrentUser = User()
-    
-    //@EnvironmentObject var session: SessionStore
-    
-    
-    func getUser () {
-        // session.listen()
-    }
-    
+
+    @Binding var logout: Bool
+    @Binding var uField: String
+    @Binding var pField: String
     var body: some View {
         
         
-        
-        
-        if loginComplete {
+        //navigates to homescreen of specidied userType
+        VStack{
             
-            if userTypeLogin == 0  {
-                LoadingView(isShowing: $loading) {
+            if(Singleton.shared.userType == "Individual"){
                 
-                HomeView().environmentObject(CurrentUser)
-                    
-                }
-            }else if userTypeLogin == 1 {
-                BusinessHomeView().environmentObject(CurrentUser)
-                
+                HomeView(logout: self.$logout)
+            
+            }else if(Singleton.shared.userType == "Business"){
+                BusinessHomeView(logout: self.$logout)
+            }else if(Singleton.shared.userType == "HealthCentre"){
+            HealthOfficialView(logout: self.$logout)
             }
-            
-            
-            
-        }else{
-            //only way i've been able to keep the heading and toggle buttons at the top
-            //not sure if best way
-            //top half remains the same. if statements below control whether signup or login shows
-            
-            
-            
-            //.onAppear(perform: getUser)
-            
-            if (self.index == -1){
-                LoginOptionsView(index: self.$index)
-            }else if (self.index == 0 || self.index == 1){
-                
-                //loading = true
-                LoadingView(isShowing: $loading) {
-                    
-                    LoginSignupView(index: self.$index, loading: $loading, loginComplete: $loginComplete, userTypeLogin: $userTypeLogin ).environmentObject(CurrentUser)
-                    
-                }
-            }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+        }.onAppear(){
+            self.uField = ""
+            self.pField = ""
         }
-        
+            .navigationBarBackButtonHidden(true)
     }
 }
 

@@ -15,8 +15,7 @@ import FirebaseFirestoreSwift
 // where data and functions related to the view will be conatined
 class IndividualSignupViewModel: ObservableObject
 {
-    // info published on @Published
-/* https://www.hackingwithswift.com/quick-start/swiftui/what-is-the-published-property-wrapper */
+
     
     @Published var firstName: String = ""
     @Published var lastName: String = ""
@@ -44,12 +43,12 @@ class IndividualSignupViewModel: ObservableObject
     {
         var result = false
         if firstName.isEmpty {
-            print("hi1")
+           
             showErrorMessage.toggle()
             print(showErrorMessage)
             result = true
         }else if firstName.isEmpty {
-            print("hi2")
+           
             showErrorMessage.toggle()
             result = true
         }else if lastName.isEmpty {
@@ -58,9 +57,7 @@ class IndividualSignupViewModel: ObservableObject
         }else if address.isEmpty {
             showErrorMessage.toggle()
             result = true
-       // }else if confirmPassword.isEmpty {
-          //  showErrorMessage.toggle()
-           // result = true
+
         }else if email.isEmpty {
             showErrorMessage.toggle()
             result = true
@@ -88,7 +85,7 @@ class IndividualSignupViewModel: ObservableObject
         formatter1.dateStyle = .short
         
         
-        var dob: String = formatter1.string(from: self.date)
+        let dob: String = formatter1.string(from: self.date)
         
         print("here")
         print(self.email)
@@ -106,7 +103,7 @@ class IndividualSignupViewModel: ObservableObject
             //after sucessfull user register, individual data is added and linked to email/password by UID
             print("fail")
             let db = Firestore.firestore()
-            let ref = db.collection("individuals").document()
+            let ref = db.collection("individual").document()
             let idref = ref.documentID
             
             ref.setData(["accountID": idref, "first_name":self.firstName, "last_name": self.lastName,"dob": dob, "address": self.address, "uid": res!.user.uid ]) { (error) in
@@ -156,33 +153,25 @@ class busSignupViewModel: ObservableObject
         
         
         if name.isEmpty {
-            print("hi1")
-            //showErrorMessage.toggle()
-           //print(showErrorMessage)
+ 
             result = true
         }else if ABN.isEmpty {
-            print("hi2")
-            //showErrorMessage.toggle()
+   
             result = true
         }else if bType.isEmpty {
-            print("hi3")
-            //showErrorMessage.toggle()
+   
             result = true
         }else if address.isEmpty {
-            print("hi4")
-            //showErrorMessage.toggle()
+  
             result = true
        }else if email.isEmpty {
-        print("hi5")
-            //showErrorMessage.toggle()
+   
            result = true
         }else if password.isEmpty {
-            print("hi6")
-            //showErrorMessage.toggle()
+    
             result = true
         }else if confirmPassword.isEmpty {
-            print("hi7")
-            //showErrorMessage.toggle()
+
             result = true
         }
         //showErrorMessage = true
@@ -204,12 +193,6 @@ class busSignupViewModel: ObservableObject
         //create user
         //transition to homescreen
     
-       // let formatter1 = DateFormatter()
-        //formatter1.dateStyle = .short
-        
-        
-        //var dob: String = formatter1.string(from: self.date)
-        
         
         Auth.auth().createUser(withEmail: self.email, password: self.password){(res, err) in if err != nil{
             print("fail")
@@ -238,3 +221,5 @@ class busSignupViewModel: ObservableObject
     }
     
 }
+
+

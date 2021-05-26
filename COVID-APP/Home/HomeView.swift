@@ -20,12 +20,12 @@ import FirebaseFirestoreSwift
 
 struct HomeView: View {
     
-    @EnvironmentObject var CurrentUser: User
-
+    //@EnvironmentObject var CurrentUser: User
+    @Binding var logout: Bool
     var body: some View {
-        NavigationView {
+      
             VStack {
-                Text(CurrentUser.uid)
+//                Text(CurrentUser.uid)
                 
                 Group{
                     HStack{
@@ -46,7 +46,7 @@ struct HomeView: View {
                             .frame(width: 100)
                         
                         // SETTINGS BUTTON
-                        NavigationLink(destination: SettingsView()){
+                        NavigationLink(destination: SettingsView(logout: self.$logout)){
                             Image(systemName: "gearshape.fill")
                                 .font(.system(size:50))
                                 .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
@@ -69,7 +69,7 @@ struct HomeView: View {
                 Group{
                     ZStack{
                         // only wrap rectangle - otherwise formatting issue
-                        NavigationLink(destination: CheckinView()){
+                        NavigationLink(destination: CheckInSelectorView()){
                             RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                                 .frame(width: 350.0, height: 50.0)
@@ -195,26 +195,22 @@ struct HomeView: View {
             } */
                 
             }
+            
             .navigationTitle("")
             .navigationBarHidden(true)
-        }
-            .environmentObject(CurrentUser)
+        
+        //    .environmentObject(CurrentUser)
     }
             
 }
 
-struct HomeView_Preview: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .environmentObject(User())
-    }
-}
+
 
 struct CheckinView: View {
-    @EnvironmentObject var CurrentUser: User
+   // @EnvironmentObject var CurrentUser: User
     var body: some View {
         VStack{
-            Text(CurrentUser.uid)
+            //Text(CurrentUser.uid)
             
         }
     }
@@ -230,13 +226,7 @@ struct VaccinesView: View {
     
 }
 
-struct AlertsView: View {
-    
-    var body: some View {
-        VStack{}
-    }
-    
-}
+
 
 
 
@@ -281,12 +271,28 @@ struct RestrictionsView_Preview: PreviewProvider {
 
 struct SettingsView: View {
     
-    
-    @AppStorage("log_Status") var status = false
+    @Binding var logout: Bool
     
     var body: some View {
        
-        VStack(alignment: .trailing) { }
+        VStack(alignment: .trailing) {
+            Button(action: {
+                
+
+                logout = false
+                
+                
+                
+                
+            }){
+                Text("Log Out")
+                    .font(.title2)
+                    .foregroundColor(Color.white)
+                    .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                                    .frame(width: 350.0, height: 50.0))
+            }
+        }
     
             }
 

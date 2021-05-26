@@ -4,7 +4,7 @@
 //
 //  Created by Taylah Galea on 13/5/21.
 //
-
+/*
 import SwiftUI
 import Firebase
 import Foundation
@@ -50,3 +50,4 @@ struct CovidSignListView_Previews: PreviewProvider {
         }
     }
 }
+*/

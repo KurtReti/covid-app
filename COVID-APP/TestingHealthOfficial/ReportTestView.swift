@@ -163,7 +163,7 @@ class ReportTestViewModel: ObservableObject{
     func fetchData(){
         //gets health officials data
        
-        db.collection("healthOfficial").whereField("accountID", isEqualTo: healthOfficialID).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("healthOfficial").whereField("accountID", isEqualTo: Singleton.shared.accountID).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -186,13 +186,7 @@ class ReportTestViewModel: ObservableObject{
                     
                     self.currentHealthOfficial = HealthOfficial(id: fsAccountID, firstName: fsFirstName, lastName: fsLastName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, occupation: fsOccupation, dob: fsDOB, accessLevel: fsAccessLevel)
                     
-                    //print("bid")
-                   // print(fsFirstName)
-                    //self.getVaccinationHistory()
-                    
-                    // self.getBusiness()
-                   // self.isActive = true
-                    //do some error stuff
+ 
                 }
                 
                 //
@@ -210,7 +204,7 @@ class ReportTestViewModel: ObservableObject{
     func individualSearch(medicare: String){
         
        
-        db.collection("individuals").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("individual").whereField("accountID", isEqualTo: medicare).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -231,7 +225,7 @@ class ReportTestViewModel: ObservableObject{
                     
                     self.currentIndividual = Individual(id: fsAccountID, firstName: fsFirstName, lastName: fsLastName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, dob: fsDOB)
                     
-                    print("bid")
+                 
                     print(fsFirstName)
                     //self.getVaccinationHistory()
                     
@@ -260,12 +254,12 @@ class ReportTestViewModel: ObservableObject{
         
         let currentTimeDate = getFormattedDateAndTime()
         
-        let ref = db.collection("testResults").document()
+        let ref = db.collection("testResult").document()
         //let busSignref = db.collection("businessSign").document(busSign.id!)
         //let indref = db.collection("individuals").document(UID)
         let idref = ref.documentID
         
-        ref.setData(["resultID": idref, "bookingID": "placeholder", "healthOfficialID": currentHealthOfficial.id as Any,"individualID": self.currentIndividual.id as Any, "notes": "", "date": currentTimeDate, "result": positiveOrNegative]) { err in
+        ref.setData(["resultID": idref, "bookingID": "placeholder", "healthOfficialID": Singleton.shared.accountID ?? "","individualID": self.currentIndividual.id as Any, "notes": "", "date": currentTimeDate, "result": positiveOrNegative]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
@@ -289,17 +283,17 @@ class ReportTestViewModel: ObservableObject{
     func getFormattedDateAndTime()->String{
         
         
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let inputFormatter = DateFormatter()
+   
+        inputFormatter.dateFormat = "dd/MM/yyyy"
         
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
-        // again convert your date to string
-        let myStringafd = formatter.string(from: yourDate!)
+        let myString = inputFormatter.string(from: Date())
+        
+        let yourDate = inputFormatter.date(from: myString)
+
+        let myStringafd = inputFormatter.string(from: yourDate!)
+        
+      
         
         print(myStringafd)
         

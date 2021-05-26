@@ -4,7 +4,7 @@
 //
 //  Created by Taylah Galea on 13/5/21.
 //
-
+/*
 import SwiftUI
 
 struct AddSignView: View {
@@ -62,3 +62,6 @@ struct AddSignView_Previews: PreviewProvider {
         AddSignView()
     }
 }
+ 
+ 
+ */

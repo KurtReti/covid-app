@@ -16,12 +16,14 @@ struct COVID_APPApp: App {
         WindowGroup {
             //this runs from login
             //ContentView()
-            
+            LoginSignupView(index: 0)
             //this is for checkin testing
             //FakeHomeForCheckInTest()
+            //HomeView()
+            //HealthOfficialView()
             //HealthOfficialView()
            //HomeTestView()
-            CovidSignListView()
+            //CovidSignListView()
         }
     }
     
