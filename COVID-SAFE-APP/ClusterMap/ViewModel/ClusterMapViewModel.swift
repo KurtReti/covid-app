@@ -109,7 +109,6 @@ class ClusterMapViewModel: ObservableObject {
                                 let marker = Marker(title: name, coordinate: coord)
                                 print("\(sign) : \(marker)")
                                 self.markers.append(marker)
-                                self.calStats()
                             }
                         }
                     }

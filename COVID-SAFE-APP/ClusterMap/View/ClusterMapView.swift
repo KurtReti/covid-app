@@ -27,13 +27,8 @@ struct ClusterMapView: View {
                     .aspectRatio(contentMode: .fit)
                     .edgesIgnoringSafeArea(.all)
             }
-            Section(header: Text("COVID Statisics")) {
-                Text("Percentage of individuals vaccinated: \(viewModel.vaccinatedIndividuals)%")
-                Text("Percentage of affected individuals: \(viewModel.covidIndividuals)%")
-                Text("Percentage of Positive Tests: \(viewModel.positiveTests)%")
-            }
         }
-        .navigationBarTitle("COVID Reports")
+        .navigationBarTitle("COVID Report")
         .onAppear() {
             viewModel.fetchData()
         }
