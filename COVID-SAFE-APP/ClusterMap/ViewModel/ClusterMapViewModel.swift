@@ -13,12 +13,62 @@ import FirebaseFirestoreSwift
 import CoreLocation
 
 class ClusterMapViewModel: ObservableObject {
+    @Published var individualCount = [String]()
+    @Published var businessCount = [String]()
+    @Published var testsCount = [String]()
+    @Published var vaccinationCount = [String]()
+    
     @Published var markers = [Marker]()
     @Published var individualsWithCovid = [String]()
+    @Published var covidRelatedSigns = [String]()
+    
+    @Published var vaccinatedIndividuals = 0
+    @Published var covidIndividuals = 0
+    @Published var positiveTests = 0
     
     private let db = Firestore.firestore()
     
+    func calStats() {
+        vaccinatedIndividuals = (vaccinationCount.count / individualCount.count) * 100
+        covidIndividuals = (individualsWithCovid.count / individualCount.count) * 100
+        positiveTests = (individualsWithCovid.count / testsCount.count) * 100
+    }
+    
     func fetchData() {
+        
+        
+        db.collection("individual").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.individualCount = documents.map { $0["accountID"]! as! String }
+        }
+        
+        db.collection("business").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.businessCount = documents.map { $0["accountID"]! as! String }
+        }
+        
+        db.collection("testResult").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.testsCount = documents.map { $0["resultID"]! as! String }
+        }
+        
+        db.collection("vaccination").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching documents: \(error!)")
+                return
+            }
+            self.vaccinationCount = documents.map { $0["vacinationID"] as? String ?? ""}
+        }
+            
         // Get all the individual id for positive test results
         let query = db.collection("testResult").whereField("result", isEqualTo: true)
         query
@@ -30,7 +80,6 @@ class ClusterMapViewModel: ObservableObject {
                 self.individualsWithCovid = documents.map { $0["individualID"]! as! String }
                 
             // Get BusinessSignIds of the places covid postive individuals have been to
-            var covidRelatedSigns = [String]()
             let myGroup = DispatchGroup()
                 for individual in self.individualsWithCovid {
                 myGroup.enter()
@@ -43,7 +92,7 @@ class ClusterMapViewModel: ObservableObject {
                             let sign = document.data()["businessSignID"] as? String ?? ""
                             //print("\(individual) : \(sign)")
                         
-                            covidRelatedSigns.append(sign)
+                            self.covidRelatedSigns.append(sign)
                         }
                         myGroup.leave()
                     }
@@ -52,8 +101,8 @@ class ClusterMapViewModel: ObservableObject {
             }
             
             myGroup.notify(queue: .main) {
-                print("\(covidRelatedSigns)")
-                for sign in covidRelatedSigns {
+                print("\(self.covidRelatedSigns)")
+                for sign in self.covidRelatedSigns {
                     self.db.collection("businessSign").whereField("businessSignID", isEqualTo: sign).getDocuments() { (querySnapshot, err) in
                         if let err = err {
                             print("Error getting documents: \(err)")
@@ -70,6 +119,7 @@ class ClusterMapViewModel: ObservableObject {
                         }
                     }
                 }
+                self.calStats()
             }
 
         }
