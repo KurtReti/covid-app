@@ -218,13 +218,6 @@ struct CheckinView: View {
 }
 
 
-struct VaccinesView: View {
-    
-    var body: some View {
-        VStack{}
-    }
-    
-}
 
 
 

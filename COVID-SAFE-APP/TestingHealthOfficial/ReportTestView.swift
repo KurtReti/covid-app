@@ -137,7 +137,7 @@ class ReportTestViewModel: ObservableObject{
     private let db = Firestore.firestore()
     
     @Published var currentIndividual: Individual
-    @Published var currentHealthOfficial: HealthOfficial
+    @Published var currentHealthOfficial: HealthCentre
     @Published var currentTest: CovidTest
     @Published var isActive = false
     @Published var positiveOrNegative = false
@@ -150,7 +150,7 @@ class ReportTestViewModel: ObservableObject{
     init() {
         currentIndividual = Individual(id: "", firstName: "", lastName: "", address: "", email: "", phoneNum: "", dob: "")
         
-        currentHealthOfficial = HealthOfficial(id: "", firstName: "", lastName: "", address: "", email: "", phoneNum: "", occupation: "", dob: "", accessLevel: "", uid: "")
+        currentHealthOfficial = HealthCentre(id: "", accessLevel: "", address: "", email: "", phoneNum: "", uid: "")
         
         currentTest = CovidTest(id: "", individualID: "", healthOfficialID: "", date: "", result: false, notes: "", bookingID: "", status: "")
         
@@ -163,7 +163,7 @@ class ReportTestViewModel: ObservableObject{
     func fetchData(){
         //gets health officials data
        
-        db.collection("healthOfficial").whereField("accountID", isEqualTo: Singleton.shared.accountID ?? "").limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("healthCentre").whereField("accountID", isEqualTo: Singleton.shared.accountID ?? "").limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -173,18 +173,16 @@ class ReportTestViewModel: ObservableObject{
                     
                     let data = document.data()
                     //  let id = document.documentID
-                    let fsAccountID = data["accountID"] as? String ?? ""
+                    let fsAccountID = data["healthCentreID"] as? String ?? ""
                     let fsAddress = data["address"] as? String ?? ""
-                    let fsDOB = data["dob"] as? String ?? ""
+                   
                     let fsEmail = data["email"] as? String ?? ""
-                    let fsFirstName = data["first_name"] as? String ?? ""
-                    let fsLastName = data["last_name"] as? String ?? ""
                     let fsPhoneNum = data["phoneNum"] as? String ?? ""
                     let fsAccessLevel = data["access_level"] as? String ?? ""
-                    let fsOccupation = data["occupation"] as? String ?? ""
                     
                     
-                    self.currentHealthOfficial = HealthOfficial(id: fsAccountID, firstName: fsFirstName, lastName: fsLastName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, occupation: fsOccupation, dob: fsDOB, accessLevel: fsAccessLevel)
+                    
+                    self.currentHealthOfficial = HealthCentre(id: fsAccountID, accessLevel: fsAccessLevel, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum)
                     
  
                 }

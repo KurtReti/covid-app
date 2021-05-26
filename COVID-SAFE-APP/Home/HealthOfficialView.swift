@@ -62,7 +62,7 @@ struct HealthOfficialView: View {
                                 .frame(width: 350.0, height: 50.0)
                         }
                         HStack {
-                            Image(systemName: "qrcode.viewfinder")
+                            Image(systemName: "stethoscope")
                                 .font(.system(size: 34))
                                 .foregroundColor(.white)
                             Text("Covid Test")

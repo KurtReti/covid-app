@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84AFEB24265EA3090049E484 /* VaccinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AFEB23265EA3090049E484 /* VaccinesView.swift */; };
 		F200EC2D265CF6500065D949 /* ClusterMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200EC2C265CF6500065D949 /* ClusterMapView.swift */; };
 		F200EC3E265CF6FC0065D949 /* ClusterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200EC3D265CF6FC0065D949 /* ClusterMapViewModel.swift */; };
 		F2634026265E3435006B76FE /* AlertsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634023265E3435006B76FE /* AlertsModel.swift */; };
@@ -92,6 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84AFEB23265EA3090049E484 /* VaccinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccinesView.swift; sourceTree = "<group>"; };
 		F200EC2C265CF6500065D949 /* ClusterMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterMapView.swift; sourceTree = "<group>"; };
 		F200EC3D265CF6FC0065D949 /* ClusterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterMapViewModel.swift; sourceTree = "<group>"; };
 		F2634023265E3435006B76FE /* AlertsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsModel.swift; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84AFEB22265EA2E00049E484 /* Vaccine Cert */ = {
+			isa = PBXGroup;
+			children = (
+				84AFEB23265EA3090049E484 /* VaccinesView.swift */,
+			);
+			path = "Vaccine Cert";
+			sourceTree = "<group>";
+		};
 		F200EC1E265CF5F50065D949 /* ClusterMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +392,7 @@
 		F27386F1265B7F8900A3CB4D /* COVID-SAFE-APP */ = {
 			isa = PBXGroup;
 			children = (
+				84AFEB22265EA2E00049E484 /* Vaccine Cert */,
 				F26340A0265E358E006B76FE /* VaccineSupply */,
 				F2634085265E3584006B76FE /* VaccineAdmission */,
 				F263407C265E3574006B76FE /* TestingHealthOfficial */,
@@ -710,6 +721,7 @@
 				F26340A3265E358E006B76FE /* VaccineSupplyView.swift in Sources */,
 				F27386F3265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift in Sources */,
 				F2738796265B80B600A3CB4D /* DependentModel.swift in Sources */,
+				84AFEB24265EA3090049E484 /* VaccinesView.swift in Sources */,
 				F26340A4265E358E006B76FE /* VaccineSupplyViewModel.swift in Sources */,
 				F27387DC265BFDAD00A3CB4D /* MapViewModel.swift in Sources */,
 				F2738781265B80B600A3CB4D /* CovidSignViewModel.swift in Sources */,
@@ -896,6 +908,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"COVID-SAFE-APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 237N382NC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "COVID-SAFE-APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -917,6 +930,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"COVID-SAFE-APP/Preview Content\"";
+				DEVELOPMENT_TEAM = 237N382NC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "COVID-SAFE-APP/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
