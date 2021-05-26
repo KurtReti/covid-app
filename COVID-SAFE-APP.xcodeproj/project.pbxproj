@@ -20,13 +20,10 @@
 		F263404F265E3498006B76FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404B265E3497006B76FE /* HomeView.swift */; };
 		F2634050265E3498006B76FE /* HealthOfficialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404C265E3497006B76FE /* HealthOfficialView.swift */; };
 		F2634051265E3498006B76FE /* BusinessHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404D265E3497006B76FE /* BusinessHomeView.swift */; };
-		F2634052265E3498006B76FE /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404E265E3497006B76FE /* SwiftUIView.swift */; };
 		F263405B265E3526006B76FE /* HealthOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634057265E3526006B76FE /* HealthOfficial.swift */; };
 		F263405C265E3526006B76FE /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634058265E3526006B76FE /* Individual.swift */; };
 		F263405D265E3526006B76FE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634059265E3526006B76FE /* Business.swift */; };
 		F263405E265E3526006B76FE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263405A265E3526006B76FE /* Contact.swift */; };
-		F2634065265E3537006B76FE /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634063265E3537006B76FE /* ReportViewModel.swift */; };
-		F2634066265E3537006B76FE /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634064265E3537006B76FE /* ReportView.swift */; };
 		F2634072265E354A006B76FE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263406E265E354A006B76FE /* LoginViewModel.swift */; };
 		F2634073265E354A006B76FE /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263406F265E354A006B76FE /* SignupViewModel.swift */; };
 		F2634074265E354A006B76FE /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634070265E354A006B76FE /* LoginOptionsView.swift */; };
@@ -108,13 +105,10 @@
 		F263404B265E3497006B76FE /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F263404C265E3497006B76FE /* HealthOfficialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficialView.swift; sourceTree = "<group>"; };
 		F263404D265E3497006B76FE /* BusinessHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHomeView.swift; sourceTree = "<group>"; };
-		F263404E265E3497006B76FE /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		F2634057265E3526006B76FE /* HealthOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficial.swift; sourceTree = "<group>"; };
 		F2634058265E3526006B76FE /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
 		F2634059265E3526006B76FE /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		F263405A265E3526006B76FE /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		F2634063265E3537006B76FE /* ReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
-		F2634064265E3537006B76FE /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		F263406E265E354A006B76FE /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F263406F265E354A006B76FE /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		F2634070265E354A006B76FE /* LoginOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
@@ -264,7 +258,6 @@
 				F263404B265E3497006B76FE /* HomeView.swift */,
 				F263404C265E3497006B76FE /* HealthOfficialView.swift */,
 				F263404D265E3497006B76FE /* BusinessHomeView.swift */,
-				F263404E265E3497006B76FE /* SwiftUIView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -278,15 +271,6 @@
 				F263405A265E3526006B76FE /* Contact.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		F2634062265E3537006B76FE /* Reports */ = {
-			isa = PBXGroup;
-			children = (
-				F2634063265E3537006B76FE /* ReportViewModel.swift */,
-				F2634064265E3537006B76FE /* ReportView.swift */,
-			);
-			path = Reports;
 			sourceTree = "<group>";
 		};
 		F263406D265E354A006B76FE /* SignupAndLogin */ = {
@@ -403,7 +387,6 @@
 				F263407C265E3574006B76FE /* TestingHealthOfficial */,
 				F2634076265E3551006B76FE /* Singleton */,
 				F263406D265E354A006B76FE /* SignupAndLogin */,
-				F2634062265E3537006B76FE /* Reports */,
 				F2634056265E3526006B76FE /* Model */,
 				F263404A265E3497006B76FE /* Home */,
 				F2634045265E347F006B76FE /* ContentView.swift */,
@@ -706,7 +689,6 @@
 				F2634094265E3584006B76FE /* VaccineIndividualSearchViewModel.swift in Sources */,
 				F263405B265E3526006B76FE /* HealthOfficial.swift in Sources */,
 				F2634097265E3584006B76FE /* VaccineBatch.swift in Sources */,
-				F2634052265E3498006B76FE /* SwiftUIView.swift in Sources */,
 				F263403D265E345F006B76FE /* LocationsListView.swift in Sources */,
 				F2634072265E354A006B76FE /* LoginViewModel.swift in Sources */,
 				F2738798265B80B600A3CB4D /* EditDependentView.swift in Sources */,
@@ -722,7 +704,6 @@
 				F2634096265E3584006B76FE /* Vaccine.swift in Sources */,
 				F2738785265B80B600A3CB4D /* CovidSignDetailsView.swift in Sources */,
 				F263409A265E3584006B76FE /* VaccineIndividualSearchView.swift in Sources */,
-				F2634065265E3537006B76FE /* ReportViewModel.swift in Sources */,
 				F263405C265E3526006B76FE /* Individual.swift in Sources */,
 				F263403E265E345F006B76FE /* CheckInView.swift in Sources */,
 				F2738782265B80B600A3CB4D /* CovidSign.swift in Sources */,
@@ -730,7 +711,6 @@
 				F27386F3265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift in Sources */,
 				F2738796265B80B600A3CB4D /* DependentModel.swift in Sources */,
 				F26340A4265E358E006B76FE /* VaccineSupplyViewModel.swift in Sources */,
-				F2634066265E3537006B76FE /* ReportView.swift in Sources */,
 				F27387DC265BFDAD00A3CB4D /* MapViewModel.swift in Sources */,
 				F2738781265B80B600A3CB4D /* CovidSignViewModel.swift in Sources */,
 				F2738784265B80B600A3CB4D /* CovidSignListView.swift in Sources */,

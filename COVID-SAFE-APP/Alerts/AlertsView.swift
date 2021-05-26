@@ -16,7 +16,7 @@ struct AlertsView: View {
     @ObservedObject private var viewModel = AlertsViewModel()
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack{
                 return List(viewModel.alerts){ alertsForUser in
                     VStack(alignment: .leading){
@@ -32,14 +32,14 @@ struct AlertsView: View {
                 
                 
             }
-            .navigationTitle("Alerts")
+            .navigationBarTitle("Alerts", displayMode: .inline)
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(trailing: Image(systemName: "exclamationmark.circle")
                                     .font(.system(size: 34))
                                     .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1))))
             
             
-        }
+        //}
         .accentColor(Color(#colorLiteral(red: 0.6196078431, green: 0, blue: 0, alpha: 1)))
         
     }

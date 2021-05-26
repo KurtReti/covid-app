@@ -16,7 +16,7 @@ class CovidSignListViewModel: ObservableObject {
     
     private let db = Firestore.firestore()
     
-    private let businessId = "34df2449-9521-4186-b125-1649d1c66cab"
+    private let businessId = Singleton.shared.accountID
     
     func fetchData() {
         // Find dependents based on individual ID
@@ -24,7 +24,7 @@ class CovidSignListViewModel: ObservableObject {
         
         //let businessRef = db.collection("business").document(businessId)
         
-        let query = covidSignRef.whereField("businessID", isEqualTo: businessId).order(by: "name")
+        let query = covidSignRef.whereField("businessID", isEqualTo: businessId ?? "").order(by: "name")
         
         print(" Count : \(covidSignList.count)")
     

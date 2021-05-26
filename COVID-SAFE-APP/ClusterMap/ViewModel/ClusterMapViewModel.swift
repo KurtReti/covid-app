@@ -14,12 +14,12 @@ import CoreLocation
 
 class ClusterMapViewModel: ObservableObject {
     @Published var markers = [Marker]()
+    @Published var individualsWithCovid = [String]()
     
     private let db = Firestore.firestore()
     
     func fetchData() {
         // Get all the individual id for positive test results
-        var individualsWithCovid = [String]()
         let query = db.collection("testResult").whereField("result", isEqualTo: true)
         query
             .addSnapshotListener { (querySnapshot, error) in
@@ -27,12 +27,12 @@ class ClusterMapViewModel: ObservableObject {
                     print("Error fetching documents: \(error!)")
                     return
                 }
-                individualsWithCovid = documents.map { $0["individualID"]! as! String }
-            
+                self.individualsWithCovid = documents.map { $0["individualID"]! as! String }
+                
             // Get BusinessSignIds of the places covid postive individuals have been to
             var covidRelatedSigns = [String]()
             let myGroup = DispatchGroup()
-            for individual in individualsWithCovid {
+                for individual in self.individualsWithCovid {
                 myGroup.enter()
                 
                 self.db.collection("contacts").whereField("individualID", isEqualTo: individual).getDocuments() { (querySnapshot, err) in

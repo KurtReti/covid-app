@@ -14,7 +14,7 @@ struct BusinessHomeView: View {
     var body: some View {
        
         // template from indvidual view. make to fit business home screen
-        NavigationView {
+
             VStack {
 //                Text(CurrentUser.uid)
                 
@@ -80,30 +80,6 @@ struct BusinessHomeView: View {
                     Spacer()
                         .frame(width: 350.0, height: 30)
                 }
-
-                // VACCINES BUTTON
-                Group{
-                    ZStack{
-                        // only wrap rectangle - otherwise formatting issue
-                        NavigationLink(destination: VaccinesView()){
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
-                                .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                                .frame(width: 350.0, height: 50.0)
-                        }
-                        HStack {
-                            Image("Vaccine")
-                                .resizable()
-                                .frame(width:34, height: 34)
-                            Text("Vaccines")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 320, alignment: .topLeading)
-                    }
-                    Spacer()
-                        .frame(width: 350.0, height: 30)
-                }
                     
                 // ALERTS BUTTON
                 Group{
@@ -129,11 +105,11 @@ struct BusinessHomeView: View {
                        .frame(height: 30)
                 }
                 
-                // DEPENDENTS BUTTON
+                // COVID SIGN BUTTON
                 Group{
                    ZStack{
                     // only wrap rectangle - otherwise formatting issue
-                    NavigationLink(destination: DependentView()){
+                    NavigationLink(destination: CovidSignListView()){
                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
                            .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                            .frame(width: 350.0, height: 50.0)
@@ -142,7 +118,7 @@ struct BusinessHomeView: View {
                            Image(systemName: "person.2.fill")
                                .font(.system(size: 24))
                                .foregroundColor(.white)
-                           Text("Dependents")
+                           Text("COVID Signs")
                                .font(.body)
                                .fontWeight(.semibold)
                                .foregroundColor(.white)
@@ -176,22 +152,12 @@ struct BusinessHomeView: View {
                 }
                 Spacer()
                     
-           /* NavigationView {
-                       VStack {
-                           NavigationLink(destination: SecondView()) {
-                               Text("Show Detail View")
-                           }
-                           
-                       }
-            } */
-                
             }
             .navigationTitle("")
             .navigationBarHidden(true)
         }
-    }
             
             
-        }
+}
 
 

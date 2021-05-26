@@ -16,13 +16,13 @@ class DependentListViewModel: ObservableObject {
     
     private let db = Firestore.firestore()
     
-    private let individualId = "cdb45e6a-0fe5-437f-a821-4e29874285ea"
+    private let individualId = Singleton.shared.accountID
     
     func fetchData() {
         // Find dependents based on individual ID
         let dependentRef = db.collection("dependent")
         
-        let query = dependentRef.whereField("individualID", isEqualTo: individualId).order(by: "first_name")
+        let query = dependentRef.whereField("individualID", isEqualTo: individualId ?? "").order(by: "first_name")
     
         // Read data and add to list
         query

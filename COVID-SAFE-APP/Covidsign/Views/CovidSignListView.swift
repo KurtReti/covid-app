@@ -24,7 +24,6 @@ struct CovidSignListView: View {
     
     var body: some View {
         VStack {
-            NavigationView{
                 List(viewModel.covidSignList) { sign in
                     NavigationLink (destination: CovidSignDetailsView(covidSign: sign)) {
                             Text(sign.name)
@@ -38,7 +37,6 @@ struct CovidSignListView: View {
                 .sheet(isPresented: self.$addCovidSign) {
                     AddSignView()
                 }
-            }
         }
     }
 }

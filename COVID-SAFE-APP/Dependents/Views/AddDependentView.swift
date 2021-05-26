@@ -43,7 +43,7 @@ struct AddDependentView: View {
                     TextField("Email Address", text: $viewModel.dependent.email)
                 }
             }
-            .navigationTitle("New Dependent")
+            .navigationBarTitle("New Dependent", displayMode: .inline)
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
         }

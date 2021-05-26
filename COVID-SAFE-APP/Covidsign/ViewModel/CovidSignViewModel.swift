@@ -19,11 +19,11 @@ class CovidSignViewModel: ObservableObject {
     
     private var cancellables = Set<AnyCancellable>()
     private let db = Firestore.firestore()
-    private let businessId = "34df2449-9521-4186-b125-1649d1c66cab"
+    private let businessId = Singleton.shared.accountID
     
     init() {
         //let businessRef = db.collection("business").document(businessId)
-        covidSign = CovidSign(id: "", businessID: businessId, name: "", latitude: 0, longitude: 0, location: "", qrCode: "")
+        covidSign = CovidSign(id: "", businessID: businessId ?? "", name: "", latitude: 0, longitude: 0, location: "", qrCode: "")
     }
     
     init(covidSign: CovidSign) {

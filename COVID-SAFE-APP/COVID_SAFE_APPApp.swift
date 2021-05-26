@@ -15,13 +15,15 @@ struct COVID_APPApp: App {
     var body: some Scene {
         WindowGroup {
             //this runs from login
+            LoginSignupView(index: 0)
+            
             //ContentView()
             
             //this is for checkin testing
             //FakeHomeForCheckInTest()
             //HealthOfficialView()
            //HomeTestView()
-            DependentView()
+            //DependentView()
             //CovidSignListView()
             //ClusterMapView()
     

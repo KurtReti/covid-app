@@ -34,7 +34,7 @@ struct DependentDetailsView: View {
                 Text("Phone: \(dependent.phoneNum)")
                 Text("Email: \(dependent.email)")
             }
-            .navigationTitle("\(dependent.first_name) \(dependent.last_name)")
+            .navigationBarTitle("\(dependent.first_name) \(dependent.last_name)", displayMode: .inline)
         }
         .navigationBarItems(trailing: editButton{
             self.presentEditDependentSheet.toggle()

@@ -54,7 +54,7 @@ struct EditDependentView: View {
                         .foregroundColor(.red)
                 }
             }
-            .navigationBarTitle("Edit Dependent")
+            .navigationBarTitle("Edit Dependent", displayMode: .inline)
             .navigationBarTitleDisplayMode(.large)
             .navigationBarItems(leading: cancelButton, trailing: saveButton)
             .actionSheet(isPresented: $presentActionSheet) {

@@ -28,24 +28,7 @@ struct CheckInSelectorView: View {
         
     }
 }
-struct FakeHomeForCheckInTest: View {
-    
-    
-    var body: some View {
-        
-        NavigationView{
-            NavigationLink(destination: CheckInSelectorView()){
-                Text("Check-In")
-                    .font(.headline)
-                    .foregroundColor(.purple)
-                    .multilineTextAlignment(.center)
-                    
-                    .frame(width: 160, height: 30)
-                // Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            }
-        }
-    }
-}
+
 import CodeScanner
 
 struct CheckInView: View {

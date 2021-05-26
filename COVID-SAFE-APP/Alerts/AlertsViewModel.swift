@@ -29,7 +29,7 @@ class AlertsViewModel: ObservableObject
     
     @Published var empty = AlertUser(title: "No Alerts", message:"")
     
-    var thisUser = "3dcff086-1cd6-4130-b540-d4fb3afd2c2f"
+    var thisUser = Singleton.shared.accountID
     
     private var db = Firestore.firestore()
     
@@ -51,14 +51,14 @@ class AlertsViewModel: ObservableObject
                 print(id)
             }
             self.fetchThisUserData()
-            self.checkIfPositive(thisUser: self.thisUser)
+            self.checkIfPositive(thisUser: self.thisUser ?? "")
         }
     }
     
     // creates array of all THIS users contacts
     func fetchThisUserData()
     {
-        db.collection("contact").whereField("individualID", isEqualTo: thisUser).addSnapshotListener {(querySnapshot, error) in
+        db.collection("contact").whereField("individualID", isEqualTo: thisUser ?? "").addSnapshotListener {(querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents: \(error!)")
                 return

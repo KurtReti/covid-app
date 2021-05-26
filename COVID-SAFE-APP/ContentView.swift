@@ -28,7 +28,7 @@ struct ContentView: View {
             }else if(Singleton.shared.userType == "Business"){
                 BusinessHomeView(logout: self.$logout)
             }else if(Singleton.shared.userType == "HealthCentre"){
-            HealthOfficialView(logout: self.$logout)
+                HealthOfficialView(logout: self.$logout)
             }
         }.onAppear(){
             self.uField = ""

@@ -124,35 +124,12 @@ struct HealthOfficialView: View {
                    Spacer()
                        .frame(height: 30)
                 }
-                
-                // DEPENDENTS BUTTON
-                Group{
-                   ZStack{
-                    // only wrap rectangle - otherwise formatting issue
-                    NavigationLink(destination: DependentView()){
-                       RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
-                           .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                           .frame(width: 350.0, height: 50.0)
-                    }
-                       HStack {
-                           Image(systemName: "person.2.fill")
-                               .font(.system(size: 24))
-                               .foregroundColor(.white)
-                           Text("Clusters")
-                               .font(.body)
-                               .fontWeight(.semibold)
-                               .foregroundColor(.white)
-                       }
-                       .frame(width: 320, alignment: .topLeading)
-                   }
-                   Spacer()
-                       .frame(height: 30)
-                }
+
                 //Reports Button
                 Group{
                    ZStack{
                     // only wrap rectangle - otherwise formatting issue
-                    NavigationLink(destination: ReportView()){
+                    NavigationLink(destination: ClusterMapView()){
                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
                            .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
                            .frame(width: 350.0, height: 50.0)

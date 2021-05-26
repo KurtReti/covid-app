@@ -74,7 +74,7 @@ class LoginViewModel: ObservableObject
                     
                     Singleton.shared.UID = res
                     Singleton.shared.accountID = accountID
-                    Singleton.shared.userType = "business"
+                    Singleton.shared.userType = "Business"
                     self.loading = false
                     //takes to next view login complete
                     self.isActive = true

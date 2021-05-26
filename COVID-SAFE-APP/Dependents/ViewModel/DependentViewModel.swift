@@ -19,12 +19,12 @@ class DependentViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     var dob: Date = Date()
     private let db = Firestore.firestore()
-    private let individualId = "cdb45e6a-0fe5-437f-a821-4e29874285ea"
+    private let individualId = Singleton.shared.accountID
     
 
     init() {
     
-        dependent = Dependent(id: "", individualID: individualId, first_name: "", last_name: "", address: "", phoneNum: "", email: "", dob: "")
+        dependent = Dependent(id: "", individualID: individualId ?? "", first_name: "", last_name: "", address: "", phoneNum: "", email: "", dob: "")
     }
     
     init(dependent: Dependent) {

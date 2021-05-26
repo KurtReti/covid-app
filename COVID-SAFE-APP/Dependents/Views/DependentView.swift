@@ -24,13 +24,13 @@ struct DependentView: View {
     
     var body: some View {
         VStack {
-            NavigationView{
+           // NavigationView{
                 List(viewModel.dependentsList) { dependent in
                     NavigationLink (destination: DependentDetailsView(dependent: dependent)) {
                             Text(dependent.first_name + " " + dependent.last_name)
                         }
                     }
-                .navigationBarTitle("My Dependents")
+                .navigationBarTitle("My Dependents", displayMode: .inline)
                 .navigationBarItems(trailing: addButton)
                 .onAppear() {
                     self.viewModel.fetchData()
@@ -38,7 +38,7 @@ struct DependentView: View {
                 .sheet(isPresented: self.$addDependent) {
                     AddDependentView()
                 }
-            }
+            //}
         }
     }
 }

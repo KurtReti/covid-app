@@ -62,7 +62,7 @@ struct CovidSignDetailsView: View {
                     }
         
             }
-            .navigationTitle("\(covidSign.name)")
+            .navigationBarTitle("\(covidSign.name)")
         }
         .actionSheet(isPresented: $presentSaveQRCodeSheet) {
             ActionSheet(title: Text("Save QR code to photos?"),
