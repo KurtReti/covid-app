@@ -35,6 +35,8 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Save QR codes to Photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>To scan QR code</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

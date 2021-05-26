@@ -20,45 +20,23 @@ class CheckInVeiwModel: ObservableObject
     @Published var url = ""
     @Published var currentBusiness: Business
     @Published var busSignLocation: CovidSign
-    @Published var currentVisit: Visit
+    @Published var currentVisit: Contact
     @Published var showCheckinPreview = false
     @Published var checkinConfirmed = false
     @Published var isLoading = false
     @Published var initialLoadComplete = false
     
-    @Published var locations = [Visit]()
+    @Published var locations = [Contact]()
     
     init() {
-        // initialise objects to store relevent check in info
-        
+ 
         busSignLocation = CovidSign(id: "", businessID: "", name: "", latitude: 0, longitude: 0, location: "", qrCode: "")
         
-        currentVisit = Visit(id: "", businessSignID: "", individualID: "", checkIn: "", active: false)
+        currentVisit = Contact(id: "", businessSignID: "", dependants: [String](), individualID: "", signInDate: "", signOutDate: "", signInTime: "", signoutTime: "", signedOut: false)
         currentBusiness = Business(id: "", abn: 0, name: "", address: "", email: "", phoneNum: "", type: "")
     }
     
-    func fetchData() {
-        db.collection("visit").whereField("individualID", isEqualTo: indID).addSnapshotListener{(QuerySnapshot, error) in
-            guard let documents = QuerySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            self.locations = documents.map{ (QueryDocumentSnapshot) -> Visit in
-                let data = QueryDocumentSnapshot.data()
-                
-                let id = data["visitID"] as? String ?? ""
-                let businessSignID = data["businessSignID"] as? String ?? ""
-                let individualID = data["individualID"] as? String ?? ""
-                let checkIn = data["checkedIn"] as? String ?? ""
-                let checkOut = data["checkout"] as? String ?? ""
-                let active = true // Temporary
-                return Visit(id: id, businessSignID: businessSignID, individualID: individualID, checkIn: checkIn, checkOut: checkOut, active: active)
-            }
-        }
-    }
 
-    
     // this one will load all the data using the url entered instead of scan
     func urlBusinessSign(){
         
@@ -79,16 +57,17 @@ class CheckInVeiwModel: ObservableObject
                     
                     let data = document.data()
                     //  let id = document.documentID
+                    let fsSignID = data["businessSignID"] as? String ?? ""
                     let fsBusinessID = data["businessID"] as? String ?? ""
                     let fsQrCode = data["qrCode"] as? String ?? ""
-                    let fsBusinessSignID = data["businessSignID"] as? String ?? ""
-                    let fsLatitude = data["latitude"] as? Double ?? 0
                     let fsLongitude = data["longitude"] as? Double ?? 0
+                    let fsLatitude = data["latitude"] as? Double ?? 0
                     let fsLocation = data["location"] as? String ?? ""
                     let fsName = data["name"] as? String ?? ""
-                    print("bid")
+ 
                     
-                    self.busSignLocation = CovidSign(id: fsBusinessSignID, businessID: fsBusinessID, name: fsName, latitude: fsLatitude, longitude: fsLongitude, location: fsLocation, qrCode: fsQrCode)
+                    self.busSignLocation = CovidSign(id: fsSignID, businessID: fsBusinessID, name: fsName, latitude: fsLatitude, longitude: fsLongitude, location: fsLocation, qrCode: fsQrCode)
+                    
                     businessSignObjectCreated = true
                     // self.setBusiness(businessID: businessID)
                 }
@@ -112,13 +91,13 @@ class CheckInVeiwModel: ObservableObject
         
         isLoading=true
         print(qr)
-        
-        qrCode = qr
+        let firstHalf = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+        qrCode = firstHalf + qr
         print(qrCode)
         
         var businessSignObjectCreated = false
         
-        db.collection("businessSign").whereField("businessSignID", isEqualTo: qrCode).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("businessSign").whereField("qrCode", isEqualTo: qrCode).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -126,19 +105,18 @@ class CheckInVeiwModel: ObservableObject
             } else {
                 print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
-                    
                     let data = document.data()
                     //  let id = document.documentID
+                    let fsSignID = data["businessSignID"] as? String ?? ""
                     let fsBusinessID = data["businessID"] as? String ?? ""
                     let fsQrCode = data["qrCode"] as? String ?? ""
-                    let fsBusinessSignID = data["businessSignID"] as? String ?? ""
-                    let fsLatitude = data["latitude"] as? Double ?? 0
                     let fsLongitude = data["longitude"] as? Double ?? 0
+                    let fsLatitude = data["latitude"] as? Double ?? 0
                     let fsLocation = data["location"] as? String ?? ""
                     let fsName = data["name"] as? String ?? ""
-                    print("bid")
+
                     
-                    self.busSignLocation = CovidSign(id: fsBusinessSignID, businessID: fsBusinessID, name: fsName,  latitude: fsLatitude, longitude: fsLongitude, location: fsLocation, qrCode: fsQrCode)
+                    self.busSignLocation = CovidSign(id: fsSignID, businessID: fsBusinessID, name: fsName, latitude: fsLatitude, longitude: fsLongitude, location: fsLocation, qrCode: fsQrCode)
                     businessSignObjectCreated = true
                     // self.setBusiness(businessID: businessID)
                 }
@@ -181,7 +159,6 @@ class CheckInVeiwModel: ObservableObject
                     let fsPhoneNum = data["phoneNum"] as? String ?? ""
                     let fsType = data["type"] as? String ?? ""
                     
-                    print("bid")
                     print(fsAddress)
                     self.currentBusiness = Business(id: fsAccountID, abn: fsABN, name: fsName, address: fsAddress, email: fsEmail, phoneNum: fsPhoneNum, type: fsType)
                     businessObjectCreated = true
@@ -220,12 +197,10 @@ class CheckInVeiwModel: ObservableObject
         
         let currentTimeDate = getFormattedDateAndTime()
         
-        let ref = db.collection("visit").document()
-        //let busSignref = db.collection("businessSign").document(busSign.id!)
-        //let indref = db.collection("individuals").document(UID)
+        let ref = db.collection("contacts").document()
         let idref = ref.documentID
         
-        ref.setData(["visitID": idref, "businessSignID": self.busSignLocation.id as Any, "individualID": self.indID,"checkedIn": currentTimeDate, "active": true]) { err in
+        ref.setData(["contactID": idref, "businessSignID": self.busSignLocation.id ?? "", "individualID": Singleton.shared.accountID ?? "","signInDate": currentTimeDate,"signInTime":getFormattedTime(), "signedOut": false]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
@@ -233,7 +208,9 @@ class CheckInVeiwModel: ObservableObject
                 
                 
                 
-                self.currentVisit = Visit(id: idref, businessSignID: self.busSignLocation.id!, individualID: self.indID,checkIn: currentTimeDate, active: true)
+                self.currentVisit = Contact(id: idref, businessSignID: self.busSignLocation.id ?? "", dependants: [String](), individualID: Singleton.shared.accountID ?? "", signInDate: currentTimeDate, signOutDate: "", signInTime: self.getFormattedTime(), signoutTime: "", signedOut: false)
+                
+                //self.currentVisit = Contact(id: idref, businessSignID: self.busSignLocation.id!, individualID: self.indID,checkIn: currentTimeDate, active: true)
                 
                 self.isLoading = false
                 self.checkinConfirmed = true
@@ -248,11 +225,12 @@ class CheckInVeiwModel: ObservableObject
     func checkout(){
         
         let currentTimeDate = getFormattedDateAndTime()
+        let currentTime = getFormattedTime()
         
         
         
         
-        db.collection("visit").whereField("individualID", isEqualTo: indID).whereField("active", isEqualTo: true).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("contacts").whereField("individualID", isEqualTo: Singleton.shared.accountID ?? "").whereField("signedOut", isEqualTo: false).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -260,7 +238,8 @@ class CheckInVeiwModel: ObservableObject
             } else {
                 for document in querySnapshot!.documents {
                     
-                    document.reference.updateData(["active": false, "checkout": currentTimeDate])
+                    
+                    document.reference.updateData(["signedOut": true, "signOutDate": currentTimeDate, "signOutTime": currentTime])
                     
                 }
                 self.checkinConfirmed = false
@@ -282,11 +261,11 @@ class CheckInVeiwModel: ObservableObject
         isLoading=true
         
         
-        var currentTimeDate = getFormattedDateAndTime()
+       // let currentTimeDate = getFormattedDateAndTime()
         
         var isActiveVisit = false
         
-        db.collection("visit").whereField("individualID", isEqualTo: indID).whereField("active", isEqualTo: true).limit(to: 1).getDocuments() { (querySnapshot, err) in
+        db.collection("contacts").whereField("individualID", isEqualTo: Singleton.shared.accountID!).whereField("signedOut", isEqualTo: false).limit(to: 1).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 
@@ -294,26 +273,34 @@ class CheckInVeiwModel: ObservableObject
             } else {
                 for document in querySnapshot!.documents {
                     
-                    
+                    print("checking active")
                     
                     let data = document.data()
                     let fsBusinessSignID =  data["businessSignID"] as? String ?? ""
-                    let fsCheckedIn =  data["checkedIn"] as? String ?? ""
+                   
+                        print("made if")
+                    let fsContactID =  data["contactID"] as? String ?? ""
+                   
                     let fsIndividualID =  data["individualID"] as? String ?? ""
+                    let fssignInDate =  data["signInDate"] as? String ?? ""
+                    let fsSignInTime =  data["signInTime"] as? String ?? ""
                     //let fsBusinessSignID =  data["email"] as? String ?? ""
                     // let fsBusinessSignID =  data["email"] as? String ?? ""
                     
-                    self.currentVisit = Visit(businessSignID: fsBusinessSignID, individualID: fsIndividualID, checkIn: fsCheckedIn, active: true)
-                    isActiveVisit = true
-                    self.qrCodeScan(qr: fsBusinessSignID)
+                    self.currentVisit = Contact(id: fsContactID, businessSignID: fsBusinessSignID, dependants: [String](), individualID: fsIndividualID, signInDate: fssignInDate, signOutDate: "", signInTime: fsSignInTime, signoutTime: "", signedOut: false)
+                        
+                        isActiveVisit = true
+                        self.qrCodeScan(qr: fsBusinessSignID)
+  
                 }
-                print("here now")
+             
                 if(isActiveVisit){
-                    print("in hereee")
+                   
+                    
                     
                 }else{
                     self.initialLoadComplete = true
-                    print("in here1")
+                   
                     self.isLoading = false
                 }
                 //do some error stuff
@@ -328,21 +315,40 @@ class CheckInVeiwModel: ObservableObject
     
     func getFormattedDateAndTime()->String{
         
+
+        let inputFormatter = DateFormatter()
         
-        let formatter = DateFormatter()
-        // initially set the format based on your datepicker date / server String
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let myString = formatter.string(from: Date()) // string purpose I add here
-        // convert your string to date
-        let yourDate = formatter.date(from: myString)
-        //then again set the date format whhich type of output you need
-        formatter.dateFormat = "dd-MMM-yyyy HH:mm:ss"
-        // again convert your date to string
-        let myStringafd = formatter.string(from: yourDate!)
+        inputFormatter.dateFormat = "dd/MM/yyyy"
+        
+        let myString = inputFormatter.string(from: Date())
+        
+        let yourDate = inputFormatter.date(from: myString)
+
+        let myStringafd = inputFormatter.string(from: yourDate!)
+        
+      
         
         print(myStringafd)
         
         return myStringafd
     }
+    
+    func getFormattedTime()->String{
+        
+        let dateFormatterGet = DateFormatter()
+        
+        dateFormatterGet.dateFormat = "HH:mm"
+
+        
+        let myStringTime = dateFormatterGet.string(from: Date())
+   
+        let yourTime = dateFormatterGet.date(from: myStringTime)
+
+        let myStringTimefd = dateFormatterGet.string(from: yourTime!)
+        
+        return myStringTimefd
+        
+    }
+    
 }

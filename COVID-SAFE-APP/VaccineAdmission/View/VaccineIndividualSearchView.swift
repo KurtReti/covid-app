@@ -14,17 +14,15 @@ import FirebaseFirestoreSwift
 
 struct VaccineIndividualSearchView: View {
     
-    @State var test = ""
     @State var medicare = ""
     @StateObject var IndividualSearchVM = VaccineIndividualSearchViewModel()
     @State var isActive = false
-    //@State var showProfile = false
+
     var body: some View {
         
         
         SearchScreen
         
-        //IndividualMedRecordScreen
         Spacer()
         
     }
@@ -48,10 +46,10 @@ struct VaccineIndividualSearchView: View {
                 TextField("Medicare Number", text: $medicare).frame(width: 300.0, height: 30.0).background(Color.white)
                     .padding(.bottom, 15)
                 
-                NavigationLink(destination: VaccineAdministrationView(medicare: $medicare), isActive: $IndividualSearchVM.isActive) {
+                NavigationLink(destination: VaccineAdministrationView(medicare: $medicare, isActive: $IndividualSearchVM.isActive), isActive: $IndividualSearchVM.isActive) {
                     Button(action: {
                         
-                        IndividualSearchVM.vaccineHistorySearch(medicare: medicare)
+                        IndividualSearchVM.IndividualSearch(medicare: medicare)
                         
                     }){
                         Text("Confirm")

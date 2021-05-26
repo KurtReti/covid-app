@@ -9,51 +9,55 @@
 /* Begin PBXBuildFile section */
 		F200EC2D265CF6500065D949 /* ClusterMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200EC2C265CF6500065D949 /* ClusterMapView.swift */; };
 		F200EC3E265CF6FC0065D949 /* ClusterMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F200EC3D265CF6FC0065D949 /* ClusterMapViewModel.swift */; };
+		F2634026265E3435006B76FE /* AlertsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634023265E3435006B76FE /* AlertsModel.swift */; };
+		F2634027265E3435006B76FE /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634024265E3435006B76FE /* AlertsView.swift */; };
+		F2634028265E3435006B76FE /* AlertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634025265E3435006B76FE /* AlertsViewModel.swift */; };
+		F2634039265E345F006B76FE /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634031265E345F006B76FE /* CheckInViewModel.swift */; };
+		F263403A265E345F006B76FE /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634032265E345F006B76FE /* LocationsViewModel.swift */; };
+		F263403D265E345F006B76FE /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634037265E345F006B76FE /* LocationsListView.swift */; };
+		F263403E265E345F006B76FE /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634038265E345F006B76FE /* CheckInView.swift */; };
+		F2634046265E347F006B76FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634045265E347F006B76FE /* ContentView.swift */; };
+		F263404F265E3498006B76FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404B265E3497006B76FE /* HomeView.swift */; };
+		F2634050265E3498006B76FE /* HealthOfficialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404C265E3497006B76FE /* HealthOfficialView.swift */; };
+		F2634051265E3498006B76FE /* BusinessHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404D265E3497006B76FE /* BusinessHomeView.swift */; };
+		F2634052265E3498006B76FE /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263404E265E3497006B76FE /* SwiftUIView.swift */; };
+		F263405B265E3526006B76FE /* HealthOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634057265E3526006B76FE /* HealthOfficial.swift */; };
+		F263405C265E3526006B76FE /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634058265E3526006B76FE /* Individual.swift */; };
+		F263405D265E3526006B76FE /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634059265E3526006B76FE /* Business.swift */; };
+		F263405E265E3526006B76FE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263405A265E3526006B76FE /* Contact.swift */; };
+		F2634065265E3537006B76FE /* ReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634063265E3537006B76FE /* ReportViewModel.swift */; };
+		F2634066265E3537006B76FE /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634064265E3537006B76FE /* ReportView.swift */; };
+		F2634072265E354A006B76FE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263406E265E354A006B76FE /* LoginViewModel.swift */; };
+		F2634073265E354A006B76FE /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263406F265E354A006B76FE /* SignupViewModel.swift */; };
+		F2634074265E354A006B76FE /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634070265E354A006B76FE /* LoginOptionsView.swift */; };
+		F2634075265E354A006B76FE /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634071265E354A006B76FE /* LoginSignupView.swift */; };
+		F2634078265E3551006B76FE /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634077265E3551006B76FE /* Singleton.swift */; };
+		F2634080265E3574006B76FE /* ReportTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263407D265E3574006B76FE /* ReportTestView.swift */; };
+		F2634081265E3574006B76FE /* CovidTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263407F265E3574006B76FE /* CovidTest.swift */; };
+		F2634093265E3584006B76FE /* VaccineAdministrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634087265E3584006B76FE /* VaccineAdministrationViewModel.swift */; };
+		F2634094265E3584006B76FE /* VaccineIndividualSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634088265E3584006B76FE /* VaccineIndividualSearchViewModel.swift */; };
+		F2634095265E3584006B76FE /* HealthCentre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263408A265E3584006B76FE /* HealthCentre.swift */; };
+		F2634096265E3584006B76FE /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263408B265E3584006B76FE /* Vaccine.swift */; };
+		F2634097265E3584006B76FE /* VaccineBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263408C265E3584006B76FE /* VaccineBatch.swift */; };
+		F2634098265E3584006B76FE /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263408D265E3584006B76FE /* Vaccination.swift */; };
+		F2634099265E3584006B76FE /* PreviousVaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263408F265E3584006B76FE /* PreviousVaccineView.swift */; };
+		F263409A265E3584006B76FE /* VaccineIndividualSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634090265E3584006B76FE /* VaccineIndividualSearchView.swift */; };
+		F263409B265E3584006B76FE /* VaccineAdministrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634091265E3584006B76FE /* VaccineAdministrationView.swift */; };
+		F263409C265E3584006B76FE /* VaccineAdmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2634092265E3584006B76FE /* VaccineAdmissionView.swift */; };
+		F26340A3265E358E006B76FE /* VaccineSupplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26340A1265E358E006B76FE /* VaccineSupplyView.swift */; };
+		F26340A4265E358E006B76FE /* VaccineSupplyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26340A2265E358E006B76FE /* VaccineSupplyViewModel.swift */; };
 		F27386F3265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27386F2265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift */; };
-		F27386F5265B7F8900A3CB4D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27386F4265B7F8900A3CB4D /* ContentView.swift */; };
 		F27386F7265B7F8D00A3CB4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27386F6265B7F8D00A3CB4D /* Assets.xcassets */; };
 		F27386FA265B7F8D00A3CB4D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F27386F9265B7F8D00A3CB4D /* Preview Assets.xcassets */; };
 		F2738705265B7F8D00A3CB4D /* COVID_SAFE_APPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738704265B7F8D00A3CB4D /* COVID_SAFE_APPTests.swift */; };
 		F2738710265B7F8D00A3CB4D /* COVID_SAFE_APPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273870F265B7F8D00A3CB4D /* COVID_SAFE_APPUITests.swift */; };
 		F2738769265B80B600A3CB4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2738720265B80B400A3CB4D /* GoogleService-Info.plist */; };
-		F273876B265B80B600A3CB4D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738724265B80B400A3CB4D /* LoginViewModel.swift */; };
-		F273876C265B80B600A3CB4D /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738725265B80B400A3CB4D /* SignupViewModel.swift */; };
-		F273876D265B80B600A3CB4D /* LoginOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738726265B80B400A3CB4D /* LoginOptionsView.swift */; };
-		F273876E265B80B600A3CB4D /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738727265B80B400A3CB4D /* LoginSignupView.swift */; };
-		F2738771265B80B600A3CB4D /* VaccineAdministrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273872C265B80B500A3CB4D /* VaccineAdministrationViewModel.swift */; };
-		F2738772265B80B600A3CB4D /* VaccineIndividualSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273872D265B80B500A3CB4D /* VaccineIndividualSearchViewModel.swift */; };
-		F2738773265B80B600A3CB4D /* HealthCentre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273872F265B80B500A3CB4D /* HealthCentre.swift */; };
-		F2738774265B80B600A3CB4D /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738730265B80B500A3CB4D /* Vaccine.swift */; };
-		F2738775265B80B600A3CB4D /* VaccineBatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738731265B80B500A3CB4D /* VaccineBatch.swift */; };
-		F2738776265B80B600A3CB4D /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738732265B80B500A3CB4D /* Vaccination.swift */; };
-		F2738777265B80B600A3CB4D /* PreviousVaccineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738734265B80B500A3CB4D /* PreviousVaccineView.swift */; };
-		F2738778265B80B600A3CB4D /* VaccineIndividualSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738735265B80B500A3CB4D /* VaccineIndividualSearchView.swift */; };
-		F2738779265B80B600A3CB4D /* VaccineAdministrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738736265B80B500A3CB4D /* VaccineAdministrationView.swift */; };
-		F273877A265B80B600A3CB4D /* VaccineAdmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738737265B80B500A3CB4D /* VaccineAdmissionView.swift */; };
-		F273877B265B80B600A3CB4D /* AlertProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738738265B80B500A3CB4D /* AlertProvider.swift */; };
-		F273877C265B80B600A3CB4D /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273873B265B80B500A3CB4D /* CheckInViewModel.swift */; };
-		F273877D265B80B600A3CB4D /* VisitDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273873D265B80B500A3CB4D /* VisitDescription.swift */; };
-		F273877E265B80B600A3CB4D /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273873E265B80B500A3CB4D /* Visit.swift */; };
-		F273877F265B80B600A3CB4D /* CheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738740265B80B500A3CB4D /* CheckInView.swift */; };
 		F2738780265B80B600A3CB4D /* CovidSignListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738743265B80B500A3CB4D /* CovidSignListViewModel.swift */; };
 		F2738781265B80B600A3CB4D /* CovidSignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738744265B80B500A3CB4D /* CovidSignViewModel.swift */; };
 		F2738782265B80B600A3CB4D /* CovidSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738746265B80B500A3CB4D /* CovidSign.swift */; };
 		F2738783265B80B600A3CB4D /* AddSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738748265B80B500A3CB4D /* AddSignView.swift */; };
 		F2738784265B80B600A3CB4D /* CovidSignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738749265B80B500A3CB4D /* CovidSignListView.swift */; };
 		F2738785265B80B600A3CB4D /* CovidSignDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273874A265B80B500A3CB4D /* CovidSignDetailsView.swift */; };
-		F2738786265B80B600A3CB4D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273874B265B80B500A3CB4D /* LoadingView.swift */; };
-		F2738787265B80B600A3CB4D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273874D265B80B500A3CB4D /* HomeView.swift */; };
-		F2738788265B80B600A3CB4D /* HealthOfficialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273874E265B80B500A3CB4D /* HealthOfficialView.swift */; };
-		F2738789265B80B600A3CB4D /* BusinessHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273874F265B80B500A3CB4D /* BusinessHomeView.swift */; };
-		F273878A265B80B600A3CB4D /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738750265B80B500A3CB4D /* SwiftUIView.swift */; };
-		F273878B265B80B600A3CB4D /* placeholderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F2738751265B80B500A3CB4D /* placeholderLogo.png */; };
-		F273878C265B80B600A3CB4D /* HealthOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738753265B80B500A3CB4D /* HealthOfficial.swift */; };
-		F273878D265B80B600A3CB4D /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738754265B80B500A3CB4D /* Individual.swift */; };
-		F273878E265B80B600A3CB4D /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738755265B80B500A3CB4D /* Business.swift */; };
-		F2738790265B80B600A3CB4D /* ReportTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738758265B80B600A3CB4D /* ReportTestView.swift */; };
-		F2738791265B80B600A3CB4D /* ConductTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738759265B80B600A3CB4D /* ConductTestView.swift */; };
-		F2738792265B80B600A3CB4D /* CovidTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273875B265B80B600A3CB4D /* CovidTest.swift */; };
-		F2738793265B80B600A3CB4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273875C265B80B600A3CB4D /* User.swift */; };
 		F2738794265B80B600A3CB4D /* DependentListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F273875F265B80B600A3CB4D /* DependentListModelView.swift */; };
 		F2738795265B80B600A3CB4D /* DependentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738760265B80B600A3CB4D /* DependentViewModel.swift */; };
 		F2738796265B80B600A3CB4D /* DependentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2738762265B80B600A3CB4D /* DependentModel.swift */; };
@@ -93,9 +97,45 @@
 /* Begin PBXFileReference section */
 		F200EC2C265CF6500065D949 /* ClusterMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterMapView.swift; sourceTree = "<group>"; };
 		F200EC3D265CF6FC0065D949 /* ClusterMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterMapViewModel.swift; sourceTree = "<group>"; };
+		F2634023265E3435006B76FE /* AlertsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsModel.swift; sourceTree = "<group>"; };
+		F2634024265E3435006B76FE /* AlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
+		F2634025265E3435006B76FE /* AlertsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewModel.swift; sourceTree = "<group>"; };
+		F2634031265E345F006B76FE /* CheckInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		F2634032265E345F006B76FE /* LocationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		F2634037265E345F006B76FE /* LocationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		F2634038265E345F006B76FE /* CheckInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
+		F2634045265E347F006B76FE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F263404B265E3497006B76FE /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F263404C265E3497006B76FE /* HealthOfficialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficialView.swift; sourceTree = "<group>"; };
+		F263404D265E3497006B76FE /* BusinessHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHomeView.swift; sourceTree = "<group>"; };
+		F263404E265E3497006B76FE /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		F2634057265E3526006B76FE /* HealthOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficial.swift; sourceTree = "<group>"; };
+		F2634058265E3526006B76FE /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
+		F2634059265E3526006B76FE /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		F263405A265E3526006B76FE /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		F2634063265E3537006B76FE /* ReportViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModel.swift; sourceTree = "<group>"; };
+		F2634064265E3537006B76FE /* ReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		F263406E265E354A006B76FE /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F263406F265E354A006B76FE /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		F2634070265E354A006B76FE /* LoginOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
+		F2634071265E354A006B76FE /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
+		F2634077265E3551006B76FE /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		F263407D265E3574006B76FE /* ReportTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTestView.swift; sourceTree = "<group>"; };
+		F263407F265E3574006B76FE /* CovidTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidTest.swift; sourceTree = "<group>"; };
+		F2634087265E3584006B76FE /* VaccineAdministrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationViewModel.swift; sourceTree = "<group>"; };
+		F2634088265E3584006B76FE /* VaccineIndividualSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchViewModel.swift; sourceTree = "<group>"; };
+		F263408A265E3584006B76FE /* HealthCentre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCentre.swift; sourceTree = "<group>"; };
+		F263408B265E3584006B76FE /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
+		F263408C265E3584006B76FE /* VaccineBatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineBatch.swift; sourceTree = "<group>"; };
+		F263408D265E3584006B76FE /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccination.swift; sourceTree = "<group>"; };
+		F263408F265E3584006B76FE /* PreviousVaccineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousVaccineView.swift; sourceTree = "<group>"; };
+		F2634090265E3584006B76FE /* VaccineIndividualSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchView.swift; sourceTree = "<group>"; };
+		F2634091265E3584006B76FE /* VaccineAdministrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationView.swift; sourceTree = "<group>"; };
+		F2634092265E3584006B76FE /* VaccineAdmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdmissionView.swift; sourceTree = "<group>"; };
+		F26340A1265E358E006B76FE /* VaccineSupplyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineSupplyView.swift; sourceTree = "<group>"; };
+		F26340A2265E358E006B76FE /* VaccineSupplyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineSupplyViewModel.swift; sourceTree = "<group>"; };
 		F27386EF265B7F8900A3CB4D /* COVID-SAFE-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COVID-SAFE-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F27386F2265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_SAFE_APPApp.swift; sourceTree = "<group>"; };
-		F27386F4265B7F8900A3CB4D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F27386F6265B7F8D00A3CB4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F27386F9265B7F8D00A3CB4D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F27386FB265B7F8D00A3CB4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,44 +146,12 @@
 		F273870F265B7F8D00A3CB4D /* COVID_SAFE_APPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID_SAFE_APPUITests.swift; sourceTree = "<group>"; };
 		F2738711265B7F8D00A3CB4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2738720265B80B400A3CB4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F2738724265B80B400A3CB4D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		F2738725265B80B400A3CB4D /* SignupViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
-		F2738726265B80B400A3CB4D /* LoginOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOptionsView.swift; sourceTree = "<group>"; };
-		F2738727265B80B400A3CB4D /* LoginSignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
-		F273872C265B80B500A3CB4D /* VaccineAdministrationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationViewModel.swift; sourceTree = "<group>"; };
-		F273872D265B80B500A3CB4D /* VaccineIndividualSearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchViewModel.swift; sourceTree = "<group>"; };
-		F273872F265B80B500A3CB4D /* HealthCentre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthCentre.swift; sourceTree = "<group>"; };
-		F2738730265B80B500A3CB4D /* Vaccine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccine.swift; sourceTree = "<group>"; };
-		F2738731265B80B500A3CB4D /* VaccineBatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineBatch.swift; sourceTree = "<group>"; };
-		F2738732265B80B500A3CB4D /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccination.swift; sourceTree = "<group>"; };
-		F2738734265B80B500A3CB4D /* PreviousVaccineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviousVaccineView.swift; sourceTree = "<group>"; };
-		F2738735265B80B500A3CB4D /* VaccineIndividualSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineIndividualSearchView.swift; sourceTree = "<group>"; };
-		F2738736265B80B500A3CB4D /* VaccineAdministrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdministrationView.swift; sourceTree = "<group>"; };
-		F2738737265B80B500A3CB4D /* VaccineAdmissionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VaccineAdmissionView.swift; sourceTree = "<group>"; };
-		F2738738265B80B500A3CB4D /* AlertProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertProvider.swift; sourceTree = "<group>"; };
-		F273873B265B80B500A3CB4D /* CheckInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
-		F273873D265B80B500A3CB4D /* VisitDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitDescription.swift; sourceTree = "<group>"; };
-		F273873E265B80B500A3CB4D /* Visit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
-		F2738740265B80B500A3CB4D /* CheckInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInView.swift; sourceTree = "<group>"; };
 		F2738743265B80B500A3CB4D /* CovidSignListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidSignListViewModel.swift; sourceTree = "<group>"; };
 		F2738744265B80B500A3CB4D /* CovidSignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidSignViewModel.swift; sourceTree = "<group>"; };
 		F2738746265B80B500A3CB4D /* CovidSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidSign.swift; sourceTree = "<group>"; };
 		F2738748265B80B500A3CB4D /* AddSignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSignView.swift; sourceTree = "<group>"; };
 		F2738749265B80B500A3CB4D /* CovidSignListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidSignListView.swift; sourceTree = "<group>"; };
 		F273874A265B80B500A3CB4D /* CovidSignDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidSignDetailsView.swift; sourceTree = "<group>"; };
-		F273874B265B80B500A3CB4D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		F273874D265B80B500A3CB4D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F273874E265B80B500A3CB4D /* HealthOfficialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficialView.swift; sourceTree = "<group>"; };
-		F273874F265B80B500A3CB4D /* BusinessHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessHomeView.swift; sourceTree = "<group>"; };
-		F2738750265B80B500A3CB4D /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		F2738751265B80B500A3CB4D /* placeholderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholderLogo.png; sourceTree = "<group>"; };
-		F2738753265B80B500A3CB4D /* HealthOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthOfficial.swift; sourceTree = "<group>"; };
-		F2738754265B80B500A3CB4D /* Individual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
-		F2738755265B80B500A3CB4D /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
-		F2738758265B80B600A3CB4D /* ReportTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTestView.swift; sourceTree = "<group>"; };
-		F2738759265B80B600A3CB4D /* ConductTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductTestView.swift; sourceTree = "<group>"; };
-		F273875B265B80B600A3CB4D /* CovidTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CovidTest.swift; sourceTree = "<group>"; };
-		F273875C265B80B600A3CB4D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F273875F265B80B600A3CB4D /* DependentListModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentListModelView.swift; sourceTree = "<group>"; };
 		F2738760265B80B600A3CB4D /* DependentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentViewModel.swift; sourceTree = "<group>"; };
 		F2738762265B80B600A3CB4D /* DependentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentModel.swift; sourceTree = "<group>"; };
@@ -213,6 +221,160 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F2634022265E3435006B76FE /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				F2634023265E3435006B76FE /* AlertsModel.swift */,
+				F2634024265E3435006B76FE /* AlertsView.swift */,
+				F2634025265E3435006B76FE /* AlertsViewModel.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		F263402F265E345F006B76FE /* Check-in */ = {
+			isa = PBXGroup;
+			children = (
+				F2634030265E345F006B76FE /* ViewModel */,
+				F2634036265E345F006B76FE /* View */,
+			);
+			path = "Check-in";
+			sourceTree = "<group>";
+		};
+		F2634030265E345F006B76FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2634031265E345F006B76FE /* CheckInViewModel.swift */,
+				F2634032265E345F006B76FE /* LocationsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2634036265E345F006B76FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2634037265E345F006B76FE /* LocationsListView.swift */,
+				F2634038265E345F006B76FE /* CheckInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F263404A265E3497006B76FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F263404B265E3497006B76FE /* HomeView.swift */,
+				F263404C265E3497006B76FE /* HealthOfficialView.swift */,
+				F263404D265E3497006B76FE /* BusinessHomeView.swift */,
+				F263404E265E3497006B76FE /* SwiftUIView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F2634056265E3526006B76FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2634057265E3526006B76FE /* HealthOfficial.swift */,
+				F2634058265E3526006B76FE /* Individual.swift */,
+				F2634059265E3526006B76FE /* Business.swift */,
+				F263405A265E3526006B76FE /* Contact.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2634062265E3537006B76FE /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				F2634063265E3537006B76FE /* ReportViewModel.swift */,
+				F2634064265E3537006B76FE /* ReportView.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		F263406D265E354A006B76FE /* SignupAndLogin */ = {
+			isa = PBXGroup;
+			children = (
+				F263406E265E354A006B76FE /* LoginViewModel.swift */,
+				F263406F265E354A006B76FE /* SignupViewModel.swift */,
+				F2634070265E354A006B76FE /* LoginOptionsView.swift */,
+				F2634071265E354A006B76FE /* LoginSignupView.swift */,
+			);
+			path = SignupAndLogin;
+			sourceTree = "<group>";
+		};
+		F2634076265E3551006B76FE /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				F2634077265E3551006B76FE /* Singleton.swift */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		F263407C265E3574006B76FE /* TestingHealthOfficial */ = {
+			isa = PBXGroup;
+			children = (
+				F263407D265E3574006B76FE /* ReportTestView.swift */,
+				F263407E265E3574006B76FE /* Model */,
+			);
+			path = TestingHealthOfficial;
+			sourceTree = "<group>";
+		};
+		F263407E265E3574006B76FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F263407F265E3574006B76FE /* CovidTest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2634085265E3584006B76FE /* VaccineAdmission */ = {
+			isa = PBXGroup;
+			children = (
+				F2634086265E3584006B76FE /* ViewModel */,
+				F2634089265E3584006B76FE /* Model */,
+				F263408E265E3584006B76FE /* View */,
+				F2634092265E3584006B76FE /* VaccineAdmissionView.swift */,
+			);
+			path = VaccineAdmission;
+			sourceTree = "<group>";
+		};
+		F2634086265E3584006B76FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2634087265E3584006B76FE /* VaccineAdministrationViewModel.swift */,
+				F2634088265E3584006B76FE /* VaccineIndividualSearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2634089265E3584006B76FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F263408A265E3584006B76FE /* HealthCentre.swift */,
+				F263408B265E3584006B76FE /* Vaccine.swift */,
+				F263408C265E3584006B76FE /* VaccineBatch.swift */,
+				F263408D265E3584006B76FE /* Vaccination.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F263408E265E3584006B76FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F263408F265E3584006B76FE /* PreviousVaccineView.swift */,
+				F2634090265E3584006B76FE /* VaccineIndividualSearchView.swift */,
+				F2634091265E3584006B76FE /* VaccineAdministrationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F26340A0265E358E006B76FE /* VaccineSupply */ = {
+			isa = PBXGroup;
+			children = (
+				F26340A1265E358E006B76FE /* VaccineSupplyView.swift */,
+				F26340A2265E358E006B76FE /* VaccineSupplyViewModel.swift */,
+			);
+			path = VaccineSupply;
+			sourceTree = "<group>";
+		};
 		F27386E6265B7F8900A3CB4D = {
 			isa = PBXGroup;
 			children = (
@@ -236,23 +398,23 @@
 		F27386F1265B7F8900A3CB4D /* COVID-SAFE-APP */ = {
 			isa = PBXGroup;
 			children = (
+				F26340A0265E358E006B76FE /* VaccineSupply */,
+				F2634085265E3584006B76FE /* VaccineAdmission */,
+				F263407C265E3574006B76FE /* TestingHealthOfficial */,
+				F2634076265E3551006B76FE /* Singleton */,
+				F263406D265E354A006B76FE /* SignupAndLogin */,
+				F2634062265E3537006B76FE /* Reports */,
+				F2634056265E3526006B76FE /* Model */,
+				F263404A265E3497006B76FE /* Home */,
+				F2634045265E347F006B76FE /* ContentView.swift */,
+				F263402F265E345F006B76FE /* Check-in */,
+				F2634022265E3435006B76FE /* Alerts */,
 				F27387D3265BFC4000A3CB4D /* Map */,
-				F2738738265B80B500A3CB4D /* AlertProvider.swift */,
 				F200EC1E265CF5F50065D949 /* ClusterMap */,
-				F2738739265B80B500A3CB4D /* Check-in */,
 				F2738741265B80B500A3CB4D /* Covidsign */,
 				F273875D265B80B600A3CB4D /* Dependents */,
 				F2738720265B80B400A3CB4D /* GoogleService-Info.plist */,
-				F273874C265B80B500A3CB4D /* Home */,
-				F273874B265B80B500A3CB4D /* LoadingView.swift */,
-				F2738752265B80B500A3CB4D /* Model */,
-				F2738751265B80B500A3CB4D /* placeholderLogo.png */,
-				F2738723265B80B400A3CB4D /* SignupAndLogin */,
-				F2738757265B80B500A3CB4D /* TestingHealthOfficial */,
-				F273875C265B80B600A3CB4D /* User.swift */,
-				F273872A265B80B500A3CB4D /* VaccineAdmission */,
 				F27386F2265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift */,
-				F27386F4265B7F8900A3CB4D /* ContentView.swift */,
 				F27386F6265B7F8D00A3CB4D /* Assets.xcassets */,
 				F27386FB265B7F8D00A3CB4D /* Info.plist */,
 				F27386F8265B7F8D00A3CB4D /* Preview Content */,
@@ -284,93 +446,6 @@
 				F2738711265B7F8D00A3CB4D /* Info.plist */,
 			);
 			path = "COVID-SAFE-APPUITests";
-			sourceTree = "<group>";
-		};
-		F2738723265B80B400A3CB4D /* SignupAndLogin */ = {
-			isa = PBXGroup;
-			children = (
-				F2738724265B80B400A3CB4D /* LoginViewModel.swift */,
-				F2738725265B80B400A3CB4D /* SignupViewModel.swift */,
-				F2738726265B80B400A3CB4D /* LoginOptionsView.swift */,
-				F2738727265B80B400A3CB4D /* LoginSignupView.swift */,
-			);
-			path = SignupAndLogin;
-			sourceTree = "<group>";
-		};
-		F273872A265B80B500A3CB4D /* VaccineAdmission */ = {
-			isa = PBXGroup;
-			children = (
-				F273872B265B80B500A3CB4D /* ViewModel */,
-				F273872E265B80B500A3CB4D /* Model */,
-				F2738733265B80B500A3CB4D /* View */,
-				F2738737265B80B500A3CB4D /* VaccineAdmissionView.swift */,
-			);
-			path = VaccineAdmission;
-			sourceTree = "<group>";
-		};
-		F273872B265B80B500A3CB4D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F273872C265B80B500A3CB4D /* VaccineAdministrationViewModel.swift */,
-				F273872D265B80B500A3CB4D /* VaccineIndividualSearchViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F273872E265B80B500A3CB4D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F273872F265B80B500A3CB4D /* HealthCentre.swift */,
-				F2738730265B80B500A3CB4D /* Vaccine.swift */,
-				F2738731265B80B500A3CB4D /* VaccineBatch.swift */,
-				F2738732265B80B500A3CB4D /* Vaccination.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F2738733265B80B500A3CB4D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F2738734265B80B500A3CB4D /* PreviousVaccineView.swift */,
-				F2738735265B80B500A3CB4D /* VaccineIndividualSearchView.swift */,
-				F2738736265B80B500A3CB4D /* VaccineAdministrationView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F2738739265B80B500A3CB4D /* Check-in */ = {
-			isa = PBXGroup;
-			children = (
-				F273873A265B80B500A3CB4D /* ViewModel */,
-				F273873C265B80B500A3CB4D /* Model */,
-				F273873F265B80B500A3CB4D /* View */,
-			);
-			path = "Check-in";
-			sourceTree = "<group>";
-		};
-		F273873A265B80B500A3CB4D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F273873B265B80B500A3CB4D /* CheckInViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		F273873C265B80B500A3CB4D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F273873D265B80B500A3CB4D /* VisitDescription.swift */,
-				F273873E265B80B500A3CB4D /* Visit.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F273873F265B80B500A3CB4D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F2738740265B80B500A3CB4D /* CheckInView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F2738741265B80B500A3CB4D /* Covidsign */ = {
@@ -409,45 +484,6 @@
 				F273874A265B80B500A3CB4D /* CovidSignDetailsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		F273874C265B80B500A3CB4D /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				F273874D265B80B500A3CB4D /* HomeView.swift */,
-				F273874E265B80B500A3CB4D /* HealthOfficialView.swift */,
-				F273874F265B80B500A3CB4D /* BusinessHomeView.swift */,
-				F2738750265B80B500A3CB4D /* SwiftUIView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		F2738752265B80B500A3CB4D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F2738753265B80B500A3CB4D /* HealthOfficial.swift */,
-				F2738754265B80B500A3CB4D /* Individual.swift */,
-				F2738755265B80B500A3CB4D /* Business.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F2738757265B80B500A3CB4D /* TestingHealthOfficial */ = {
-			isa = PBXGroup;
-			children = (
-				F2738758265B80B600A3CB4D /* ReportTestView.swift */,
-				F2738759265B80B600A3CB4D /* ConductTestView.swift */,
-				F273875A265B80B600A3CB4D /* Model */,
-			);
-			path = TestingHealthOfficial;
-			sourceTree = "<group>";
-		};
-		F273875A265B80B600A3CB4D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F273875B265B80B600A3CB4D /* CovidTest.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F273875D265B80B600A3CB4D /* Dependents */ = {
@@ -641,7 +677,6 @@
 				F27386FA265B7F8D00A3CB4D /* Preview Assets.xcassets in Resources */,
 				F27386F7265B7F8D00A3CB4D /* Assets.xcassets in Resources */,
 				F2738769265B80B600A3CB4D /* GoogleService-Info.plist in Resources */,
-				F273878B265B80B600A3CB4D /* placeholderLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,57 +702,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				F200EC3E265CF6FC0065D949 /* ClusterMapViewModel.swift in Sources */,
-				F273876E265B80B600A3CB4D /* LoginSignupView.swift in Sources */,
-				F2738788265B80B600A3CB4D /* HealthOfficialView.swift in Sources */,
+				F2634050265E3498006B76FE /* HealthOfficialView.swift in Sources */,
+				F2634094265E3584006B76FE /* VaccineIndividualSearchViewModel.swift in Sources */,
+				F263405B265E3526006B76FE /* HealthOfficial.swift in Sources */,
+				F2634097265E3584006B76FE /* VaccineBatch.swift in Sources */,
+				F2634052265E3498006B76FE /* SwiftUIView.swift in Sources */,
+				F263403D265E345F006B76FE /* LocationsListView.swift in Sources */,
+				F2634072265E354A006B76FE /* LoginViewModel.swift in Sources */,
 				F2738798265B80B600A3CB4D /* EditDependentView.swift in Sources */,
-				F273878C265B80B600A3CB4D /* HealthOfficial.swift in Sources */,
-				F273878A265B80B600A3CB4D /* SwiftUIView.swift in Sources */,
-				F2738771265B80B600A3CB4D /* VaccineAdministrationViewModel.swift in Sources */,
-				F27386F5265B7F8900A3CB4D /* ContentView.swift in Sources */,
+				F2634098265E3584006B76FE /* Vaccination.swift in Sources */,
+				F2634039265E345F006B76FE /* CheckInViewModel.swift in Sources */,
+				F2634074265E354A006B76FE /* LoginOptionsView.swift in Sources */,
 				F2B363F3265C81EB00C760F4 /* EditSignView.swift in Sources */,
-				F2738777265B80B600A3CB4D /* PreviousVaccineView.swift in Sources */,
-				F2738776265B80B600A3CB4D /* Vaccination.swift in Sources */,
+				F2634093265E3584006B76FE /* VaccineAdministrationViewModel.swift in Sources */,
 				F2738780265B80B600A3CB4D /* CovidSignListViewModel.swift in Sources */,
+				F2634099265E3584006B76FE /* PreviousVaccineView.swift in Sources */,
 				F2738799265B80B600A3CB4D /* DependentDetailsView.swift in Sources */,
+				F2634028265E3435006B76FE /* AlertsViewModel.swift in Sources */,
+				F2634096265E3584006B76FE /* Vaccine.swift in Sources */,
 				F2738785265B80B600A3CB4D /* CovidSignDetailsView.swift in Sources */,
-				F273877F265B80B600A3CB4D /* CheckInView.swift in Sources */,
-				F273878D265B80B600A3CB4D /* Individual.swift in Sources */,
+				F263409A265E3584006B76FE /* VaccineIndividualSearchView.swift in Sources */,
+				F2634065265E3537006B76FE /* ReportViewModel.swift in Sources */,
+				F263405C265E3526006B76FE /* Individual.swift in Sources */,
+				F263403E265E345F006B76FE /* CheckInView.swift in Sources */,
 				F2738782265B80B600A3CB4D /* CovidSign.swift in Sources */,
-				F2738775265B80B600A3CB4D /* VaccineBatch.swift in Sources */,
+				F26340A3265E358E006B76FE /* VaccineSupplyView.swift in Sources */,
 				F27386F3265B7F8900A3CB4D /* COVID_SAFE_APPApp.swift in Sources */,
-				F2738790265B80B600A3CB4D /* ReportTestView.swift in Sources */,
-				F273877D265B80B600A3CB4D /* VisitDescription.swift in Sources */,
-				F2738793265B80B600A3CB4D /* User.swift in Sources */,
 				F2738796265B80B600A3CB4D /* DependentModel.swift in Sources */,
-				F273877E265B80B600A3CB4D /* Visit.swift in Sources */,
-				F2738772265B80B600A3CB4D /* VaccineIndividualSearchViewModel.swift in Sources */,
+				F26340A4265E358E006B76FE /* VaccineSupplyViewModel.swift in Sources */,
+				F2634066265E3537006B76FE /* ReportView.swift in Sources */,
 				F27387DC265BFDAD00A3CB4D /* MapViewModel.swift in Sources */,
 				F2738781265B80B600A3CB4D /* CovidSignViewModel.swift in Sources */,
-				F2738787265B80B600A3CB4D /* HomeView.swift in Sources */,
-				F2738791265B80B600A3CB4D /* ConductTestView.swift in Sources */,
-				F2738792265B80B600A3CB4D /* CovidTest.swift in Sources */,
-				F2738789265B80B600A3CB4D /* BusinessHomeView.swift in Sources */,
 				F2738784265B80B600A3CB4D /* CovidSignListView.swift in Sources */,
-				F2738773265B80B600A3CB4D /* HealthCentre.swift in Sources */,
-				F273876D265B80B600A3CB4D /* LoginOptionsView.swift in Sources */,
-				F273876C265B80B600A3CB4D /* SignupViewModel.swift in Sources */,
-				F2738774265B80B600A3CB4D /* Vaccine.swift in Sources */,
-				F2738778265B80B600A3CB4D /* VaccineIndividualSearchView.swift in Sources */,
-				F273877C265B80B600A3CB4D /* CheckInViewModel.swift in Sources */,
-				F2738786265B80B600A3CB4D /* LoadingView.swift in Sources */,
+				F263409C265E3584006B76FE /* VaccineAdmissionView.swift in Sources */,
+				F2634080265E3574006B76FE /* ReportTestView.swift in Sources */,
+				F263405E265E3526006B76FE /* Contact.swift in Sources */,
+				F2634073265E354A006B76FE /* SignupViewModel.swift in Sources */,
+				F263404F265E3498006B76FE /* HomeView.swift in Sources */,
+				F2634081265E3574006B76FE /* CovidTest.swift in Sources */,
+				F2634051265E3498006B76FE /* BusinessHomeView.swift in Sources */,
+				F2634078265E3551006B76FE /* Singleton.swift in Sources */,
+				F2634026265E3435006B76FE /* AlertsModel.swift in Sources */,
+				F2634095265E3584006B76FE /* HealthCentre.swift in Sources */,
 				F2738795265B80B600A3CB4D /* DependentViewModel.swift in Sources */,
-				F273876B265B80B600A3CB4D /* LoginViewModel.swift in Sources */,
 				F2738794265B80B600A3CB4D /* DependentListModelView.swift in Sources */,
+				F2634027265E3435006B76FE /* AlertsView.swift in Sources */,
+				F263409B265E3584006B76FE /* VaccineAdministrationView.swift in Sources */,
 				F27387D7265BFC7600A3CB4D /* MapView.swift in Sources */,
+				F2634075265E354A006B76FE /* LoginSignupView.swift in Sources */,
 				F200EC2D265CF6500065D949 /* ClusterMapView.swift in Sources */,
 				F27387E6265C04DD00A3CB4D /* Marker.swift in Sources */,
-				F273877A265B80B600A3CB4D /* VaccineAdmissionView.swift in Sources */,
-				F273877B265B80B600A3CB4D /* AlertProvider.swift in Sources */,
-				F273878E265B80B600A3CB4D /* Business.swift in Sources */,
 				F273879A265B80B600A3CB4D /* AddDependentView.swift in Sources */,
 				F2738797265B80B600A3CB4D /* DependentView.swift in Sources */,
-				F2738779265B80B600A3CB4D /* VaccineAdministrationView.swift in Sources */,
+				F2634046265E347F006B76FE /* ContentView.swift in Sources */,
 				F2738783265B80B600A3CB4D /* AddSignView.swift in Sources */,
+				F263405D265E3526006B76FE /* Business.swift in Sources */,
+				F263403A265E345F006B76FE /* LocationsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
