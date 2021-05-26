@@ -22,17 +22,11 @@ class ClusterMapViewModel: ObservableObject {
     @Published var individualsWithCovid = [String]()
     @Published var covidRelatedSigns = [String]()
     
-    @Published var vaccinatedIndividuals = 0
-    @Published var covidIndividuals = 0
-    @Published var positiveTests = 0
+    @Published var vaccinatedIndividuals = 0.0
+    @Published var covidIndividuals = 0.0
+    @Published var positiveTests = 0.0
     
     private let db = Firestore.firestore()
-    
-    func calStats() {
-        vaccinatedIndividuals = (vaccinationCount.count / individualCount.count) * 100
-        covidIndividuals = (individualsWithCovid.count / individualCount.count) * 100
-        positiveTests = (individualsWithCovid.count / testsCount.count) * 100
-    }
     
     func fetchData() {
         
@@ -115,11 +109,11 @@ class ClusterMapViewModel: ObservableObject {
                                 let marker = Marker(title: name, coordinate: coord)
                                 print("\(sign) : \(marker)")
                                 self.markers.append(marker)
+                                self.calStats()
                             }
                         }
                     }
                 }
-                self.calStats()
             }
 
         }

@@ -28,15 +28,14 @@ struct ClusterMapView: View {
                     .edgesIgnoringSafeArea(.all)
             }
             Section(header: Text("COVID Statisics")) {
-                Text("Percentage of individuals vaccinated: \(viewModel.individualCount.count)")
-                Text("Percentage of affected individuals: \(viewModel.businessCount.count)")
-                Text("Percentage of Positive Tests: \(viewModel.testsCount.count)")
+                Text("Percentage of individuals vaccinated: \(viewModel.vaccinatedIndividuals)%")
+                Text("Percentage of affected individuals: \(viewModel.covidIndividuals)%")
+                Text("Percentage of Positive Tests: \(viewModel.positiveTests)%")
             }
         }
         .navigationBarTitle("COVID Reports")
         .onAppear() {
             viewModel.fetchData()
-            //viewModel.calStats()
         }
     }
 }
