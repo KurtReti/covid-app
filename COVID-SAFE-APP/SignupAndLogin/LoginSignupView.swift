@@ -180,7 +180,7 @@ struct LoginSignupView: View {
                 
                 
             }){
-                Text("Sign in")
+                Text("Sign Up")
                     .font(.title2)
                     .foregroundColor(Color.white)
                     .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
@@ -242,7 +242,7 @@ struct LoginSignupView: View {
                 
                 
             }){
-                Text("Sign in")
+                Text("Sign Up")
                     .font(.title2)
                     .foregroundColor(Color.white)
                     .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
@@ -295,7 +295,7 @@ struct LoginSignupView: View {
                 
                 
             }){
-                Text("Sign in")
+                Text("Sign Up")
                     .font(.title2)
                     .foregroundColor(Color.white)
                     .background(RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
