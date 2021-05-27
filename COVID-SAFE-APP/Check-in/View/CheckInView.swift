@@ -245,7 +245,7 @@ struct CheckInView: View {
                 Text("Address:")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
-                Text("\(CheckInVM.currentBusiness.address)")
+                Text("\(CheckInVM.busSignLocation.location)")
                 //Text(date, style: .time)
                 Text("Time & Date:")
                     .fontWeight(.semibold)
