@@ -56,54 +56,7 @@ struct BusinessHomeView: View {
                         .frame(height: 10)
                 }
                     
-                // CHECK-IN BUTTON
-                Group{
-                    ZStack{
-                        // only wrap rectangle - otherwise formatting issue
-                        NavigationLink(destination: CheckInSelectorView()){
-                            RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
-                                .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                                .frame(width: 350.0, height: 50.0)
-                        }
-                        HStack {
-                            Image(systemName: "qrcode.viewfinder")
-                                .font(.system(size: 34))
-                                .foregroundColor(.white)
-                            Text("Check-ins")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundColor(.white)
-                        }
-                        .frame(width: 320, alignment: .topLeading)
-                        
-                    }
-                    Spacer()
-                        .frame(width: 350.0, height: 30)
-                }
-                    
-                // ALERTS BUTTON
-                Group{
-                   ZStack{
-                    // only wrap rectangle - otherwise formatting issue
-                    NavigationLink(destination: AlertsView()){
-                       RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Corner Radius@*/10.0/*@END_MENU_TOKEN@*/)
-                           .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
-                           .frame(width: 350.0, height: 50.0)
-                    }
-                       HStack {
-                           Image(systemName: "exclamationmark.circle")
-                               .font(.system(size: 34))
-                               .foregroundColor(.white)
-                           Text("Alerts")
-                               .font(.body)
-                               .fontWeight(.semibold)
-                               .foregroundColor(.white)
-                       }
-                       .frame(width: 320, alignment: .topLeading)
-                   }
-                   Spacer()
-                       .frame(height: 30)
-                }
+
                 
                 // COVID SIGN BUTTON
                 Group{

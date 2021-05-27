@@ -48,7 +48,7 @@ struct PreviousVaccineView: View {
 
                             HStack{
 
-                                Text("Adress:")
+                                Text("Address:")
 
                                 Text(individual.address)
 
